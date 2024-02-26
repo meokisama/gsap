@@ -231,7 +231,7 @@ function Vote() {
                     onClose={() => setOpen(false)}
                     steps={steps}
                 />}
-                <Footer />
+                <Footer text="Trang Chủ" to="/" />
             </div>}
         </div>
     );

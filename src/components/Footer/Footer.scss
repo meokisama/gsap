@@ -2,12 +2,25 @@
     padding-top: 10rem;
     div {
         text-align: center;
-        img {
-            width: 350px;
+        .footerBtn {
+            width: 300px;
             height: auto;
             display: block;
-            margin: auto;
-            padding: 5rem 0;
+            margin: 4rem auto;
+            padding: 1.5rem 0;
+            border: 1px solid rgb(151, 151, 151);
+            border-radius: 10px;
+            span {
+                font-family: 'Phudu';
+                font-size: 2rem;
+                color: rgb(151, 151, 151);
+            }
+            .btnLink {
+                text-decoration: none;
+            }
+            &:hover {
+                cursor: pointer;
+            }
         }
         p {
             font-weight: 300;
@@ -28,7 +41,7 @@
 
 @media all and (max-width: 480px) {
     .footer {
-        img {
+        .footerBtn {
             width: 200px !important;
         }
         p {
