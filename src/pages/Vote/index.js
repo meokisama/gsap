@@ -171,6 +171,16 @@ function Vote() {
         return () => clearTimeout(timeout);
     }, []);
 
+    //Only run tour once
+    const [hasRun, setHasRun] = useState(false);
+    useEffect(() => {
+        const hasRunPreviously = localStorage.getItem('hasRun');
+        if (!hasRunPreviously) {
+            setHasRun(true);
+            localStorage.setItem('hasRun', 'true');
+        }
+    }, []);
+
     //Hide Tour when width < 600px
     const [shouldHide, setShouldHide] = useState(false);
 
@@ -226,11 +236,11 @@ function Vote() {
                         </svg>
                     </button>
                 </div>
-                {shouldHide ? null : <Tour
+                {hasRun && (shouldHide ? null : <Tour
                     open={open}
                     onClose={() => setOpen(false)}
                     steps={steps}
-                />}
+                />)}
                 <Footer text="Trang Chủ" to="/" />
             </div>}
         </div>

@@ -11,11 +11,11 @@ function Footer({ text = "Bình Chọn", to = "/vote" }) {
                     「<strong onClick={() => window.open("https://www.facebook.com/Zennomi", "_blank")}>Zennomi</strong> (Backend)」
                     「<strong onClick={() => window.open("https://www.facebook.com/TheMeoki", "_blank")}>Meoki</strong> (Frontend)」
                 </p>
-                <div className="footerBtn">
-                    <Link className="btnLink" to={to} target="_blank">
+                <Link className="btnLink" to={to} target="_blank">
+                    <div className="footerBtn">
                         <span>{text}</span>
-                    </Link>
-                </div>
+                    </div>
+                </Link>
                 <p>© BXH Light Novel Việt Nam 2024</p>
             </div>
         </div>

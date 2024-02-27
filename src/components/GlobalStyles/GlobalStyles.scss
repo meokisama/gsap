@@ -96,6 +96,7 @@ body {
     padding: 2rem;
     background-color: var(--color-background);
     position: relative;
+    overflow: hidden;
     #btnPrev,
     #btnNext {
         cursor: pointer;

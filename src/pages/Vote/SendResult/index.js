@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { Card, Statistic, Alert } from 'antd';
 import { HomeOutlined, GlobalOutlined, WifiOutlined, EnvironmentOutlined } from '@ant-design/icons';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 import "./SendResult.scss"
 import Category from "../../../components/Category";
+import MessageHub from "../../../components/MessageHub";
 
 function SendResult({ result }) {
 
@@ -48,6 +50,29 @@ function SendResult({ result }) {
         fontFamily: "Lexend",
         fontWeight: 300,
     }
+
+    //Captcha
+    const [captchaVerified, setCaptchaVerified] = useState(false);
+    const [token, setToken] = useState(null);
+    const [done, setDone] = useState(false);
+    const captchaRef = useRef(null);
+
+    const onVerify = (token) => {
+        setCaptchaVerified(true);
+        setToken(token);
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (captchaVerified) {
+            // console.log(token);
+            setDone(true)
+        } else {
+            alertRef.current('Vui lòng xác minh captcha trước khi gửi! (Captcha được dùng để giảm vote ảo)');
+        }
+    };
+
+    const alertRef = useRef(null);
 
 
     return (
@@ -120,6 +145,34 @@ function SendResult({ result }) {
                         </div>
                     </Card>
                 ))}
+
+                <div className="captcha">
+                    {!done && (
+                        <form onSubmit={handleSubmit}>
+                            <HCaptcha
+                                sitekey="10000000-ffff-ffff-ffff-000000000001"
+                                onVerify={onVerify}
+                                ref={captchaRef}
+                            />
+                            <div className="btnContainer">
+                                <button type="submit">
+                                    Gửi Bình Chọn
+                                </button>
+                            </div>
+                        </form>
+                    )}
+                    {done && (
+                        <div className="showSuccess">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
+                            <h3>Bình chọn đã được ghi nhận!</h3>
+                            <p>Cảm ơn bạn đã tham gia bình chọn cho bảng xếp hạng lần này. Chúng tôi sẽ tổng hợp các lượt bình chọn và công bố kết quả của bảng xếp hạng trong thời gian sớm nhất!</p>
+                        </div>
+                    )}
+                </div>
+
+                <MessageHub>{(msg) => (alertRef.current = msg)}</MessageHub>
 
             </div>
         </div>
