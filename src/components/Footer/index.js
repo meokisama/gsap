@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import "./Footer.scss"
 
-function Footer({ text = "Bình Chọn", to = "/vote" }) {
+function Footer({ text = "Bình Chọn", to = process.env.REACT_APP_VOTEPATH }) {
     return (
         <div className='footer'>
             <div>

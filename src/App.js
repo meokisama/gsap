@@ -8,9 +8,9 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/vote" element={<Vote />} />
-          <Route path="*" element={<Navigate to="/" />} />
+          <Route path={process.env.REACT_APP_HOMEPATH} element={<Home />} />
+          <Route path={process.env.REACT_APP_VOTEPATH} element={<Vote />} />
+          <Route path="*" element={<Navigate to={process.env.REACT_APP_HOMEPATH} />} />
         </Routes>
       </div>
     </Router>

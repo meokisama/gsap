@@ -29,7 +29,7 @@ function VoteButton() {
     return (
         <div className="voteButton wrapper">
             <div className="voteBtn" ref={mediaRef}>
-                <Link className="cta" to="/vote" target="_blank">
+                <Link className="cta" to={process.env.REACT_APP_VOTEPATH} target="_blank">
                     <span>Bình chọn</span>
                     <span>
                         <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg">

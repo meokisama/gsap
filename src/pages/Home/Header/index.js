@@ -61,7 +61,7 @@ function Header() {
                         Đến, và đem quyền lực của bạn để bình chọn cho những Light Novel độc đáo nhất, góp phần làm nên một bảng xếp hạng xuất sắc nhất lịch sử Light Novel Việt Nam.
                         Hãy là phù thủy của chính câu chuyện bạn yêu thích, và hãy để cái tên của câu chuyện đó ghi danh bảng vàng!</p>
                     <div id='textBtn'>
-                        <Link id='votebtn' to="/vote" target="_blank">
+                        <Link id='votebtn' to={process.env.REACT_APP_VOTEPATH} target="_blank">
                             <span>Bình Chọn</span>
                             <img alt='' src={rotSakura1} />
                         </Link>

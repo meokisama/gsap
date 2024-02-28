@@ -241,7 +241,7 @@ function Vote() {
                     onClose={() => setOpen(false)}
                     steps={steps}
                 />)}
-                <Footer text="Trang Chủ" to="/" />
+                <Footer text="Trang Chủ" to={process.env.REACT_APP_HOMEPATH} />
             </div>}
         </div>
     );
