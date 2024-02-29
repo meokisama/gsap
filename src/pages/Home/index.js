@@ -13,7 +13,7 @@ import "../../fonts/DTPhudu-Black.otf"
 
 function Home() {
     return (
-        <div>
+        <div style={{ backgroundColor: "#fff7f8" }}>
             <SplashScreen />
             <Header />
             <div className="contentContainer">
