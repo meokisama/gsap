@@ -17,7 +17,7 @@ function Overview() {
             gsap.fromTo(
                 text,
                 {
-                    y: -500,
+                    y: -200,
                     opacity: 0,
                 },
                 {
@@ -25,7 +25,8 @@ function Overview() {
                     opacity: 1,
                     scrollTrigger: {
                         trigger: text,
-                        end: 'top 50%',
+                        start: 'top 80%',
+                        end: 'top 40%',
                         scrub: true,
                     },
                 },
