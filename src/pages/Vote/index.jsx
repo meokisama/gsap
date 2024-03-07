@@ -7,8 +7,11 @@ import { lnList } from './NovelData/NovelList';
 import Transition from '../../components/Transition';
 import Footer from '../../components/Footer';
 import SendResult from './SendResult';
+import DocumentTitle from '../../components/DocumentTitle';
 
 function Vote() {
+    DocumentTitle('Bình Chọn - Bảng Xếp Hạng Light Novel Việt Nam');
+
     const ref1 = useRef(null);
     const ref2 = useRef(null);
 
