@@ -10,16 +10,39 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Media() {
     useEffect(() => {
-        const textElements = gsap.utils.toArray('.mediaItem');
+        const textElements = gsap.utils.toArray('.mediaItemLeft');
         textElements.forEach((text) => {
             gsap.fromTo(
                 text,
                 {
-                    y: -200,
+                    x: -500,
                     opacity: 0,
                 },
                 {
-                    y: 0,
+                    x: 0,
+                    opacity: 1,
+                    scrollTrigger: {
+                        trigger: text,
+                        start: 'top 70%',
+                        end: 'top 40%',
+                        scrub: true,
+                    },
+                },
+            );
+        });
+    }, []);
+
+    useEffect(() => {
+        const textElements = gsap.utils.toArray('.mediaItemRight');
+        textElements.forEach((text) => {
+            gsap.fromTo(
+                text,
+                {
+                    x: 500,
+                    opacity: 0,
+                },
+                {
+                    x: 0,
                     opacity: 1,
                     scrollTrigger: {
                         trigger: text,
@@ -37,7 +60,7 @@ function Media() {
             <SectionTitle title="Truyền Thông" description="Các bên hỗ trợ truyền thông cho bảng xếp hạng!" />
             <div className="mediaContent">
                 {mediaList.map((media, index) => (
-                    <div key={index} className="mediaItem">
+                    <div key={index} className={`mediaItem ${index % 2 == 0 ? 'mediaItemLeft' : 'mediaItemRight'}`}>
                         <div className="mediaAvatar">
                             <img onClick={() => window.open(media.url, '_blank')} alt="" src={media.avatar} />
                         </div>

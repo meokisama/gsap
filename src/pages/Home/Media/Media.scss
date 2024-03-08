@@ -5,16 +5,28 @@
         flex-wrap: wrap;
         justify-content: center;
         align-content: stretch;
-        gap: 20px;
+        gap: 10px;
         width: 100%;
-        .mediaItem {
-            width: 45%;
+        .mediaItemLeft {
+            flex-direction: row-reverse;
+            .mediaInfo {
+                text-align: right;
+            }
+        }
+        .mediaItemRight {
+            flex-direction: row;
+            .mediaInfo {
+                text-align: left;
+            }
+        }
+        .mediaItemLeft,
+        .mediaItemRight {
+            width: calc(50% - 10px);
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             .mediaAvatar {
-                width: 50%;
+                width: 30%;
                 img {
                     display: block;
                     margin: 0 auto;
@@ -36,12 +48,11 @@
                 }
             }
             .mediaInfo {
-                text-align: center;
                 width: 100%;
                 border-radius: 15px;
                 background-color: #fff7f8;
                 box-shadow: rgba(250, 146, 134, 0.35) 0px 20px 25px -5px, rgba(250, 146, 134, 0.51) 0px 10px 10px -5px;
-                padding: 40px 20px 20px;
+                padding: 10px 20px;
                 display: flex;
                 flex-direction: column;
                 background: linear-gradient(#fff2f2 0 0) padding-box,
@@ -54,13 +65,28 @@
                     width: 100%;
                     font-size: 2rem;
                     font-weight: 800;
-                    // color: rgba(171, 25, 9, 0.862745098);
                 }
             }
         }
         img {
             width: 100%;
             height: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .mediaContent {
+        flex-direction: column;
+        .mediaItemLeft,
+        .mediaItemRight {
+            width: 95% !important;
+        }
+        .mediaItemLeft {
+            flex-direction: row !important;
+            .mediaInfo {
+                text-align: left !important;
+            }
         }
     }
 }
