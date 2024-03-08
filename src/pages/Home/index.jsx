@@ -1,7 +1,6 @@
 import Header from './Header';
 import Comment from './Comment';
 import Media from './Media';
-import VoteButton from './VoteButton';
 import SplashScreen from '../../components/SplashScreen';
 import LargeText from './LargeText';
 import LastTop10 from './LastTop10';
@@ -19,7 +18,6 @@ function Home() {
             <Header />
             <div className="contentContainer">
                 <LargeText />
-                <VoteButton />
                 <Introduction />
                 <Overview />
                 <CategoryVote />

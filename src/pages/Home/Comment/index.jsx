@@ -25,7 +25,7 @@ function Comment() {
         gsap.fromTo(
             el,
             {
-                x: -500,
+                x: 200,
                 opacity: 0,
             },
             {
@@ -42,7 +42,7 @@ function Comment() {
         gsap.fromTo(
             elimg,
             {
-                x: 500,
+                x: -200,
                 opacity: 0,
             },
             {

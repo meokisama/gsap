@@ -1,4 +1,5 @@
 .overview {
+    position: relative;
     .sectionTitleContent {
         text-align: center;
     }
@@ -31,6 +32,18 @@
                     padding: 15px 20px;
                     border-radius: 0 7px 7px 7px;
                     box-shadow: rgba(250, 118, 103, 0.75) 0px 2px 5px -1px, rgb(252, 197, 191) 0px 1px 3px -1px;
+                }
+                .detailOptional {
+                    font-family: 'Phudu';
+                    color: #fa7667;
+                    text-align: center;
+                    cursor: pointer;
+                    p {
+                        border-radius: 8px;
+                        background-color: #fff7f8;
+                        padding: 10px 20px;
+                        box-shadow: rgba(250, 118, 103, 0.75) 0px 2px 5px -1px, rgb(252, 197, 191) 0px 1px 3px -1px;
+                    }
                 }
             }
         }
@@ -84,6 +97,124 @@
             }
         }
     }
+    .countdown {
+        padding-top: 10rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        width: 100%;
+        position: relative;
+        .cdwrapper {
+            width: 30%;
+            background: linear-gradient(#fbf2f2 0 0) padding-box,
+                linear-gradient(to bottom, transparent, #fa7667) border-box;
+            border: 1px solid transparent;
+            box-shadow: rgba(250, 146, 134, 0.35) 0px 20px 25px -5px, rgba(250, 146, 134, 0.51) 0px 10px 10px -5px;
+            border-radius: 15px;
+            padding: 15px 20px;
+            p {
+                text-align: center;
+                color: rgba(171, 25, 9, 0.862745098);
+                font-weight: 600;
+            }
+            .timeLeft {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                text-align: center;
+                h2 {
+                    color: #fa7667;
+                    font-weight: 700;
+                    margin: 0;
+                }
+                span {
+                    color: #fa7667;
+                }
+            }
+        }
+        .voteWrapper {
+            width: 30%;
+            .voteBtn {
+                width: 100%;
+                font-family: 'Phudu';
+                text-decoration: none;
+                font-weight: 900;
+                font-size: 3rem;
+                text-transform: uppercase;
+                display: flex;
+                gap: 1%;
+                justify-content: space-around;
+                align-items: center;
+                border: 2px solid salmon;
+                border-radius: 15px;
+                padding: 15px 20px;
+                transition: all 0.5s ease-in-out;
+                background: linear-gradient(#fbf2f2 0 0) padding-box,
+                    linear-gradient(to bottom, transparent, #fa7667) border-box;
+                border: 1px solid transparent;
+                box-shadow: rgba(250, 146, 134, 0.35) 0px 20px 25px -5px, rgba(250, 146, 134, 0.51) 0px 10px 10px -5px;
+                span {
+                    color: #fa7667;
+                    line-height: 5rem;
+                    letter-spacing: 1px;
+                }
+                img {
+                    width: 15%;
+                    animation: spin 4s infinite linear;
+                }
+                &:hover {
+                    img {
+                        animation-duration: 1s;
+                    }
+                }
+            }
+        }
+
+        #chibi00 {
+            position: absolute;
+            top: 25%;
+            right: 17%;
+            width: 15%;
+        }
+        #chibi01 {
+            position: absolute;
+            top: 25%;
+            left: 14%;
+            width: 20%;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .overview {
+        .statistic {
+            .statisticItem {
+                p {
+                    font-size: 3rem !important;
+                }
+                .staname {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+        .countdown {
+            .cdwrapper {
+                width: 50%;
+            }
+            .voteWrapper {
+                width: 50%;
+            }
+            #chibi00 {
+                top: 35%;
+                right: 5%;
+            }
+            #chibi01 {
+                top: 35%;
+                left: 5%;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -102,23 +233,25 @@
                 }
             }
         }
-        .statistic {
-            .statisticItem {
-                p {
-                    font-size: 2.5rem;
-                }
-                .staname {
-                    font-size: 1.4rem;
-                }
-            }
-        }
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
     .overview {
         .statistic {
             grid-template-columns: repeat(2, 1fr);
+        }
+        .countdown {
+            .cdwrapper {
+                width: 70%;
+            }
+            .voteWrapper {
+                width: 70%;
+            }
+            #chibi00,
+            #chibi01 {
+                display: none;
+            }
         }
     }
 }

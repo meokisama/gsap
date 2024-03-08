@@ -1,12 +1,16 @@
+import { Link } from 'react-router-dom';
 import { Timeline } from 'antd';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import CountUp from 'react-countup';
 
+import rotSakura1 from '../../../assets/sakura1.svg';
 import './Overview.scss';
 import SectionTitle from '../../../components/SectionTitle';
 import timelineItem from './Timeline';
+import chibi00 from '../../../assets/chibi00.png';
+import chibi01 from '../../../assets/chibi01.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,7 +29,7 @@ function Overview() {
                     opacity: 1,
                     scrollTrigger: {
                         trigger: text,
-                        start: 'top 80%',
+                        start: 'top 70%',
                         end: 'top 40%',
                         scrub: true,
                     },
@@ -33,6 +37,112 @@ function Overview() {
             );
         });
     }, []);
+
+    const ref1 = useRef(null);
+    const ref2 = useRef(null);
+    const ref3 = useRef(null);
+    const ref4 = useRef(null);
+    useEffect(() => {
+        const el1 = ref1.current;
+        const el2 = ref2.current;
+        const el3 = ref3.current;
+        const el4 = ref4.current;
+        gsap.fromTo(
+            el1,
+            {
+                x: 200,
+                opacity: 0,
+            },
+            {
+                x: 0,
+                opacity: 1,
+                scrollTrigger: {
+                    trigger: el1,
+                    start: 'top 70%',
+                    end: 'top 40%',
+                    scrub: true,
+                },
+            },
+        );
+        gsap.fromTo(
+            el2,
+            {
+                x: -200,
+                opacity: 0,
+            },
+            {
+                x: 0,
+                opacity: 1,
+                scrollTrigger: {
+                    trigger: el2,
+                    start: 'top 70%',
+                    end: 'top 40%',
+                    scrub: true,
+                },
+            },
+        );
+        gsap.fromTo(
+            el3,
+            {
+                x: -200,
+                opacity: 0,
+            },
+            {
+                x: 0,
+                opacity: 1,
+                scrollTrigger: {
+                    trigger: el3,
+                    start: 'top 70%',
+                    end: 'top 40%',
+                    scrub: true,
+                },
+            },
+        );
+        gsap.fromTo(
+            el4,
+            {
+                x: 200,
+                opacity: 0,
+            },
+            {
+                x: 0,
+                opacity: 1,
+                scrollTrigger: {
+                    trigger: el4,
+                    start: 'top 70%',
+                    end: 'top 40%',
+                    scrub: true,
+                },
+            },
+        );
+    }, []);
+
+    const targetDate = '2024-06-08T12:00:00';
+    const calculateTimeLeft = () => {
+        const difference = new Date(targetDate) - new Date();
+        let timeLeft = {};
+
+        if (difference > 0) {
+            timeLeft = {
+                days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+                hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+                minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+                seconds: Math.floor((difference % (1000 * 60)) / 1000),
+            };
+        }
+
+        return timeLeft;
+    };
+
+    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setTimeLeft(calculateTimeLeft());
+        }, 1000);
+
+        return () => clearTimeout(timer);
+    }, [timeLeft]);
 
     return (
         <div className="wrapper overview">
@@ -65,6 +175,37 @@ function Overview() {
             </div>
             <div className="timeline">
                 <Timeline mode="alternate" items={timelineItem} />
+            </div>
+            <div className="countdown">
+                <div className="cdwrapper" ref={ref1}>
+                    <p>Thời gian bình chọn còn lại?</p>
+                    <div className="timeLeft">
+                        <div>
+                            <h2>{timeLeft.days < 10 ? '0' + timeLeft.days : timeLeft.days}</h2>
+                            <span>ngày</span>
+                        </div>
+                        <div>
+                            <h2>{timeLeft.hours < 10 ? '0' + timeLeft.hours : timeLeft.hours}</h2>
+                            <span>giờ</span>
+                        </div>
+                        <div>
+                            <h2>{timeLeft.minutes < 10 ? '0' + timeLeft.minutes : timeLeft.minutes}</h2>
+                            <span>phút</span>
+                        </div>
+                        <div>
+                            <h2>{timeLeft.seconds < 10 ? '0' + timeLeft.seconds : timeLeft.seconds}</h2>
+                            <span>giây</span>
+                        </div>
+                    </div>
+                </div>
+                <div className="voteWrapper" ref={ref2}>
+                    <Link className="voteBtn" to={import.meta.env.VITE_VOTEPATH} target="_blank">
+                        <span>Bình Chọn</span>
+                        <img alt="" src={rotSakura1} />
+                    </Link>
+                </div>
+                <img id="chibi00" alt="" src={chibi00} ref={ref3} />
+                <img id="chibi01" alt="" src={chibi01} ref={ref4} />
             </div>
         </div>
     );

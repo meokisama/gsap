@@ -4,35 +4,58 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 6rem;
-        div {
-            img {
-                display: block;
-                margin: 0 auto;
-                border-radius: 100px;
-                border: 3px solid var(--color-azure);
-                width: 150px;
-                height: 150px;
-                overflow: hidden;
-                box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-                transition: all 0.3s ease-out;
-                transform: translateZ(0);
-                &:hover {
-                    transform: translate3d(0px, -0.5rem, 0px);
-                    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
-                    cursor: pointer;
+        align-content: stretch;
+        gap: 20px;
+        width: 100%;
+        .mediaItem {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .mediaAvatar {
+                width: 50%;
+                img {
+                    display: block;
+                    margin: 0 auto;
+                    border-radius: 50%;
+                    border: 3px solid white;
+                    width: 100px;
+                    height: 100px;
+                    overflow: hidden;
+                    position: relative;
+                    top: 30%;
+                    box-shadow: rgba(250, 118, 103, 0.75) 0px 2px 5px -1px, rgb(252, 197, 191) 0px 1px 3px -1px;
+                    transition: all 0.3s ease-out;
+                    transform: translateZ(0);
+                    &:hover {
+                        transform: translate3d(0px, -0.5rem, 0px);
+                        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+                        cursor: pointer;
+                    }
                 }
             }
-            p {
+            .mediaInfo {
                 text-align: center;
-                color: var(--color-gray);
-            }
-            .fullName {
-                margin: 0 auto;
-                font-family: 'Playfair Display';
-                width: 70%;
-                font-size: 2rem;
-                font-weight: 500;
+                width: 100%;
+                border-radius: 15px;
+                background-color: #fff7f8;
+                box-shadow: rgba(250, 146, 134, 0.35) 0px 20px 25px -5px, rgba(250, 146, 134, 0.51) 0px 10px 10px -5px;
+                padding: 40px 20px 20px;
+                display: flex;
+                flex-direction: column;
+                background: linear-gradient(#fff2f2 0 0) padding-box,
+                    linear-gradient(to bottom, transparent, #fa7667) border-box;
+                border: 1px solid transparent;
+                span {
+                    color: var(--color-gray);
+                }
+                .fullName {
+                    width: 100%;
+                    font-size: 2rem;
+                    font-weight: 800;
+                    // color: rgba(171, 25, 9, 0.862745098);
+                }
             }
         }
         img {
