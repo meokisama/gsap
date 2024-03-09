@@ -36,7 +36,7 @@
                     linear-gradient(to bottom, transparent, #fa7667) border-box;
                 border: 1px solid transparent;
                 border-radius: 20px;
-                padding: 30px 5% 20px;
+                padding: 30px 10% 30px;
                 height: 80%;
                 align-items: center;
                 text-align: center;
@@ -50,23 +50,31 @@
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    img {
+                    .avatarMain {
                         width: 100px;
                         height: 100px;
                         border-radius: 50%;
                         border: 3px solid var(--color-azure);
-                        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+                        box-shadow: rgba(221, 104, 104, 0.16) 0px 3px 6px, rgba(204, 105, 105, 0.23) 0px 3px 6px;
                         position: absolute;
                         top: -10%;
                     }
+                    .avatarFrame {
+                        position: absolute;
+                        z-index: 100;
+                        width: 152px;
+                        top: -11.6%;
+                    }
                     p {
                         padding-top: 3rem;
+                        color: #c7837b;
                     }
                 }
                 .content {
                     font-family: 'Playfair Display';
                     margin: -9% 0 -3%;
                     font-size: 2.5rem;
+                    color: #a55a52;
                     &::before {
                         content: open-quote;
                     }
@@ -74,9 +82,13 @@
                         content: close-quote;
                     }
                 }
+                span {
+                    color: #c7837b;
+                }
                 .author {
-                    font-weight: 400;
+                    font-weight: 600;
                     font-size: 1.7rem;
+                    color: #b3473bd7;
                 }
             }
         }

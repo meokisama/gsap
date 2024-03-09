@@ -82,6 +82,19 @@
                         }
                     }
                 }
+                .dotwrapper {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 10px;
+                    margin-top: 40px;
+                    justify-content: center;
+                    .dot {
+                        width: 15px;
+                        height: 15px;
+                        background-color: #fa7667;
+                        border-radius: 50%;
+                    }
+                }
             }
         }
     }

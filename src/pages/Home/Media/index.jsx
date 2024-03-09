@@ -23,8 +23,7 @@ function Media() {
                     opacity: 1,
                     scrollTrigger: {
                         trigger: text,
-                        start: 'top 70%',
-                        end: 'top 40%',
+                        end: 'top 50%',
                         scrub: true,
                     },
                 },
@@ -46,8 +45,7 @@ function Media() {
                     opacity: 1,
                     scrollTrigger: {
                         trigger: text,
-                        start: 'top 70%',
-                        end: 'top 40%',
+                        end: 'top 50%',
                         scrub: true,
                     },
                 },
