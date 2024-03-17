@@ -3,7 +3,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useRef, useEffect } from 'react';
 
 import './Media.scss';
-import SectionTitle from '../../../components/SectionTitle';
+import SectionTitle from '../SectionTitle';
 import { mediaList } from './Media';
 
 gsap.registerPlugin(ScrollTrigger);

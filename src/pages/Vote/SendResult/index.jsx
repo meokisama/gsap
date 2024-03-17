@@ -4,7 +4,7 @@ import { HomeOutlined, GlobalOutlined, WifiOutlined, EnvironmentOutlined } from 
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 import './SendResult.scss';
-import Category from '../../../components/Category';
+import Category from '../Category';
 import MessageHub from '../../../components/MessageHub';
 
 function SendResult({ result }) {
@@ -137,10 +137,10 @@ function SendResult({ result }) {
                         <div className="listItem">
                             {resultItem.chosenItems.map((ln, index) => (
                                 <div key={index} className="rItem">
-                                    <img alt="" src={`images/ln/${ln.cover}`} />
+                                    <img alt="" src={ln.coverUrl} />
                                     <div className="info">
-                                        <h4>{ln.name}</h4>
-                                        <p>NXB: {ln.nxb}</p>
+                                        <h4>{ln.seriesName}</h4>
+                                        <p>NXB: {ln.publisherName}</p>
                                     </div>
                                 </div>
                             ))}

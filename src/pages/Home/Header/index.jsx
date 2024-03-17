@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './Header.scss';
 import halumonica from '../../../assets/headerimg.webp';
-import Sakura from '../../../components/Sakura';
+import Sakura from '../Sakura';
 import rotSakura1 from '../../../assets/sakura1.svg';
 import rotSakura2 from '../../../assets/sakura2.svg';
 

@@ -1,9 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
-import { Tour } from 'antd';
 
 import VoteHeader from './VoteHeader';
 import ListComponent from './ListComponent';
-import { lnList } from './NovelData/NovelList';
+import { novelList } from './NovelData/NovelList';
 import Transition from '../../components/Transition';
 import Footer from '../../components/Footer';
 import SendResult from './SendResult';
@@ -14,54 +13,6 @@ function Vote() {
 
     const ref1 = useRef(null);
     const ref2 = useRef(null);
-
-    const tourTitleStyles = {
-        fontFamily: 'Lexend',
-        fontWeight: 800,
-        fontSize: '15px',
-    };
-
-    const tourDesStyles = {
-        fontFamily: 'Lexend',
-        fontWeight: 400,
-    };
-
-    const [open, setOpen] = useState(false);
-    const steps = [
-        {
-            title: <span style={tourTitleStyles}>Hạng mục trước đó</span>,
-            description: (
-                <p style={tourDesStyles}>
-                    Nhấn vào nút này để chuyển sang hạng mục bình chọn trước đó.
-                    <br />
-                    <em>Hiện tại đang ở hạng mục đầu tiên!</em>
-                </p>
-            ),
-            // cover: (
-            //     <img
-            //         alt="tour.png"
-            //         src="https://user-images.githubusercontent.com/5378891/197385811-55df8480-7ff4-44bd-9d43-a7dade598d70.png"
-            //     />
-            // ),
-            target: () => ref1.current,
-            nextButtonProps: { children: 'Tiếp' },
-        },
-        {
-            title: <span style={tourTitleStyles}>Hạng mục kế tiếp</span>,
-            description: <p style={tourDesStyles}>Nhấn vào nút này để chuyển sang hạng mục bình chọn tiếp theo!</p>,
-            target: () => ref2.current,
-            prevButtonProps: { children: 'Trước' },
-            nextButtonProps: { children: 'Xong' },
-        },
-    ];
-
-    useEffect(() => {
-        const timeout = setTimeout(() => {
-            setOpen(true);
-        }, 3000);
-
-        return () => clearTimeout(timeout);
-    }, []);
 
     const [currentComponent, setCurrentComponent] = useState(0);
 
@@ -115,8 +66,14 @@ function Vote() {
         <ListComponent
             id="1"
             title="Light Novel được yêu thích nhất"
-            description="Với 203 lựa chọn, chắc hẵn sẽ có nhiều người không muốn chỉ vote 1 vài tựa. Như các main harem đã nói: 'Chỉ con nít mới lựa chọn, tao chơi tất'. Đúng vậy, thay vì chọn 1 các cháu có thể lựa chọn nhiều ( à thì TỐI ĐA LÀ 10 để tránh loãng nhé )"
-            listData={lnList}
+            description={
+                <p>
+                    Hạng mục đầu tiên chính là Light Novel được yêu thích nhất. Yêu không thể nín, đói không thể nhịn,
+                    và harem cũng không thể chỉ một người. Các bạn có thể chọn tối đa <strong>10 tác phẩm </strong> cho
+                    hạng mục này.
+                </p>
+            }
+            listData={novelList}
             maxItems={3}
             notification="Bạn chỉ được chọn tối đa 3 tựa sách cho hạng mục này!"
             category="mostFavorite"
@@ -125,8 +82,14 @@ function Vote() {
         <ListComponent
             id="2"
             title="Light Novel được mong chờ nhất"
-            description="Với 203 lựa chọn, chắc hẵn sẽ có nhiều người không muốn chỉ vote 1 vài tựa. Như các main harem đã nói: 'Chỉ con nít mới lựa chọn, tao chơi tất'. Đúng vậy, thay vì chọn 1 các cháu có thể lựa chọn nhiều ( à thì TỐI ĐA LÀ 10 để tránh loãng nhé )"
-            listData={lnList}
+            description={
+                <p>
+                    Hạng mục đầu tiên chính là Light Novel được yêu thích nhất. Yêu không thể nín, đói không thể nhịn,
+                    và harem cũng không thể chỉ một người. Các bạn có thể chọn tối đa <strong>10 tác phẩm </strong> cho
+                    hạng mục này.
+                </p>
+            }
+            listData={novelList}
             maxItems={2}
             notification="Bạn chỉ được chọn tối đa 2 tựa sách cho hạng mục này!"
             category="mostExpected"
@@ -135,8 +98,14 @@ function Vote() {
         <ListComponent
             id="3"
             title="Light Novel được mong chờ nhất"
-            description="Với 203 lựa chọn, chắc hẵn sẽ có nhiều người không muốn chỉ vote 1 vài tựa. Như các main harem đã nói: 'Chỉ con nít mới lựa chọn, tao chơi tất'. Đúng vậy, thay vì chọn 1 các cháu có thể lựa chọn nhiều ( à thì TỐI ĐA LÀ 10 để tránh loãng nhé )"
-            listData={lnList}
+            description={
+                <p>
+                    Hạng mục đầu tiên chính là Light Novel được yêu thích nhất. Yêu không thể nín, đói không thể nhịn,
+                    và harem cũng không thể chỉ một người. Các bạn có thể chọn tối đa <strong>10 tác phẩm </strong> cho
+                    hạng mục này.
+                </p>
+            }
+            listData={novelList}
             maxItems={1}
             notification="Bạn chỉ được chọn tối đa 2 tựa sách cho hạng mục này!"
             category="mostTest"
@@ -174,32 +143,6 @@ function Vote() {
         }, 1000);
 
         return () => clearTimeout(timeout);
-    }, []);
-
-    //Only run tour once
-    const [hasRun, setHasRun] = useState(false);
-    useEffect(() => {
-        const hasRunPreviously = localStorage.getItem('hasRun');
-        if (!hasRunPreviously) {
-            setHasRun(true);
-            localStorage.setItem('hasRun', 'true');
-        }
-    }, []);
-
-    //Hide Tour when width < 600px
-    const [shouldHide, setShouldHide] = useState(false);
-
-    useEffect(() => {
-        const handleResize = () => {
-            setShouldHide(window.innerWidth < 600);
-        };
-
-        window.addEventListener('resize', handleResize);
-        handleResize();
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
     }, []);
 
     return (
@@ -275,7 +218,6 @@ function Vote() {
                             </svg>
                         </button>
                     </div>
-                    {hasRun && (shouldHide ? null : <Tour open={open} onClose={() => setOpen(false)} steps={steps} />)}
                     <Footer text="Trang Chủ" to={import.meta.env.VITE_HOMEPATH} />
                 </div>
             )}

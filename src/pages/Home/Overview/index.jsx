@@ -7,7 +7,7 @@ import CountUp from 'react-countup';
 
 import rotSakura1 from '../../../assets/sakura1.svg';
 import './Overview.scss';
-import SectionTitle from '../../../components/SectionTitle';
+import SectionTitle from '../SectionTitle';
 import timelineItem from './Timeline';
 import chibi00 from '../../../assets/chibi00.png';
 import chibi01 from '../../../assets/chibi01.png';

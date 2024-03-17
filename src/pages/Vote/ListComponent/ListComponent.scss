@@ -1,4 +1,4 @@
-.mostFavoriteLN {
+.ranobeContainer {
     min-height: 100vh !important;
     padding-bottom: 15rem;
     .functionContainer {
@@ -41,7 +41,7 @@
             box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
         }
     }
-    .mostFavoriteLNList {
+    .ranobeList {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -53,32 +53,37 @@
             background-color: var(--color-azure);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
             cursor: pointer;
-            transition: all 0.3s ease-out;
-            transform: translateZ(0);
-            &:hover {
-                transform: translate3d(0px, -0.5rem, 0px);
-                box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.4);
-            }
-            img {
+            .coverWrapper {
                 width: 100%;
-                height: auto;
+                height: 75%;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                img {
+                    width: calc(100% + 10px);
+                    height: calc(100% + 2px);
+                }
             }
             .info {
+                height: 25%;
                 display: flex;
                 flex-direction: column;
                 text-align: center;
-                padding: 0 10px;
-                gap: 25px;
+                padding: 0 15px;
+                gap: 5px;
+                justify-content: space-between;
                 h4 {
                     color: rgb(109 99 99);
                     margin: 0;
-                    padding-top: 8px;
+                    padding-top: 15px;
                 }
                 p {
-                    margin-top: -10px;
+                    margin: 0;
                     font-size: 1.4rem;
+                    padding-bottom: 15px;
                 }
             }
             .lnID {
@@ -104,8 +109,8 @@
             }
         }
         .lnChosen {
-            border: 2px solid rgb(64 197 69);
             background-color: rgb(213 255 200);
+            box-shadow: rgb(17 147 21 / 61%) 0px 6px 12px -2px, rgb(17 147 21 / 40%) 0px 3px 7px -3px;
             .info {
                 h4 {
                     color: rgb(17 147 21);
@@ -119,12 +124,12 @@
 }
 
 @media screen and (max-width: 740px) {
-    .mostFavoriteLN {
+    .ranobeContainer {
         .functionContainer {
             flex-direction: column;
             gap: 2rem;
         }
-        .mostFavoriteLNList {
+        .ranobeList {
             gap: 1rem;
             .lnItem {
                 max-width: 150px;
