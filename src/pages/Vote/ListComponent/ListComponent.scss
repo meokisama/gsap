@@ -1,6 +1,13 @@
 .ranobeContainer {
     min-height: 100vh !important;
     padding-bottom: 15rem;
+    img {
+        -moz-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
     .functionContainer {
         display: flex;
         flex-direction: row;
@@ -72,13 +79,14 @@
                 display: flex;
                 flex-direction: column;
                 text-align: center;
-                padding: 0 15px;
                 gap: 5px;
                 justify-content: space-between;
+                padding: 0 10px;
                 h4 {
                     color: rgb(109 99 99);
                     margin: 0;
                     padding-top: 15px;
+                    line-height: 2.1rem;
                 }
                 p {
                     margin: 0;
@@ -121,6 +129,162 @@
             }
         }
     }
+
+    .publisherList {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        gap: 2rem;
+        .pItem {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            border-radius: 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border: 2px solid white;
+            transition: all 0.5s ease-in-out;
+            .logoWrapper {
+                width: 100%;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                img {
+                    width: 70%;
+                }
+            }
+            .pID {
+                position: absolute;
+                top: 3%;
+                left: 3%;
+                font-size: 1.4rem;
+                font-weight: 600;
+                background: var(--color-azure);
+                border-radius: 25%;
+                padding: 1px 5px;
+                text-align: center;
+            }
+            svg {
+                width: 35px;
+                position: absolute;
+                top: 3%;
+                right: 3%;
+                color: rgb(17 147 21);
+                background-color: azure;
+                border-radius: 50%;
+                display: none;
+            }
+        }
+        .ipm {
+            background-color: #15934b;
+            border: 2px solid #15934b;
+            box-shadow: rgb(12 151 204 / 10%) 0px 20px 25px -5px, rgb(12 151 204 / 50%) 0px 10px 10px -5px;
+            .logoWrapper {
+                img {
+                    width: 65%;
+                }
+            }
+        }
+        .hikari {
+            box-shadow: rgba(250, 146, 134, 0.1) 0px 20px 25px -5px, rgba(250, 146, 134, 0.5) 0px 10px 10px -5px;
+        }
+        .quangvan {
+            box-shadow: rgb(12 151 204 / 10%) 0px 20px 25px -5px, rgb(12 151 204 / 50%) 0px 10px 10px -5px;
+            .logoWrapper {
+                img {
+                    width: 65%;
+                }
+            }
+        }
+        .amak {
+            box-shadow: rgb(73 127 43 / 10%) 0px 20px 25px -5px, rgb(71 126 42 / 50%) 0px 10px 10px -5px;
+        }
+        .tsuki {
+            background-color: #fece00;
+            border: 2px solid #fece00;
+            box-shadow: rgb(30 135 65 / 10%) 0px 20px 25px -5px, rgb(30 135 65 / 50%) 0px 10px 10px -5px;
+            .logoWrapper {
+                img {
+                    width: 50%;
+                }
+            }
+        }
+        .sky {
+            box-shadow: rgb(12 151 204 / 10%) 0px 20px 25px -5px, rgb(12 151 204 / 50%) 0px 10px 10px -5px;
+            background-color: #4b4b4b;
+            border: 2px solid #4b4b4b;
+        }
+        .nhanam {
+            box-shadow: rgb(62 184 179 / 10%) 0px 20px 25px -5px, rgb(62 184 179 / 50%) 0px 10px 10px -5px;
+        }
+        .owlbooks {
+            box-shadow: rgb(12 151 204 / 10%) 0px 20px 25px -5px, rgb(12 151 204 / 50%) 0px 10px 10px -5px;
+        }
+        .wingsbooks {
+            background-color: #00aef0;
+            border: 2px solid #00aef0;
+            box-shadow: rgba(250, 146, 134, 0.1) 0px 20px 25px -5px, rgba(250, 146, 134, 0.5) 0px 10px 10px -5px;
+        }
+        .uranix {
+            background-color: #f6de12;
+            border: 2px solid #f6de12;
+            box-shadow: rgb(62 184 179 / 10%) 0px 20px 25px -5px, rgb(62 184 179 / 50%) 0px 10px 10px -5px;
+            .logoWrapper {
+                img {
+                    width: 65%;
+                }
+            }
+        }
+        .shine {
+            background-color: #fed3a6;
+            border: 2px solid #fed3a6;
+            box-shadow: rgb(221 10 13 / 10%) 0px 20px 25px -5px, rgba(250, 146, 134, 0.51) 0px 10px 10px -5px;
+        }
+        .orion {
+            background-color: #fca412;
+            border: 2px solid #fca412;
+            box-shadow: rgb(19 32 60 / 10%) 0px 20px 25px -5px, rgb(19 32 60 / 50%) 0px 10px 10px -5px;
+        }
+        .usagi {
+            box-shadow: rgb(206 104 141 / 10%) 0px 20px 25px -5px, rgba(250, 146, 134, 0.51) 0px 10px 10px -5px;
+        }
+        .ainovel {
+            box-shadow: rgba(250, 146, 134, 0.1) 0px 20px 25px -5px, rgba(250, 146, 134, 0.51) 0px 10px 10px -5px;
+        }
+        .ichi {
+            box-shadow: rgba(250, 146, 134, 0.1) 0px 20px 25px -5px, rgba(250, 146, 134, 0.51) 0px 10px 10px -5px;
+        }
+        .tre {
+            box-shadow: rgb(12 151 204 / 10%) 0px 20px 25px -5px, rgb(12 151 204 / 50%) 0px 10px 10px -5px;
+        }
+        .tabooks {
+            box-shadow: rgb(30 135 65 / 10%) 0px 20px 25px -5px, rgb(30 135 65 / 50%) 0px 10px 10px -5px;
+        }
+
+        .pChosen {
+            box-shadow: rgb(17 147 21 / 61%) 0px 6px 12px -2px, rgb(17 147 21 / 40%) 0px 3px 7px -3px;
+            border: 2px solid #0c753a;
+            .logoWrapper {
+                animation: spin 4s infinite linear;
+            }
+            svg {
+                display: block;
+            }
+            @keyframes spin {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 740px) {
@@ -133,15 +297,38 @@
             gap: 1rem;
             .lnItem {
                 max-width: 150px;
+                .coverWrapper {
+                    height: 60%;
+                }
                 .info {
-                    gap: 15px;
+                    padding: 0 5px;
                     h4 {
-                        font-size: 1.4rem;
+                        padding-top: 10px;
+                        font-size: 1.3rem;
                     }
                     p {
-                        font-size: 1.2rem;
+                        font-size: 1.1rem;
                     }
                 }
+            }
+        }
+        .publisherList {
+            gap: 1rem;
+            .pItem {
+                width: 220px;
+                height: 220px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .ranobeContainer {
+        .publisherList {
+            gap: 1rem;
+            .pItem {
+                width: 150px;
+                height: 150px;
             }
         }
     }

@@ -52,9 +52,16 @@ function ListComponent({ id, title, description, listData, maxItems, notificatio
             .replace(/đ/g, 'd')
             .replace(/Đ/g, 'D');
 
-    const filteredLnList = listData.filter((ln) =>
-        removeAccents(ln.seriesName.toLowerCase()).includes(removeAccents(searchInput.toLowerCase())),
-    );
+    let filteredLnList;
+    if (category !== 'favoritePublisher') {
+        filteredLnList = listData.filter((ln) =>
+            removeAccents(ln.seriesName.toLowerCase()).includes(removeAccents(searchInput.toLowerCase())),
+        );
+    } else {
+        filteredLnList = listData.filter((ln) =>
+            removeAccents(ln.publisherName.toLowerCase()).includes(removeAccents(searchInput.toLowerCase())),
+        );
+    }
 
     //Show selected items
     const handleShowSelected = () => {
@@ -88,38 +95,70 @@ function ListComponent({ id, title, description, listData, maxItems, notificatio
                     </button>
                 </Tooltip>
             </div>
-            <div className="ranobeList">
-                {displayList.map((ln) => (
-                    <div
-                        key={ln.id}
-                        className={`lnItem ${chosenItems.find((item) => item.id === ln.id) ? 'lnChosen' : ''}`}
-                        onClick={() => handleClick(ln.id)}
-                    >
-                        <div className="coverWrapper">
-                            <img alt="" src={ln.coverUrl} />
-                        </div>
-                        <div className="info">
-                            <h4>{ln.seriesName}</h4>
-                            <p>
-                                (<strong style={{ color: '#5f5f5f' }}>{ln.publisherName}</strong> phát hành)
-                            </p>
-                        </div>
-                        <span className="lnID">{ln.id}</span>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                            className="w-6 h-6"
+            {category !== 'favoritePublisher' ? (
+                <div className="ranobeList">
+                    {displayList.map((ln) => (
+                        <div
+                            key={ln.id}
+                            className={`lnItem ${chosenItems.find((item) => item.id === ln.id) ? 'lnChosen' : ''}`}
+                            onClick={() => handleClick(ln.id)}
                         >
-                            <path
-                                fillRule="evenodd"
-                                d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
-                                clipRule="evenodd"
-                            />
-                        </svg>
-                    </div>
-                ))}
-            </div>
+                            <div className="coverWrapper">
+                                <img alt="" src={ln.coverUrl} loading="lazy" />
+                            </div>
+                            <div className="info">
+                                <h4>{ln.seriesName}</h4>
+                                <p>
+                                    (<strong style={{ color: '#5f5f5f' }}>{ln.publisherName}</strong> phát hành)
+                                </p>
+                            </div>
+                            <span className="lnID">{ln.id}</span>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                className="w-6 h-6"
+                            >
+                                <path
+                                    fillRule="evenodd"
+                                    d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+                                    clipRule="evenodd"
+                                />
+                            </svg>
+                        </div>
+                    ))}
+                </div>
+            ) : (
+                <div className="publisherList">
+                    {displayList.map((ln) => (
+                        <Tooltip key={ln.id} title={ln.publisherName}>
+                            <div
+                                className={`pItem ${ln.publisherLogo} ${
+                                    chosenItems.find((item) => item.id === ln.id) ? 'pChosen' : ''
+                                }`}
+                                onClick={() => handleClick(ln.id)}
+                            >
+                                <div className="logoWrapper">
+                                    <img alt="" src={`images/publisher/${ln.publisherLogo}.webp`} loading="lazy" />
+                                </div>
+                                {/* <span className="pID">{ln.id}</span> */}
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    className="w-6 h-6"
+                                >
+                                    <path
+                                        fillRule="evenodd"
+                                        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+                                        clipRule="evenodd"
+                                    />
+                                </svg>
+                            </div>
+                        </Tooltip>
+                    ))}
+                </div>
+            )}
             <MessageHub>{(msg) => (alertRef.current = msg)}</MessageHub>
         </div>
     );

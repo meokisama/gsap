@@ -59,8 +59,10 @@ function SendResult({ result }) {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (captchaVerified) {
-            // console.log(token);
+            // send result (and token);
+
             setDone(true);
+            localStorage.clear();
         } else {
             alertRef.current('Vui lòng xác minh captcha trước khi gửi! (Captcha được dùng để giảm vote ảo)');
         }
@@ -72,7 +74,12 @@ function SendResult({ result }) {
         <div className="sendResult">
             <Category
                 title="Xác nhận và Gửi bình chọn"
-                description="Dưới đây là phần tóm tắt các lựa chọn mà bạn đã chọn trước đó. Vui lòng kiểm tra kỹ thông tin và xác nhận lại trước khi gửi bình chọn cuối cùng cho chúng tôi. Xin cảm ơn!"
+                description={
+                    <p>
+                        Dưới đây là phần tóm tắt các lựa chọn mà bạn đã chọn trước đó. Vui lòng kiểm tra kỹ thông tin và
+                        xác nhận lại trước khi gửi bình chọn cuối cùng cho chúng tôi. Xin cảm ơn!
+                    </p>
+                }
             />
             <div className="votedContent">
                 <Card>
@@ -134,17 +141,33 @@ function SendResult({ result }) {
 
                 {result.map((resultItem, index) => (
                     <Card key={index} title={<span style={cardTitleStyles}>{index + 1 + '. ' + resultItem.name}</span>}>
-                        <div className="listItem">
-                            {resultItem.chosenItems.map((ln, index) => (
-                                <div key={index} className="rItem">
-                                    <img alt="" src={ln.coverUrl} />
-                                    <div className="info">
-                                        <h4>{ln.seriesName}</h4>
-                                        <p>NXB: {ln.publisherName}</p>
-                                    </div>
+                        {resultItem.category !== 'favoritePublisher' ? (
+                            resultItem.chosenItems.length !== 0 ? (
+                                <div className="listItem">
+                                    {resultItem.chosenItems.map((ln, index) => (
+                                        <div key={index} className="rItem">
+                                            <div className="rCover">
+                                                <img alt="" src={ln.coverUrl} />
+                                            </div>
+                                            <div className="info">
+                                                <h4>{ln.seriesName}</h4>
+                                                <p>
+                                                    (<strong>{ln.publisherName}</strong> phát hành)
+                                                </p>
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
-                            ))}
-                        </div>
+                            ) : (
+                                <p>Bạn chưa bình chọn cho hạng mục này.</p>
+                            )
+                        ) : resultItem.chosenItems.length !== 0 ? (
+                            <div className={`rPublisher ${resultItem.chosenItems[0].publisherLogo}`}>
+                                <img src={`images/publisher/${resultItem.chosenItems[0].publisherLogo}.webp`} alt="" />
+                            </div>
+                        ) : (
+                            <p>Bạn chưa bình chọn cho hạng mục này.</p>
+                        )}
                     </Card>
                 ))}
 

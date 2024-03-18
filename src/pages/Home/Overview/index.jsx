@@ -9,8 +9,8 @@ import rotSakura1 from '../../../assets/sakura1.svg';
 import './Overview.scss';
 import SectionTitle from '../SectionTitle';
 import timelineItem from './Timeline';
-import chibi00 from '../../../assets/chibi00.png';
-import chibi01 from '../../../assets/chibi01.png';
+import chibi00 from '../../../assets/chibi00.webp';
+import chibi01 from '../../../assets/chibi01.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -156,7 +156,7 @@ function Overview() {
                 </div>
                 <div className="statisticItem">
                     <p>
-                        0<CountUp end={7} enableScrollSpy={true} scrollSpyDelay={0} />
+                        0<CountUp end={6} enableScrollSpy={true} scrollSpyDelay={0} />
                     </p>
                     <span className="staname">Hạng mục bình chọn</span>
                 </div>

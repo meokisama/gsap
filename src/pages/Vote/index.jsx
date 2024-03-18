@@ -2,7 +2,12 @@ import { useState, useEffect, useRef } from 'react';
 
 import VoteHeader from './VoteHeader';
 import ListComponent from './ListComponent';
-import { novelList } from './NovelData/NovelList';
+import { favoriteRanobe } from './List/FavoriteRanobe';
+import { rookieRanobe } from './List/RookieRanobe';
+import { anticipatedRanobe } from './List/AnticipatedRanobe';
+import { disappointingRanobe } from './List/DisappointingRanobe';
+import { copyrightRanobe } from './List/CopyrightRanobe';
+import { favoritePublisher } from './List/FavoritePublisher';
 import Transition from '../../components/Transition';
 import Footer from '../../components/Footer';
 import SendResult from './SendResult';
@@ -16,7 +21,7 @@ function Vote() {
 
     const [currentComponent, setCurrentComponent] = useState(0);
 
-    //------------Get selected items from each category
+    //Get selected items from each category
     const [selectedItems, setSelectedItems] = useState([]);
     const handleChildSelection = (category, title, selectedItemsFromChild) => {
         setSelectedItems((prevSelectedItems) => {
@@ -46,9 +51,8 @@ function Vote() {
     useEffect(() => {
         console.log(JSON.stringify(selectedItems));
     }, [selectedItems]);
-    //---------------End
 
-    //---------------Change category component
+    //Change category component
     const handleNext = () => {
         if (currentComponent < components.length - 1) {
             setCurrentComponent(currentComponent + 1);
@@ -60,7 +64,6 @@ function Vote() {
             setCurrentComponent(currentComponent - 1);
         }
     };
-    //-----------------End
 
     const components = [
         <ListComponent
@@ -69,30 +72,30 @@ function Vote() {
             description={
                 <p>
                     Hạng mục đầu tiên chính là Light Novel được yêu thích nhất. Yêu không thể nín, đói không thể nhịn,
-                    và harem cũng không thể chỉ một người. Các bạn có thể chọn tối đa <strong>10 tác phẩm </strong> cho
+                    và harem cũng không thể chỉ một người. Các bạn có thể chọn <strong>tối đa 10 tác phẩm </strong> cho
                     hạng mục này.
                 </p>
             }
-            listData={novelList}
-            maxItems={3}
-            notification="Bạn chỉ được chọn tối đa 3 tựa sách cho hạng mục này!"
-            category="mostFavorite"
+            listData={favoriteRanobe}
+            maxItems={10}
+            notification="Bạn chỉ được chọn tối đa 10 tựa sách cho hạng mục này!"
+            category="favoriteRanobe"
             onSelectionChange={handleChildSelection}
         />,
         <ListComponent
             id="2"
-            title="Light Novel được mong chờ nhất"
+            title="Light Novel tân binh của năm"
             description={
                 <p>
                     Hạng mục đầu tiên chính là Light Novel được yêu thích nhất. Yêu không thể nín, đói không thể nhịn,
-                    và harem cũng không thể chỉ một người. Các bạn có thể chọn tối đa <strong>10 tác phẩm </strong> cho
+                    và harem cũng không thể chỉ một người. Các bạn có thể chọn <strong>tối đa 10 tác phẩm </strong> cho
                     hạng mục này.
                 </p>
             }
-            listData={novelList}
+            listData={rookieRanobe}
             maxItems={2}
             notification="Bạn chỉ được chọn tối đa 2 tựa sách cho hạng mục này!"
-            category="mostExpected"
+            category="rookieRanobe"
             onSelectionChange={handleChildSelection}
         />,
         <ListComponent
@@ -101,14 +104,62 @@ function Vote() {
             description={
                 <p>
                     Hạng mục đầu tiên chính là Light Novel được yêu thích nhất. Yêu không thể nín, đói không thể nhịn,
-                    và harem cũng không thể chỉ một người. Các bạn có thể chọn tối đa <strong>10 tác phẩm </strong> cho
+                    và harem cũng không thể chỉ một người. Các bạn có thể chọn <strong>tối đa 10 tác phẩm </strong> cho
                     hạng mục này.
                 </p>
             }
-            listData={novelList}
+            listData={anticipatedRanobe}
             maxItems={1}
             notification="Bạn chỉ được chọn tối đa 2 tựa sách cho hạng mục này!"
-            category="mostTest"
+            category="anticipatedRanobe"
+            onSelectionChange={handleChildSelection}
+        />,
+        <ListComponent
+            id="4"
+            title="Light Novel gây thất vọng nhất"
+            description={
+                <p>
+                    Hạng mục đầu tiên chính là Light Novel được yêu thích nhất. Yêu không thể nín, đói không thể nhịn,
+                    và harem cũng không thể chỉ một người. Các bạn có thể chọn <strong>tối đa 10 tác phẩm </strong> cho
+                    hạng mục này.
+                </p>
+            }
+            listData={disappointingRanobe}
+            maxItems={1}
+            notification="Bạn chỉ được chọn tối đa 2 tựa sách cho hạng mục này!"
+            category="disappointingRanobe"
+            onSelectionChange={handleChildSelection}
+        />,
+        <ListComponent
+            id="5"
+            title="Light Novel muốn có bản quyền nhất"
+            description={
+                <p>
+                    Hạng mục đầu tiên chính là Light Novel được yêu thích nhất. Yêu không thể nín, đói không thể nhịn,
+                    và harem cũng không thể chỉ một người. Các bạn có thể chọn <strong>tối đa 10 tác phẩm </strong> cho
+                    hạng mục này.
+                </p>
+            }
+            listData={copyrightRanobe}
+            maxItems={1}
+            notification="Bạn chỉ được chọn tối đa 2 tựa sách cho hạng mục này!"
+            category="copyrightRanobe"
+            onSelectionChange={handleChildSelection}
+        />,
+        <ListComponent
+            id="6"
+            title="Nhà phát hành được yêu thích nhất"
+            description={
+                <p>
+                    Hạng mục đầu tiên chính là Light Novel được yêu thích nhất. Yêu không thể nín, đói không thể nhịn,
+                    và harem cũng không thể chỉ một người. Các bạn có thể chọn <strong>tối đa 10 tác phẩm </strong> cho
+                    hạng mục này.
+                </p>
+            }
+            listData={favoritePublisher}
+            maxItems={1}
+            notification="Bạn chỉ được chọn tối đa 1 nhà phát hành yêu thích nhất!"
+            category="favoritePublisher"
             onSelectionChange={handleChildSelection}
         />,
         <SendResult result={selectedItems} />,
@@ -116,7 +167,7 @@ function Vote() {
 
     const isLastComponent = currentComponent === components.length - 1;
 
-    //---------Scroll to top
+    //Scroll to top
     const [isVisible, setIsVisible] = useState(false);
     const handleScroll = () => setIsVisible(window.scrollY > 400);
 
@@ -134,8 +185,8 @@ function Vote() {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
-    //----------End
 
+    //Fix first second of content when transition's opacity = 0
     const [contentMouted, setContentMounted] = useState(false);
     useEffect(() => {
         const timeout = setTimeout(() => {

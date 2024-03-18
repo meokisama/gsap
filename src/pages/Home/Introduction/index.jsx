@@ -165,7 +165,7 @@ function Introduction() {
                         </div>
                         <div className="noicon">
                             <div className="ỉntroleft" ref={ref1}>
-                                <img alt="" src="images/introimg.jpg" />
+                                <img alt="" src="images/introimg.webp" />
                             </div>
                             <div className="ỉntroright">
                                 <div className="rightElement aboutRanking">

@@ -38,28 +38,87 @@
                 &:hover {
                     transform: translate3d(0px, -0.5rem, 0px);
                 }
-                img {
+                .rCover {
                     width: 100%;
-                    height: auto;
+                    height: 63%;
+                    overflow: hidden;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
                 .info {
+                    height: 35%;
                     display: flex;
                     flex-direction: column;
+                    justify-content: space-between;
                     text-align: center;
-                    padding: 0 10px;
-                    gap: 25px;
                     h4 {
                         color: rgb(109 99 99);
                         margin: 0;
-                        padding-top: 8px;
+                        padding: 0 10px;
+                        padding-top: 14px;
                         font-size: 1.3rem;
+                        line-height: 1.8rem;
                     }
                     p {
-                        margin-top: -10px;
+                        margin-top: 0;
                         font-size: 1.2rem;
+                        strong {
+                            font-weight: 600;
+                        }
                     }
                 }
             }
+        }
+
+        .rPublisher {
+            width: 200px;
+            height: 200px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 25px;
+            img {
+                width: 65%;
+            }
+            cursor: pointer;
+            transition: all 0.3s ease-out;
+            transform: translateZ(0);
+            &:hover {
+                transform: translate3d(0px, -0.5rem, 0px);
+            }
+        }
+
+        .ipm {
+            background-color: #15934b;
+        }
+        .tsuki {
+            background-color: #fece00;
+            img {
+                width: 50%;
+            }
+        }
+        .quangvan {
+            img {
+                width: 60%;
+            }
+        }
+        .sky {
+            background-color: #4b4b4b;
+        }
+        .wingsbooks {
+            background-color: #00aef0;
+        }
+        .uranix {
+            background-color: #f6de12;
+        }
+        .shine {
+            background-color: #fed3a6;
+        }
+        .orion {
+            background-color: #fca412;
         }
 
         .captcha {

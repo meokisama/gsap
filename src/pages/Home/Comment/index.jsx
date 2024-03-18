@@ -10,7 +10,7 @@ import { useRef, useEffect } from 'react';
 import './Comment.scss';
 import { commentsList } from './Comment';
 import SectionTitle from '../SectionTitle';
-import img from '../../../assets/makein2.png';
+import img from '../../../assets/makein2.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -79,7 +79,6 @@ function Comment() {
                             <div className="slideContent">
                                 <div className="avatar">
                                     <img className="avatarMain" alt="" src={comment.avatar} />
-                                    <img className="avatarFrame" alt="" src={comment.frame} />
                                     <p>@{comment.username}</p>
                                 </div>
                                 <p className="content">{comment.content}</p>

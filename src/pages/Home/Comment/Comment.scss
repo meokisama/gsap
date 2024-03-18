@@ -36,7 +36,7 @@
                     linear-gradient(to bottom, transparent, #fa7667) border-box;
                 border: 1px solid transparent;
                 border-radius: 20px;
-                padding: 30px 10% 30px;
+                padding: 20px 10% 30px;
                 height: 80%;
                 align-items: center;
                 text-align: center;
@@ -58,12 +58,6 @@
                         box-shadow: rgba(221, 104, 104, 0.16) 0px 3px 6px, rgba(204, 105, 105, 0.23) 0px 3px 6px;
                         position: absolute;
                         top: -10%;
-                    }
-                    .avatarFrame {
-                        position: absolute;
-                        z-index: 100;
-                        width: 152px;
-                        top: -11.6%;
                     }
                     p {
                         padding-top: 3rem;

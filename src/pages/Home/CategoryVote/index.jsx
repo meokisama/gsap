@@ -4,19 +4,18 @@ import { useRef, useEffect } from 'react';
 
 import './CategoryVote.scss';
 import SectionTitle from '../SectionTitle';
-import makein from '../../../assets/makein.png';
+import makein from '../../../assets/makein.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
 function CategoryVote() {
     const categories = [
         'Light Novel được yêu thích nhất',
+        'Light Novel tân binh của năm',
         'Light Novel được mong chờ nhất',
-        'Light Novel được yêu thích nhất',
-        'Light Novel được yêu thích nhất',
-        'Light Novel được yêu thích nhất',
-        'Light Novel được yêu thích nhất',
-        'Light Novel được yêu thích nhất',
+        'Light Novel gây thất vọng nhất',
+        'Light Novel muốn có bản quyền nhất',
+        'Nhà phát hành được yêu thích nhất',
     ];
 
     useEffect(() => {

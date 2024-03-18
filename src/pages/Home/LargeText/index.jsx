@@ -3,7 +3,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useRef, useEffect } from 'react';
 
 import './LargeText.scss';
-import nonoa_chibi from '../../../assets/nonoa_chibi.png';
+import nonoa_chibi from '../../../assets/nonoa_chibi.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
