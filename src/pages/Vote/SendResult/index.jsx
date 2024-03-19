@@ -61,8 +61,12 @@ function SendResult({ result }) {
         if (captchaVerified) {
             // send result (and token);
 
-            setDone(true);
-            localStorage.clear();
+            result.every((item) => item.chosenItems.length !== 0)
+                ? setDone(() => {
+                      localStorage.clear();
+                      return true;
+                  })
+                : alertRef.current('Bạn chưa hoàn thành hết các hạng mục bình chọn!');
         } else {
             alertRef.current('Vui lòng xác minh captcha trước khi gửi! (Captcha được dùng để giảm vote ảo)');
         }
@@ -172,7 +176,7 @@ function SendResult({ result }) {
                 ))}
 
                 <div className="captcha">
-                    {!done && (
+                    {!done ? (
                         <form onSubmit={handleSubmit}>
                             <HCaptcha
                                 sitekey="10000000-ffff-ffff-ffff-000000000001"
@@ -183,8 +187,7 @@ function SendResult({ result }) {
                                 <button type="submit">Gửi Bình Chọn</button>
                             </div>
                         </form>
-                    )}
-                    {done && (
+                    ) : (
                         <div className="showSuccess">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
