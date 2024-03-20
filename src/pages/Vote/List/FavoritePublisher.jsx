@@ -86,4 +86,4 @@ const favoritePublisher = [
     },
 ];
 
-export { favoritePublisher };
+export default favoritePublisher;

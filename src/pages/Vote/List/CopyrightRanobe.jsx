@@ -40,4 +40,4 @@ const copyrightRanobe = lnList.map((ln, index) => {
     return { ...ln, id: index + 1 };
 });
 
-export { copyrightRanobe };
+export default copyrightRanobe;

@@ -1,13 +1,12 @@
 import Header from './Header';
 import Comment from './Comment';
 import Media from './Media';
-import SplashScreen from '../../components/SplashScreen';
 import LargeText from './LargeText';
 import LastTop10 from './LastTop10';
-import Footer from '../../components/Footer';
 import CategoryVote from './CategoryVote';
 import Introduction from './Introduction';
 import Overview from './Overview';
+import { SplashScreen, Footer } from '../../components';
 
 import '../../fonts/DTPhudu-Black.otf';
 

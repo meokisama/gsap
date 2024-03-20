@@ -1115,4 +1115,4 @@ const favoriteRanobe = lnList.map((ln, index) => {
     return { ...ln, id: index + 1 };
 });
 
-export { favoriteRanobe };
+export default favoriteRanobe;

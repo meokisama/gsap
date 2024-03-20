@@ -40,4 +40,4 @@ const disappointingRanobe = lnList.map((ln, index) => {
     return { ...ln, id: index + 1 };
 });
 
-export { disappointingRanobe };
+export default disappointingRanobe;

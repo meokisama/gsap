@@ -1,17 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
 
+import { Transition, Footer, DocumentTitle } from '../../components';
 import VoteHeader from './VoteHeader';
 import ListComponent from './ListComponent';
-import { favoriteRanobe } from './List/FavoriteRanobe';
-import { rookieRanobe } from './List/RookieRanobe';
-import { anticipatedRanobe } from './List/AnticipatedRanobe';
-import { disappointingRanobe } from './List/DisappointingRanobe';
-import { copyrightRanobe } from './List/CopyrightRanobe';
-import { favoritePublisher } from './List/FavoritePublisher';
-import Transition from '../../components/Transition';
-import Footer from '../../components/Footer';
 import SendResult from './SendResult';
-import DocumentTitle from '../../components/DocumentTitle';
+import {
+    favoriteRanobe,
+    rookieRanobe,
+    anticipatedRanobe,
+    disappointingRanobe,
+    copyrightRanobe,
+    favoritePublisher,
+} from './List';
 
 function Vote() {
     DocumentTitle('Bình Chọn - Bảng Xếp Hạng Light Novel Việt Nam');

@@ -40,4 +40,4 @@ const anticipatedRanobe = lnList.map((ln, index) => {
     return { ...ln, id: index + 1 };
 });
 
-export { anticipatedRanobe };
+export default anticipatedRanobe;

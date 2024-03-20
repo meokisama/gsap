@@ -40,4 +40,4 @@ const rookieRanobe = lnList.map((ln, index) => {
     return { ...ln, id: index + 1 };
 });
 
-export { rookieRanobe };
+export default rookieRanobe;
