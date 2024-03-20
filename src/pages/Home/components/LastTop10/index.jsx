@@ -3,9 +3,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useRef, useLayoutEffect } from 'react';
 
 import './LastTop10.scss';
-import gold from '../../../assets/gold.png';
-import silver from '../../../assets/silver.png';
-import bronze from '../../../assets/bronze.png';
+import gold from 'assets/gold.png';
+import silver from 'assets/silver.png';
+import bronze from 'assets/bronze.png';
 
 gsap.registerPlugin(ScrollTrigger);
 

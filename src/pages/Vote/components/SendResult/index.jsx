@@ -5,7 +5,7 @@ import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 import './SendResult.scss';
 import Category from '../Category';
-import MessageHub from '../../../components/MessageHub';
+import { MessageHub } from 'components';
 
 function SendResult({ result }) {
     const [ipAddress, setIPAddress] = useState('');

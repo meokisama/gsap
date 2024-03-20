@@ -10,7 +10,7 @@ import { useRef, useEffect } from 'react';
 import './Comment.scss';
 import { commentsList } from './Comment';
 import SectionTitle from '../SectionTitle';
-import img from '../../../assets/makein2.webp';
+import img from 'assets/makein2.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 

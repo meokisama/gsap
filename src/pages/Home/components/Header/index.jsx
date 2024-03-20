@@ -2,10 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 import './Header.scss';
-import halumonica from '../../../assets/headerimg.webp';
 import Sakura from '../Sakura';
-import rotSakura1 from '../../../assets/sakura1.svg';
-import rotSakura2 from '../../../assets/sakura2.svg';
+import halumonica from 'assets/headerimg.webp';
+import rotSakura1 from 'assets/sakura1.svg';
+import rotSakura2 from 'assets/sakura2.svg';
 
 function Header() {
     const [imgHeight, setImgHeight] = useState(null);

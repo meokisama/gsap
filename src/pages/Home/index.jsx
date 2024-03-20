@@ -1,14 +1,7 @@
-import Header from './Header';
-import Comment from './Comment';
-import Media from './Media';
-import LargeText from './LargeText';
-import LastTop10 from './LastTop10';
-import CategoryVote from './CategoryVote';
-import Introduction from './Introduction';
-import Overview from './Overview';
-import { SplashScreen, Footer } from '../../components';
+import { Header, LargeText, Introduction, Overview, CategoryVote, LastTop10, Comment, Media } from './components';
+import { SplashScreen, Footer } from 'components';
 
-import '../../fonts/DTPhudu-Black.otf';
+import 'fonts/DTPhudu-Black.otf';
 
 function Home() {
     return (

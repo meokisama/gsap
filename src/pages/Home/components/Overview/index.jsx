@@ -5,12 +5,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useState, useEffect, useRef } from 'react';
 import CountUp from 'react-countup';
 
-import rotSakura1 from '../../../assets/sakura1.svg';
 import './Overview.scss';
-import SectionTitle from '../SectionTitle';
 import timelineItem from './Timeline';
-import chibi00 from '../../../assets/chibi00.webp';
-import chibi01 from '../../../assets/chibi01.webp';
+import SectionTitle from '../SectionTitle';
+import rotSakura1 from 'assets/sakura1.svg';
+import chibi00 from 'assets/chibi00.webp';
+import chibi01 from 'assets/chibi01.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 

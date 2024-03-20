@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 
-import tl01 from '../../../assets/tl01.webp';
-import tl02 from '../../../assets/tl02.webp';
-import tl03 from '../../../assets/tl03.webp';
-import tl04 from '../../../assets/tl04.webp';
-import tl05 from '../../../assets/tl05.webp';
+import tl01 from 'assets/tl01.webp';
+import tl02 from 'assets/tl02.webp';
+import tl03 from 'assets/tl03.webp';
+import tl04 from 'assets/tl04.webp';
+import tl05 from 'assets/tl05.webp';
 
 const detail = [
     {

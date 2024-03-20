@@ -4,7 +4,7 @@ import { useRef, useEffect } from 'react';
 
 import './CategoryVote.scss';
 import SectionTitle from '../SectionTitle';
-import makein from '../../../assets/makein.webp';
+import makein from 'assets/makein.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
