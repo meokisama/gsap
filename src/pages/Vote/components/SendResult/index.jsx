@@ -58,18 +58,17 @@ function SendResult({ result }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (captchaVerified) {
-            // send result (and token);
-
-            result.every((item) => item.chosenItems.length !== 0)
+        captchaVerified
+            ? result.every((item) => item.chosenItems.length !== 0)
                 ? setDone(() => {
+                      // send result and token to server
+                      //...
+
                       localStorage.clear();
                       return true;
                   })
-                : alertRef.current('Bạn chưa hoàn thành hết các hạng mục bình chọn!');
-        } else {
-            alertRef.current('Vui lòng xác minh captcha trước khi gửi! (Captcha được dùng để giảm vote ảo)');
-        }
+                : alertRef.current('Bạn chưa hoàn thành hết các hạng mục bình chọn!')
+            : alertRef.current('Vui lòng xác minh captcha trước khi gửi! (Captcha được dùng để giảm vote ảo)');
     };
 
     const alertRef = useRef(null);
