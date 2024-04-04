@@ -24,20 +24,20 @@ function Vote() {
     const handleChildSelection = (category, title, selectedItemsFromChild) => {
         setSelectedItems((prevSelectedItems) => {
             const updatedSelectedItems = [...prevSelectedItems];
-            const existingIndex = updatedSelectedItems.findIndex((item) => item.category === category);
+            const existingIndex = updatedSelectedItems.findIndex((item) => item.category_short === category);
 
             if (existingIndex !== -1) {
                 // Update existing item
                 updatedSelectedItems[existingIndex] = {
-                    name: title,
-                    category: category,
+                    category_name: title,
+                    category_short: category,
                     chosenItems: selectedItemsFromChild,
                 };
             } else {
                 // Add new item
                 updatedSelectedItems.push({
-                    name: title,
-                    category: category,
+                    category_name: title,
+                    category_short: category,
                     chosenItems: selectedItemsFromChild,
                 });
             }

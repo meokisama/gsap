@@ -1,13 +1,38 @@
 const lnList = [
     {
+        seriesName: 'Sứ Giả Bốn Mùa - Vũ Điệu Mùa Xuân',
+        publisherName: 'Kim Đồng',
+        coverUrl: 'https://i2.docln.net/ln/licensed/covers/db58571a-54fb-421a-bed7-8ea4ff79e7e5.jpg',
+    },
+    {
+        seriesName: '86 Eighty Six',
+        publisherName: 'IPM',
+        coverUrl: 'https://i2.docln.net/ln/licensed/covers/10f01789-fbd5-476a-8a5f-00da1410e2b4.jpg',
+    },
+    {
         seriesName: 'Hành Trình Của Elaina',
         publisherName: 'Amak',
         coverUrl: 'https://i2.docln.net/ln/licensed/covers/185560ca-d4be-4889-9756-9b8198707957.jpg',
     },
     {
+        seriesName: 'Nhân Vật Hạ Cấp Tomozaki',
+        publisherName: 'Kim Đồng',
+        coverUrl: 'https://i2.docln.net/ln/licensed/covers/d295990b-fc8f-42c5-ba5e-274f2bc0730a.jpg',
+    },
+    {
         seriesName: 'Chàng Trai Chuyển Kiếp Và Cô Gái Thiên Tài',
         publisherName: 'Nhã Nam',
         coverUrl: 'https://i2.docln.net/ln/licensed/covers/eec5f26d-eaed-4d73-8b65-b037ff0ce61e.jpg',
+    },
+    {
+        seriesName: 'Thánh Hiệp Sĩ Nơi Tận Cùng Thế Giới',
+        publisherName: 'Sky Light Novel',
+        coverUrl: 'https://i2.docln.net/ln/licensed/covers/35e0c1f6-8816-42cf-a011-ac5ddc3e7e86.jpg',
+    },
+    {
+        seriesName: 'Phá Đảo Dị Giới Cùng Nữ Thần Không Tín Đồ',
+        publisherName: 'Orion Books',
+        coverUrl: 'https://i2.docln.net/ln/licensed/covers/2b79495f-14d1-471b-9ce5-ec86a4c32512.jpg',
     },
     {
         seriesName: 'Bởi Vì Tôi Sẽ Gọi Tên Em',
@@ -32,7 +57,7 @@ const lnList = [
     {
         seriesName: 'Tặng Hoa Cho Quái Vật Trong Rừng',
         publisherName: 'IPM',
-        coverUrl: 'images/tang_hoa_cho_quai_vat_trong_rung.jpg',
+        coverUrl: 'https://i2.docln.net/ln/licensed/covers/303fce14-a85b-4c98-9ece-53c3d7f1b2be.jpg',
     },
     {
         seriesName: 'Thiên Sứ Nhà Bên',
@@ -47,7 +72,7 @@ const lnList = [
     {
         seriesName: 'Khi Muốn Khóc Tôi Đeo Mặt Nạ Mèo',
         publisherName: 'IPM',
-        coverUrl: 'images/khi_muon_khoc_toi_deo_mat_na_meo.webp',
+        coverUrl: 'https://i2.docln.net/ln/licensed/covers/81b1412c-273a-4046-b277-bf68e29ab56b.jpg',
     },
     {
         seriesName: 'Xa Một Chút Hơn Một Triệu Năm Ánh Sáng',
@@ -110,11 +135,6 @@ const lnList = [
         coverUrl: 'https://i.docln.net/lightnovel/covers/u2-a3b8511d-e997-40b7-8852-6f384d08e113.jpg',
     },
     {
-        seriesName: 'Thánh Hiệp Sĩ Nơi Tận Cùng Thế Giới',
-        publisherName: 'Sky Light Novel',
-        coverUrl: 'https://i.docln.net/lightnovel/covers/u2-c5ec0ad9-cad7-41fd-a6a9-14aef7b3b775.jpg',
-    },
-    {
         seriesName: 'Chúa Tể Bóng Tối',
         publisherName: 'Kim Đồng',
         coverUrl: 'https://i.docln.net/lightnovel/covers/u2-8d6df625-c394-4344-b347-e8a1da785bf4.jpg',
@@ -142,7 +162,7 @@ const lnList = [
     {
         seriesName: 'Khóa Chặt Cửa Nào Suzume',
         publisherName: 'IPM',
-        coverUrl: 'https://i.docln.net/lightnovel/covers/u2-29be5640-9e62-4c55-9cb6-62e5d05054c9.jpg',
+        coverUrl: 'https://i.docln.net/lightnovel/covers/u2-0fa6d015-07da-4832-a9eb-59da83fd9e1b.jpg',
     },
     {
         seriesName: 'Tôi Yêu Nữ Phản Diện',
@@ -153,11 +173,6 @@ const lnList = [
         seriesName: 'Hiệp Sĩ Xương Trên Đường Du Hành Đến Thế Giới Khác',
         publisherName: 'Tsuki Light Novel',
         coverUrl: 'https://i.docln.net/lightnovel/covers/u2-f8e4863c-22fc-43f5-b2f3-e9d8464fbe16.jpg',
-    },
-    {
-        seriesName: 'Nhân Vật Hạ Cấp Tomozaki',
-        publisherName: 'Kim Đồng',
-        coverUrl: 'https://i.docln.net/lightnovel/covers/u2-5adaba1e-c379-4bb5-a087-053d8a05ac54.jpg',
     },
     {
         seriesName: 'Thất Kiếm Ma Thuật Thống Trị Thế Giới',
@@ -193,16 +208,6 @@ const lnList = [
         seriesName: 'Cách Sống Của Thiếu Nữ Hành Quyết - Và Rồi, Cô Ấy Được Tái Sinh',
         publisherName: 'Ichi Light Novel',
         coverUrl: 'https://i.docln.net/lightnovel/covers/u2-543dcf8c-f20b-4a32-adaa-ded181e3d0a2.jpg',
-    },
-    {
-        seriesName: 'Phá Đảo Dị Giới Cùng Nữ Thần Không Tín Đồ',
-        publisherName: 'Orion Books',
-        coverUrl: 'https://i.docln.net/lightnovel/covers/u3855-5d3029d2-688d-4a59-8f40-df151de3479b.jpg',
-    },
-    {
-        seriesName: '86 Eighty Six',
-        publisherName: 'IPM',
-        coverUrl: 'https://i.docln.net/lightnovel/covers/u2-3814dedf-0e26-47d2-917a-f3ff12048d12.jpg',
     },
     {
         seriesName: 'Arya Bàn Bên Thỉnh Thoảng Lại Trêu Ghẹo Tôi Bằng Tiếng Nga',
