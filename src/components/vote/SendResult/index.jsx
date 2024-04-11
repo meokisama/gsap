@@ -5,7 +5,7 @@ import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 import './SendResult.scss';
 import Category from '../Category';
-import { MessageHub } from 'components';
+import { MessageHub } from 'components/common';
 
 function SendResult({ result }) {
     const [ipAddress, setIPAddress] = useState('');
@@ -143,8 +143,11 @@ function SendResult({ result }) {
                 </Card>
 
                 {result.map((resultItem, index) => (
-                    <Card key={index} title={<span style={cardTitleStyles}>{index + 1 + '. ' + resultItem.name}</span>}>
-                        {resultItem.category !== 'favoritePublisher' ? (
+                    <Card
+                        key={index}
+                        title={<span style={cardTitleStyles}>{index + 1 + '. ' + resultItem.category_name}</span>}
+                    >
+                        {resultItem.category_short !== 'favoritePublisher' ? (
                             resultItem.chosenItems.length !== 0 ? (
                                 <div className="listItem">
                                     {resultItem.chosenItems.map((ln, index) => (

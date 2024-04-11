@@ -1,5 +1,5 @@
-import { Header, LargeText, Introduction, Overview, CategoryVote, LastTop10, Comment, Media } from './components';
-import { SplashScreen, Footer } from 'components';
+import { Header, LargeText, Introduction, Overview, CategoryVote, LastTop10, Comment, Media } from 'components/home';
+import { SplashScreen, Footer } from 'components/common';
 
 import 'fonts/DTPhudu-Black.otf';
 

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 
-import { Transition, Footer, DocumentTitle } from 'components';
-import { VoteHeader, ListComponent, SendResult } from './components';
+import { Transition, Footer, DocumentTitle } from 'components/common';
+import { VoteHeader, ListComponent, SendResult } from 'components/vote';
 import {
     favoriteRanobe,
     rookieRanobe,

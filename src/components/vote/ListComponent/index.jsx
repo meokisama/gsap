@@ -3,7 +3,7 @@ import { Tooltip } from 'antd';
 
 import './ListComponent.scss';
 import Category from '../Category';
-import { MessageHub } from 'components';
+import { MessageHub } from 'components/common';
 
 function ListComponent({ id, title, description, listData, maxItems, notification, category, onSelectionChange }) {
     const [chosenItems, setChosenItems] = useState([]);
