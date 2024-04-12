@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-
+import { ROUTES } from 'constants';
 import './Footer.scss';
 
-function Footer({ text = 'Bình Chọn', to = import.meta.env.VITE_VOTEPATH }) {
+function Footer({ text = 'Bình Chọn', to = ROUTES.VOTE }) {
     return (
         <div className="footer">
             <div>

@@ -4,7 +4,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useState, useEffect, useRef } from 'react';
 import CountUp from 'react-countup';
-
+import { ROUTES } from 'constants';
 import './Overview.scss';
 import timelineItem from './Timeline';
 import SectionTitle from '../SectionTitle';
@@ -199,7 +199,7 @@ function Overview() {
                     </div>
                 </div>
                 <div className="voteWrapper" ref={ref2}>
-                    <Link className="voteBtn" to={import.meta.env.VITE_VOTEPATH} target="_blank">
+                    <Link className="voteBtn" to={ROUTES.VOTE} target="_blank">
                         <span>Bình Chọn</span>
                         <img alt="" src={rotSakura1} />
                     </Link>

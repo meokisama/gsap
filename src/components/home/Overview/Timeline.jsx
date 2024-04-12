@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-
+import { ROUTES } from 'constants';
 import tl01 from 'assets/tl01.webp';
 import tl02 from 'assets/tl02.webp';
 import tl03 from 'assets/tl03.webp';
@@ -57,7 +57,7 @@ const timelineItem = detail.map((item) => ({
                 <p className="des">{item.description}</p>
                 {item.optional && (
                     <div>
-                        <Link className="detailOptional" to={import.meta.env.VITE_VOTEPATH} target="_blank">
+                        <Link className="detailOptional" to={ROUTES.VOTE} target="_blank">
                             <p>Bình Chọn ngay cho tác phẩm yêu thích !!</p>
                         </Link>
                     </div>

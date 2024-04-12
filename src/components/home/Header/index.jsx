@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-
+import { ROUTES } from 'constants';
 import './Header.scss';
 import Sakura from '../Sakura';
 import halumonica from 'assets/headerimg.webp';
@@ -70,7 +70,7 @@ function Header() {
                         của câu chuyện đó ghi danh bảng vàng!
                     </p>
                     <div id="textBtn">
-                        <Link id="votebtn" to={import.meta.env.VITE_VOTEPATH} target="_blank">
+                        <Link id="votebtn" to={ROUTES.VOTE} target="_blank">
                             <span>Bình Chọn</span>
                             <img alt="" src={rotSakura1} />
                         </Link>

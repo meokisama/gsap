@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-
+import { ROUTES } from 'constants';
 import { Transition, Footer, DocumentTitle } from 'components/common';
 import { VoteHeader, ListComponent, SendResult } from 'components/vote';
 import {
@@ -267,7 +267,7 @@ function Vote() {
                             </svg>
                         </button>
                     </div>
-                    <Footer text="Trang Chủ" to={import.meta.env.VITE_HOMEPATH} />
+                    <Footer text="Trang Chủ" to={ROUTES.HOME} />
                 </div>
             )}
         </div>
