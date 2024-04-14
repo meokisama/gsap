@@ -1,106 +1,117 @@
-import { Table } from 'antd';
+import { Select, Table } from 'antd';
 import './LeaderBoardTable.scss';
+import {
+    publisherFilter,
+    rookieRanobe,
+    anticipatedRanobe,
+    disappointingRanobe,
+    copyrightRanobe,
+    favoritePublisher,
+    favoriteRanobe,
+} from './Data';
+import { useState } from 'react';
 
 function LeaderBoardTable() {
+    const [selectedCategory, setSelectedCategory] = useState({
+        value: 'favoriteRanobe',
+        label: 'Light Novel được yêu thích nhất',
+    });
+    const [data, setData] = useState(favoriteRanobe);
+    const dataInput = {
+        publisherFilter,
+        rookieRanobe,
+        anticipatedRanobe,
+        disappointingRanobe,
+        copyrightRanobe,
+        favoritePublisher,
+        favoriteRanobe,
+    };
+
     const columns = [
         {
-            title: 'Name',
-            dataIndex: 'name',
-            showSorterTooltip: {
-                target: 'full-header',
-            },
-            filters: [
-                {
-                    text: 'Joe',
-                    value: 'Joe',
-                },
-                {
-                    text: 'Jim',
-                    value: 'Jim',
-                },
-                {
-                    text: 'Submenu',
-                    value: 'Submenu',
-                    children: [
-                        {
-                            text: 'Green',
-                            value: 'Green',
-                        },
-                        {
-                            text: 'Black',
-                            value: 'Black',
-                        },
-                    ],
-                },
-            ],
-            // specify the condition of filtering result
-            // here is that finding the name started with `value`
-            onFilter: (value, record) => record.name.indexOf(value) === 0,
-            sorter: (a, b) => a.name.length - b.name.length,
+            title: 'Xếp hạng',
+            dataIndex: 'rank',
+            align: 'center',
+            sorter: (a, b) => a.rank - b.rank,
             sortDirections: ['descend'],
         },
         {
-            title: 'Age',
-            dataIndex: 'age',
-            defaultSortOrder: 'descend',
-            sorter: (a, b) => a.age - b.age,
+            title: 'Tác phẩm',
+            dataIndex: 'seriesName',
         },
         {
-            title: 'Address',
-            dataIndex: 'address',
-            filters: [
-                {
-                    text: 'London',
-                    value: 'London',
-                },
-                {
-                    text: 'New York',
-                    value: 'New York',
-                },
-            ],
-            onFilter: (value, record) => record.address.indexOf(value) === 0,
+            title: 'Nhà phát hành',
+            dataIndex: 'publisherName',
+            align: 'center',
+            filters: publisherFilter,
+            onFilter: (value, record) => record.publisherName.indexOf(value) === 0,
+        },
+        {
+            title: 'Số bình chọn',
+            dataIndex: 'vote',
+            align: 'center',
+            sorter: (a, b) => b.vote - a.vote,
+            sortDirections: ['descend'],
         },
     ];
-    const data = [
+
+    const selectArray = [
         {
-            key: '1',
-            name: 'John Brown',
-            age: 32,
-            address: 'New York No. 1 Lake Park',
+            value: 'favoriteRanobe',
+            label: 'Light Novel được yêu thích nhất',
         },
         {
-            key: '2',
-            name: 'Jim Green',
-            age: 42,
-            address: 'London No. 1 Lake Park',
+            value: 'rookieRanobe',
+            label: 'Light Novel tân binh của năm',
         },
         {
-            key: '3',
-            name: 'Joe Black',
-            age: 32,
-            address: 'Sydney No. 1 Lake Park',
+            value: 'anticipatedRanobe',
+            label: 'Light Novel được mong chờ nhất',
         },
         {
-            key: '4',
-            name: 'Jim Red',
-            age: 32,
-            address: 'London No. 2 Lake Park',
+            value: 'disappointingRanobe',
+            label: 'Light Novel gây thất vọng nhất',
+        },
+        {
+            value: 'copyrightRanobe',
+            label: 'Light Novel muốn có bản quyền nhất',
+        },
+        {
+            value: 'favoritePublisher',
+            label: 'Nhà phát hành được yêu thích nhất',
         },
     ];
-    const onChange = (pagination, filters, sorter, extra) => {
-        console.log('params', pagination, filters, sorter, extra);
+
+    const handleChange = (value) => {
+        setSelectedCategory(selectArray.find((item) => item.value === value));
+        setData(dataInput[value]);
     };
+
     return (
         <div className="leaderboard">
-            <div>
-                <Table
-                    columns={columns}
-                    dataSource={data}
-                    onChange={onChange}
-                    showSorterTooltip={{
-                        target: 'sorter-icon',
+            <p className="ld-description">
+                Đã có kết quả cho đợt bình chọn bảng xếp hạng kì này! Hãy chọn hạng mục tương ứng ở bên dưới để xem thứ
+                hạng cụ thể của hạng mục đó. Có thể ấn vào phần tiêu đề của mỗi cột bên dưới để{' '}
+                <strong>xem thứ hạng tăng dần/giảm dần</strong>, <strong>tìm kiếm tác phẩm cụ thể</strong> hay{' '}
+                <strong>lọc ra các tác phẩm của mỗi nhà xuất bản</strong> tương ứng.
+            </p>
+            <div className="ld-select">
+                <Select
+                    defaultValue="favoriteRanobe"
+                    style={{
+                        width: 400,
                     }}
+                    onChange={handleChange}
+                    options={selectArray}
+                    dropdownStyle={{ fontFamily: 'Lexend' }}
                 />
+            </div>
+            <h1>{selectedCategory.label}</h1>
+            <p className="h1-description">
+                [Hạng mục này có tổng cộng <strong>{data.length} tác phẩm</strong> tham gia!]
+            </p>
+            <div className="ld-table">
+                <Table columns={columns} dataSource={data} bordered />
             </div>
         </div>
     );

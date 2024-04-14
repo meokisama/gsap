@@ -1,6 +1,5 @@
 import { Header, LargeText, Introduction, Overview, CategoryVote, LastTop10, Comment, Media } from 'components/home';
 import { SplashScreen, Footer } from 'components/common';
-
 import 'fonts/DTPhudu-Black.otf';
 
 function Home() {
