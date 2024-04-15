@@ -3,7 +3,7 @@
     .ant-table-content {
         font-family: 'Lexend';
         font-weight: 300;
-        color: #494949;
+        color: #4e4d4d;
         // .ant-table-column-title {
         //     color: #dd6e61;
         //     font-weight: 700;
@@ -14,13 +14,36 @@
             font-weight: 700 !important;
             font-size: 1.6rem;
         }
+        .anticon {
+            color: #49494996;
+        }
+    }
+    .ant-select-selector {
+        padding: 20px !important;
+        color: #f32a52 !important;
+        border-color: #cc586c !important;
     }
     max-width: 1500px;
     padding: 2rem 0;
     display: block;
     margin: 0 auto;
+    .sakuraimg {
+        width: 50px;
+        display: block;
+        margin: 0 auto;
+        margin-top: 100px;
+        animation: spin 4s infinite linear;
+    }
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
     h1 {
-        margin-top: 150px;
+        margin-top: 100px;
         padding: 1rem 1rem;
         text-align: center;
         line-height: 5rem;

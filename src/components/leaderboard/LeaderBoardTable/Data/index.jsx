@@ -102,7 +102,7 @@ const favoriteRanobeList = [
         publisherName: 'IPM',
     },
     {
-        vote: 47,
+        vote: 46,
         seriesName: 'Hành Trình Của Elaina',
         publisherName: 'Amak',
     },
@@ -122,7 +122,7 @@ const favoriteRanobeList = [
         publisherName: 'IPM',
     },
     {
-        vote: 47,
+        vote: 45,
         seriesName: 'Hành Trình Của Elaina',
         publisherName: 'Amak',
     },
@@ -177,8 +177,14 @@ const favoritePublisherList = [
 const handleList = (arr) => {
     arr.sort((a, b) => b.vote - a.vote);
 
+    let rank = 1;
+    let prevVote = arr[0].vote;
     arr.forEach((item, index) => {
-        item.rank = index + 1;
+        if (item.vote < prevVote) {
+            rank++;
+            prevVote = item.vote;
+        }
+        item.rank = rank;
     });
 
     const finalList = arr.map((ln, index) => {
