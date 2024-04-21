@@ -15,7 +15,7 @@
             font-size: 1.6rem;
         }
         .anticon {
-            color: #49494996;
+            color: #494949d7;
         }
     }
     .ant-select-selector {
@@ -23,12 +23,12 @@
         color: #f32a52 !important;
         border-color: #cc586c !important;
     }
-    max-width: 1500px;
+    max-width: 1400px;
     padding: 2rem 0;
     display: block;
     margin: 0 auto;
     .sakuraimg {
-        width: 50px;
+        width: 40px;
         display: block;
         margin: 0 auto;
         margin-top: 100px;
@@ -57,6 +57,7 @@
     .ld-select {
         display: flex;
         justify-content: center;
+        padding: 0 20px;
         .ant-select {
             font-family: 'Lexend' !important;
         }
@@ -68,12 +69,16 @@
     .ld-description,
     .h1-description {
         text-align: center;
-        width: min(800px, 95%);
+        width: min(800px, 90%);
         display: block;
         margin: 5rem auto;
         strong {
             color: #f32a52;
         }
+    }
+
+    .ld-description {
+        text-align: justify;
     }
 
     .h1-description {

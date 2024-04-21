@@ -1,21 +1,18 @@
 import { Link } from 'react-router-dom';
-import { ROUTES } from 'constants';
 import './Footer.scss';
+import { ROUTES, AUTHORS } from 'constants';
 
 function Footer({ text = 'Bình Chọn', to = ROUTES.VOTE }) {
     return (
         <div className="footer">
             <div>
                 <p>
-                    ©「
-                    <strong onClick={() => window.open('https://www.facebook.com/hyddytngokngek', '_blank')}>
-                        Hyddyt
-                    </strong>{' '}
-                    (Organizer)」 「
-                    <strong onClick={() => window.open('https://www.facebook.com/Zennomi', '_blank')}>Zennomi</strong>{' '}
-                    (Backend)」 「
-                    <strong onClick={() => window.open('https://www.facebook.com/TheMeoki', '_blank')}>Meoki</strong>{' '}
-                    (Frontend)」
+                    {AUTHORS.map((author) => (
+                        <span key={author.name}>
+                            「<strong onClick={() => window.open(author.url, '_blank')}>{author.name}</strong> (
+                            {author.description})」
+                        </span>
+                    ))}
                 </p>
                 <Link className="btnLink" to={to} target="_blank">
                     <div className="footerBtn">

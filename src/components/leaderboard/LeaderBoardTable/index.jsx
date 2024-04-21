@@ -54,7 +54,7 @@ function LeaderBoardTable() {
             >
                 <Input
                     ref={searchInput}
-                    placeholder={`Search ${dataIndex}`}
+                    placeholder={`Nhập tên tác phẩm cần tìm`}
                     value={selectedKeys[0]}
                     onChange={(e) => setSelectedKeys(e.target.value ? [e.target.value] : [])}
                     onPressEnter={() => handleSearch(selectedKeys, confirm, dataIndex)}
@@ -70,33 +70,20 @@ function LeaderBoardTable() {
                         icon={<SearchOutlined />}
                         size="small"
                         style={{
-                            width: 90,
+                            width: 110,
                         }}
                     >
-                        Search
+                        Tìm kiếm
                     </Button>
                     <Button
                         onClick={() => clearFilters && handleReset(clearFilters)}
                         size="small"
                         style={{
-                            width: 90,
+                            width: 70,
                         }}
                     >
                         Reset
                     </Button>
-                    {/* <Button
-                        type="link"
-                        size="small"
-                        onClick={() => {
-                            confirm({
-                                closeDropdown: false,
-                            });
-                            setSearchText(selectedKeys[0]);
-                            setSearchedColumn(dataIndex);
-                        }}
-                    >
-                        Filter
-                    </Button> */}
                     <Button
                         type="link"
                         size="small"
@@ -104,7 +91,7 @@ function LeaderBoardTable() {
                             close();
                         }}
                     >
-                        close
+                        Đóng
                     </Button>
                 </Space>
             </div>
@@ -255,7 +242,17 @@ function LeaderBoardTable() {
                 [Hạng mục này có tổng cộng <strong>{data.length} tác phẩm</strong> tham gia!]
             </p>
             <div className="ld-table">
-                <Table columns={columns} dataSource={data} bordered />
+                <Table
+                    columns={columns}
+                    dataSource={data}
+                    pagination={{ position: ['bottomCenter'], pageSize: 20 }}
+                    bordered
+                    locale={{
+                        triggerDesc: 'Click để xếp theo thứ tự giảm dần',
+                        cancelSort: 'Click để xếp theo thứ tự tăng dần',
+                        filterSearchPlaceholder: 'Tìm tên nhà phát hành',
+                    }}
+                />
             </div>
         </div>
     );
