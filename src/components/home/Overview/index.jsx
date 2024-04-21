@@ -1,11 +1,11 @@
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Timeline } from 'antd';
+import CountUp from 'react-countup';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useState, useEffect, useRef } from 'react';
-import CountUp from 'react-countup';
-import { ROUTES } from 'constants';
 import './Overview.scss';
+import { ROUTES } from 'constants';
 import timelineItem from './Timeline';
 import SectionTitle from '../SectionTitle';
 import rotSakura1 from 'assets/sakura1.svg';
@@ -15,6 +15,22 @@ import chibi01 from 'assets/chibi01.webp';
 gsap.registerPlugin(ScrollTrigger);
 
 function Overview() {
+    const [isWideScreen, setIsWideScreen] = useState(true);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsWideScreen(window.innerWidth > 600);
+        };
+
+        handleResize();
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     useEffect(() => {
         const textElements = gsap.utils.toArray('.tlref');
         textElements.forEach((text) => {
@@ -174,7 +190,7 @@ function Overview() {
                 </div>
             </div>
             <div className="timeline">
-                <Timeline mode="alternate" items={timelineItem} />
+                {isWideScreen ? <Timeline mode="alternate" items={timelineItem} /> : <Timeline items={timelineItem} />}
             </div>
             <div className="countdown">
                 <div className="cdwrapper" ref={ref1}>

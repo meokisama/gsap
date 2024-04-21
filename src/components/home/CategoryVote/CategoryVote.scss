@@ -56,6 +56,7 @@
                         letter-spacing: 1px;
                         color: #ab1909dc;
                         text-align: center;
+                        padding: 5px;
                     }
                 }
             }
@@ -76,11 +77,12 @@
     .categoryVote {
         .categoryContainer {
             justify-content: center;
+            display: block;
             .categoryImg {
                 display: none;
             }
             .categoryText {
-                width: 90%;
+                width: 100%;
             }
         }
     }
@@ -95,12 +97,30 @@
                         width: 10vw;
                         height: 10vw;
                         font-size: 4vw;
+                        border-radius: 10px 0 0 10px;
+                    }
+                    .categoryName {
+                        border-radius: 10px;
+                        p {
+                            font-size: 4.2vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .categoryVote {
+        .categoryContainer {
+            .categoryText {
+                .categoryItem {
+                    .categoryIndex {
+                        border-radius: 7px 0 0 7px;
                     }
                     .categoryName {
                         border-radius: 7px;
-                        p {
-                            font-size: 4vw;
-                        }
                     }
                 }
             }

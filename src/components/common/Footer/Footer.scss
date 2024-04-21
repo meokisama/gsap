@@ -46,7 +46,7 @@
 @media all and (max-width: 550px) {
     .footer {
         p {
-            font-size: 2.8vw !important;
+            font-size: 3.5vw !important;
         }
     }
 }
@@ -54,13 +54,12 @@
 @media all and (max-width: 480px) {
     .footer {
         .footerBtn {
+            width: 200px !important;
+            padding: 5px 0 !important;
             span {
                 font-size: 1.5rem !important;
                 padding: 1rem 0 !important;
             }
-        }
-        .footerBtn {
-            width: 200px !important;
         }
     }
 }
