@@ -13,7 +13,7 @@ function LargeText() {
 
     useGSAP(() => {
         const textElements = gsap.utils.toArray('.text');
-        const el = imgRef.current;
+        const imgElement = imgRef.current;
 
         textElements.forEach((text) => {
             gsap.to(text, {
@@ -27,14 +27,14 @@ function LargeText() {
         });
 
         gsap.fromTo(
-            el,
+            imgElement,
             {
                 opacity: 0,
             },
             {
                 opacity: 1,
                 scrollTrigger: {
-                    trigger: el,
+                    trigger: imgElement,
                     end: 'top 50%',
                     scrub: true,
                 },
@@ -46,15 +46,9 @@ function LargeText() {
         <div className="largeText">
             <img alt="" src={nonoa_chibi} ref={imgRef} />
             <div className="container">
-                <h1 className="text">
-                    Vietnam<span>bảng xếp hạng</span>
-                </h1>
-                <h1 className="text">
-                    light novel<span>light novel</span>
-                </h1>
-                <h1 className="text">
-                    ranking<span>Việt Nam</span>
-                </h1>
+                <h1 className="text">Vietnam</h1>
+                <h1 className="text">light novel</h1>
+                <h1 className="text">ranking</h1>
             </div>
         </div>
     );
