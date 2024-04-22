@@ -1,7 +1,7 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useRef, useEffect } from 'react';
-
+import { useRef } from 'react';
+import { useGSAP } from '@gsap/react';
 import './CategoryVote.scss';
 import SectionTitle from '../SectionTitle';
 import makein from 'assets/makein.webp';
@@ -18,8 +18,12 @@ function CategoryVote() {
         'Nhà phát hành được yêu thích nhất',
     ];
 
-    useEffect(() => {
+    const mediaRef = useRef(null);
+
+    useGSAP(() => {
         const textElements = gsap.utils.toArray('.categoryItem');
+        const el = mediaRef.current;
+
         textElements.forEach((text) => {
             gsap.fromTo(
                 text,
@@ -38,11 +42,7 @@ function CategoryVote() {
                 },
             );
         });
-    }, []);
 
-    const mediaRef = useRef(null);
-    useEffect(() => {
-        const el = mediaRef.current;
         gsap.fromTo(
             el,
             {

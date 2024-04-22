@@ -4,6 +4,7 @@ import { Timeline } from 'antd';
 import CountUp from 'react-countup';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 import './Overview.scss';
 import { ROUTES } from 'constants';
 import timelineItem from './Timeline';
@@ -31,7 +32,7 @@ function Overview() {
         };
     }, []);
 
-    useEffect(() => {
+    useGSAP(() => {
         const textElements = gsap.utils.toArray('.tlref');
         textElements.forEach((text) => {
             gsap.fromTo(
@@ -58,7 +59,7 @@ function Overview() {
     const ref2 = useRef(null);
     const ref3 = useRef(null);
     const ref4 = useRef(null);
-    useEffect(() => {
+    useGSAP(() => {
         const el1 = ref1.current;
         const el2 = ref2.current;
         const el3 = ref3.current;

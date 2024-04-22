@@ -1,7 +1,7 @@
+import { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useRef, useEffect } from 'react';
-
+import { useGSAP } from '@gsap/react';
 import './Introduction.scss';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -15,7 +15,7 @@ function Introduction() {
     const ref1 = useRef(null);
     const ref2 = useRef(null);
 
-    useEffect(() => {
+    useGSAP(() => {
         const e1 = ref1.current;
         const e2 = ref2.current;
 

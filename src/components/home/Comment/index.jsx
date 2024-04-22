@@ -1,12 +1,11 @@
+import { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
-
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useRef, useEffect } from 'react';
-
+import { useGSAP } from '@gsap/react';
 import './Comment.scss';
 import { commentsList } from './Comment';
 import SectionTitle from '../SectionTitle';
@@ -18,7 +17,7 @@ function Comment() {
     const commentRef = useRef(null);
     const commentimgRef = useRef(null);
 
-    useEffect(() => {
+    useGSAP(() => {
         const el = commentRef.current;
         const elimg = commentimgRef.current;
 

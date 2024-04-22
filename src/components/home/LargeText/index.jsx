@@ -1,6 +1,7 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useRef, useEffect } from 'react';
+import { useGSAP } from '@gsap/react';
+import { useRef } from 'react';
 
 import './LargeText.scss';
 import nonoa_chibi from 'assets/nonoa_chibi.webp';
@@ -10,8 +11,10 @@ gsap.registerPlugin(ScrollTrigger);
 function LargeText() {
     const imgRef = useRef(null);
 
-    useEffect(() => {
+    useGSAP(() => {
         const textElements = gsap.utils.toArray('.text');
+        const el = imgRef.current;
+
         textElements.forEach((text) => {
             gsap.to(text, {
                 backgroundSize: '100%',
@@ -22,10 +25,7 @@ function LargeText() {
                 },
             });
         });
-    }, []);
 
-    useEffect(() => {
-        const el = imgRef.current;
         gsap.fromTo(
             el,
             {

@@ -49,7 +49,7 @@ function Header() {
     return (
         <div className="header">
             <div className="headerContent" ref={bannerRef}>
-                <Sakura density={110} />
+                <Sakura density={60} />
                 <div className="textContent">
                     <div className="textTitle">
                         <h1>

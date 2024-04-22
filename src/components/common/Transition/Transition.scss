@@ -3,6 +3,8 @@
     position: fixed;
     width: 100%;
     transition: all;
+    user-select: none;
+    pointer-events: none;
     .splashTextBG {
         overflow: hidden;
         position: absolute;

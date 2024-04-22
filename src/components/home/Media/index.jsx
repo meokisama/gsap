@@ -1,7 +1,6 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useRef, useEffect } from 'react';
-
+import { useGSAP } from '@gsap/react';
 import './Media.scss';
 import SectionTitle from '../SectionTitle';
 import { mediaList } from './Media';
@@ -9,9 +8,9 @@ import { mediaList } from './Media';
 gsap.registerPlugin(ScrollTrigger);
 
 function Media() {
-    useEffect(() => {
-        const textElements = gsap.utils.toArray('.mediaItemLeft');
-        textElements.forEach((text) => {
+    useGSAP(() => {
+        const elementsLeft = gsap.utils.toArray('.mediaItemLeft');
+        elementsLeft.forEach((text) => {
             gsap.fromTo(
                 text,
                 {
@@ -29,11 +28,9 @@ function Media() {
                 },
             );
         });
-    }, []);
 
-    useEffect(() => {
-        const textElements = gsap.utils.toArray('.mediaItemRight');
-        textElements.forEach((text) => {
+        const elementsRight = gsap.utils.toArray('.mediaItemRight');
+        elementsRight.forEach((text) => {
             gsap.fromTo(
                 text,
                 {
