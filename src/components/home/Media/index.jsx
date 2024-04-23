@@ -9,45 +9,52 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Media() {
     useGSAP(() => {
-        const elementsLeft = gsap.utils.toArray('.mediaItemLeft');
-        elementsLeft.forEach((text) => {
-            gsap.fromTo(
-                text,
-                {
-                    x: -500,
-                    opacity: 0,
-                },
-                {
-                    x: 0,
-                    opacity: 1,
-                    scrollTrigger: {
-                        trigger: text,
-                        end: 'top 50%',
-                        scrub: true,
+        function handleLoad() {
+            const elementsLeft = gsap.utils.toArray('.mediaItemLeft');
+            elementsLeft.forEach((text) => {
+                gsap.fromTo(
+                    text,
+                    {
+                        x: -500,
+                        opacity: 0,
                     },
-                },
-            );
-        });
+                    {
+                        x: 0,
+                        opacity: 1,
+                        scrollTrigger: {
+                            trigger: text,
+                            end: 'top 50%',
+                            scrub: true,
+                        },
+                    },
+                );
+            });
 
-        const elementsRight = gsap.utils.toArray('.mediaItemRight');
-        elementsRight.forEach((text) => {
-            gsap.fromTo(
-                text,
-                {
-                    x: 500,
-                    opacity: 0,
-                },
-                {
-                    x: 0,
-                    opacity: 1,
-                    scrollTrigger: {
-                        trigger: text,
-                        end: 'top 50%',
-                        scrub: true,
+            const elementsRight = gsap.utils.toArray('.mediaItemRight');
+            elementsRight.forEach((text) => {
+                gsap.fromTo(
+                    text,
+                    {
+                        x: 500,
+                        opacity: 0,
                     },
-                },
-            );
-        });
+                    {
+                        x: 0,
+                        opacity: 1,
+                        scrollTrigger: {
+                            trigger: text,
+                            end: 'top 50%',
+                            scrub: true,
+                        },
+                    },
+                );
+            });
+        }
+        window.addEventListener('load', handleLoad);
+
+        return () => {
+            window.removeEventListener('load', handleLoad);
+        };
     }, []);
 
     return (

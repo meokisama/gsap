@@ -2,7 +2,6 @@
     --swiper-pagination-color: #fa7667;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 5rem 0;
     padding: 10rem 0 20rem;
     height: 100rem;
     position: relative;
@@ -113,6 +112,7 @@
 
 @media screen and (max-width: 900px) {
     .comment {
+        padding-top: 0;
         .commentContent {
             .swiper {
                 width: 100%;

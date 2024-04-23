@@ -82,6 +82,7 @@
 @media screen and (max-width: 900px) {
     .mediaContent {
         flex-direction: column;
+        padding-top: 1rem !important;
         .mediaItemLeft,
         .mediaItemRight {
             width: 95% !important;

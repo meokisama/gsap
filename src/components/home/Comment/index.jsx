@@ -18,42 +18,49 @@ function Comment() {
     const commentimgRef = useRef(null);
 
     useGSAP(() => {
-        const el = commentRef.current;
-        const elimg = commentimgRef.current;
+        function handleLoad() {
+            const el = commentRef.current;
+            const elimg = commentimgRef.current;
 
-        gsap.fromTo(
-            el,
-            {
-                x: 200,
-                opacity: 0,
-            },
-            {
-                x: 0,
-                opacity: 1,
-                scrollTrigger: {
-                    trigger: el,
-                    end: 'top 30%',
-                    scrub: true,
+            gsap.fromTo(
+                el,
+                {
+                    x: 200,
+                    opacity: 0,
                 },
-            },
-        );
+                {
+                    x: 0,
+                    opacity: 1,
+                    scrollTrigger: {
+                        trigger: el,
+                        end: 'top 30%',
+                        scrub: true,
+                    },
+                },
+            );
 
-        gsap.fromTo(
-            elimg,
-            {
-                x: -200,
-                opacity: 0,
-            },
-            {
-                x: 0,
-                opacity: 1,
-                scrollTrigger: {
-                    trigger: elimg,
-                    end: 'top 30%',
-                    scrub: true,
+            gsap.fromTo(
+                elimg,
+                {
+                    x: -200,
+                    opacity: 0,
                 },
-            },
-        );
+                {
+                    x: 0,
+                    opacity: 1,
+                    scrollTrigger: {
+                        trigger: elimg,
+                        end: 'top 30%',
+                        scrub: true,
+                    },
+                },
+            );
+        }
+        window.addEventListener('load', handleLoad);
+
+        return () => {
+            window.removeEventListener('load', handleLoad);
+        };
     }, []);
 
     return (

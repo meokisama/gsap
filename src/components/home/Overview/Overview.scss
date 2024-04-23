@@ -222,6 +222,12 @@
 
 @media screen and (max-width: 700px) {
     .overview {
+        .statistic {
+            margin: 3rem 0 100px;
+        }
+        .countdown {
+            padding-top: 3rem;
+        }
         .timeline {
             .timelineItemright,
             .timelineItemleft {
