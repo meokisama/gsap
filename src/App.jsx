@@ -1,8 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { ROUTES } from 'constants';
-import Home from './pages/Home';
-import Vote from './pages/Vote';
-import LeaderBoard from 'pages/Leaderboard';
+import { Home, Vote, LeaderBoard } from 'pages';
 
 function App() {
     return (

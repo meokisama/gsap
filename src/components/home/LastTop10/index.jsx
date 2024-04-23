@@ -15,9 +15,8 @@ function LastTop10() {
 
     useGSAP(() => {
         function handleLoad() {
-            console.log(slider.current.scrollWidth);
             gsap.to(slider.current, {
-                x: -(slider.current.scrollWidth - window.innerWidth),
+                x: -(slider.current.scrollWidth - window.innerWidth * 0.9),
                 ease: 'none',
                 scrollTrigger: {
                     trigger: wrapper.current,

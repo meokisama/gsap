@@ -23,6 +23,7 @@
         .mediaItemRight {
             width: calc(50% - 10px);
             display: flex;
+            gap: 5px;
             justify-content: center;
             align-items: center;
             .mediaAvatar {
