@@ -146,3 +146,21 @@ body {
         cursor: default;
     }
 }
+
+.popover-content {
+    font-family: 'Lexend';
+    cursor: pointer;
+    p {
+        margin: 0;
+        padding: 5px 15px 5px 10px;
+        border-radius: 5px;
+        color: #4e4d4d;
+        &:hover:not(.selected-category) {
+            background-color: rgba(192, 190, 190, 0.411);
+        }
+    }
+    .selected-category {
+        background-color: #f193a6;
+        color: white;
+    }
+}
