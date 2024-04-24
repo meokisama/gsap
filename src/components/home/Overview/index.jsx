@@ -32,6 +32,29 @@ function Overview() {
         };
     }, []);
 
+    const stat1 = useRef(null);
+    const stat2 = useRef(null);
+    const stat3 = useRef(null);
+    const stat4 = useRef(null);
+    useGSAP(() => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.statistic',
+                start: 'top 90%',
+                end: 'top 40%',
+                scrub: true,
+            },
+        });
+        const el1 = stat1.current;
+        const el2 = stat2.current;
+        const el3 = stat3.current;
+        const el4 = stat4.current;
+        tl.fromTo(el1, { y: -200, opacity: 0 }, { y: 0, opacity: 1 }, 0)
+            .fromTo(el2, { y: -200, opacity: 0 }, { y: 0, opacity: 1 }, 0.5)
+            .fromTo(el3, { y: -200, opacity: 0 }, { y: 0, opacity: 1 }, 1)
+            .fromTo(el4, { y: -200, opacity: 0 }, { y: 0, opacity: 1 }, 1.5);
+    }, []);
+
     useGSAP(() => {
         const textElements = gsap.utils.toArray('.tlref');
         textElements.forEach((text) => {
@@ -165,25 +188,25 @@ function Overview() {
         <div className="wrapper overview">
             <SectionTitle title={'Tổng Quan'} description={'Tổng quan vài điểm nhấn của bảng xếp hạng.'} />
             <div className="statistic">
-                <div className="statisticItem">
+                <div ref={stat1} className="statisticItem">
                     <p>
                         0<CountUp end={6} enableScrollSpy={true} scrollSpyDelay={0} />
                     </p>
                     <span className="staname">Năm tổ chức</span>
                 </div>
-                <div className="statisticItem">
+                <div ref={stat2} className="statisticItem">
                     <p>
                         0<CountUp end={6} enableScrollSpy={true} scrollSpyDelay={0} />
                     </p>
                     <span className="staname">Hạng mục bình chọn</span>
                 </div>
-                <div className="statisticItem">
+                <div ref={stat3} className="statisticItem">
                     <p>
                         <CountUp end={200} enableScrollSpy={true} scrollSpyDelay={0} />+
                     </p>
                     <span className="staname">Tác phẩm</span>
                 </div>
-                <div className="statisticItem">
+                <div ref={stat4} className="statisticItem">
                     <p>
                         <CountUp end={3000} enableScrollSpy={true} scrollSpyDelay={0} />+
                     </p>

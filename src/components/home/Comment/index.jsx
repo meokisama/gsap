@@ -25,7 +25,7 @@ function Comment() {
             gsap.fromTo(
                 el,
                 {
-                    x: 200,
+                    x: -500,
                     opacity: 0,
                 },
                 {
@@ -42,12 +42,12 @@ function Comment() {
             gsap.fromTo(
                 elimg,
                 {
-                    x: -200,
                     opacity: 0,
+                    scale: 0.2,
                 },
                 {
-                    x: 0,
                     opacity: 1,
+                    scale: 1,
                     scrollTrigger: {
                         trigger: elimg,
                         end: 'top 30%',
