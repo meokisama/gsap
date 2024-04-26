@@ -1,5 +1,4 @@
 .leaderboard {
-    padding: 5rem 1rem;
     max-width: 1400px;
     padding: 2rem 0;
     display: block;
@@ -55,6 +54,10 @@
             }
             .next-container {
                 width: 30%;
+                background: linear-gradient(#fbf2f2 0 0) padding-box,
+                    linear-gradient(to bottom, transparent, #fa7667) border-box;
+                border: 1px solid transparent;
+                // box-shadow: rgba(250, 146, 134, 0.35) 0px 20px 25px -5px, rgba(250, 146, 134, 0.51) 0px 10px 10px -5px;
                 span {
                     padding: 0 1rem;
                     font-weight: 400;
@@ -137,6 +140,14 @@
     .h1-description {
         margin: 0 auto;
     }
+    .ld-chibi {
+        margin-bottom: 80px;
+        img {
+            display: block;
+            margin: 0 auto;
+            width: max(10%, 120px);
+        }
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -144,9 +155,10 @@
         padding: 2rem 1rem;
         .ld-table-header {
             flex-direction: column-reverse;
-            gap: 20px;
+            gap: 5px;
             .header-right-panel {
                 width: 100%;
+                gap: 5px;
                 h1 {
                     font-size: 2.7rem;
                 }
@@ -164,6 +176,51 @@
                     font-size: 1.4rem;
                 }
             }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .leaderboard {
+        .ld-table-header {
+            .header-right-panel {
+                .vote-container,
+                .rate-container,
+                .next-container {
+                    padding: 2rem 10px;
+                    p {
+                        font-size: 1.2rem;
+                    }
+                }
+                .next-container {
+                    display: none;
+                }
+                .vote-container {
+                    width: 40%;
+                    .vote-number {
+                        p {
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+                .rate-container {
+                    width: 60%;
+                }
+            }
+            .header-left-panel {
+                padding: 2rem 10px;
+                .category-title {
+                    h1 {
+                        font-size: 2rem;
+                    }
+                    p {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+        .ld-description {
+            font-size: 1.3rem;
         }
     }
 }

@@ -43,11 +43,11 @@ function Comment() {
                 elimg,
                 {
                     opacity: 0,
-                    scale: 0.2,
+                    y: -200,
                 },
                 {
                     opacity: 1,
-                    scale: 1,
+                    y: 0,
                     scrollTrigger: {
                         trigger: elimg,
                         end: 'top 30%',

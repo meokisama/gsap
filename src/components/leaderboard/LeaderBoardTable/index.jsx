@@ -6,6 +6,7 @@ import './LeaderBoardTable.scss';
 import gold from 'assets/gold.png';
 import silver from 'assets/silver.png';
 import bronze from 'assets/bronze.png';
+import nonoa from 'assets/nonoa_chibi.webp';
 import {
     publisherFilter,
     rookieRanobe,
@@ -222,7 +223,7 @@ function LeaderBoardTable() {
         </div>
     );
 
-    const [rateValue, setRateValue] = useState(4.5);
+    const [rateValue, setRateValue] = useState(4);
     const rateDesc = ['Tốt', 'Quá tốt', 'Cực kỳ tốt', 'Tốt không còn gì để nói', 'G Cup'];
 
     const handleChange = (value) => {
@@ -238,6 +239,9 @@ function LeaderBoardTable() {
                 <strong>xem thứ hạng tăng dần/giảm dần</strong>, <strong>tìm kiếm tác phẩm cụ thể</strong> hay{' '}
                 <strong>lọc ra các tác phẩm của mỗi nhà xuất bản</strong> tương ứng.
             </p>
+            <div className="ld-chibi">
+                <img src={nonoa} alt="" />
+            </div>
             <div className="ld-table-header">
                 <div className="header-left-panel">
                     <div className="category-title">
@@ -271,7 +275,7 @@ function LeaderBoardTable() {
                     </div>
                     <div className="rate-container">
                         <p>Đánh giá bảng xếp hạng</p>
-                        <Rate allowHalf tooltips={rateDesc} value={rateValue} />
+                        <Rate tooltips={rateDesc} value={rateValue} />
                     </div>
                     <div className="next-container">
                         <p>Kỳ tiếp theo</p>
