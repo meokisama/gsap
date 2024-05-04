@@ -121,6 +121,44 @@
                 color: #494949d7;
             }
         }
+        .rank-1 {
+            // background-color: #fff6c861;
+            td:nth-child(2) {
+                font-weight: 600;
+                color: #e79827;
+            }
+        }
+
+        .rank-2 {
+            // background-color: #e9e9e940;
+            td:nth-child(2) {
+                font-weight: 600;
+                color: #7784a5;
+            }
+        }
+
+        .rank-3 {
+            // background-color: #ffe1c44a;
+            td:nth-child(2) {
+                font-weight: 600;
+                color: #b46933;
+            }
+        }
+        .ant-pagination-item {
+            font-family: 'Lexend';
+            font-weight: 300;
+        }
+        .ant-select,
+        .ant-select-dropdown {
+            font-family: 'Lexend', sans-serif;
+        }
+        .ant-pagination-item-active {
+            border-color: #dd6e61;
+            a {
+                font-weight: 600;
+                color: #dd6e61;
+            }
+        }
     }
     .ld-description,
     .h1-description {

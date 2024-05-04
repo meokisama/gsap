@@ -43,22 +43,38 @@
     }
 }
 
-@media all and (max-width: 550px) {
+@media screen and (max-width: 768px) {
     .footer {
-        p {
-            font-size: 3.5vw !important;
+        padding-top: 10rem;
+        div {
+            .footerBtn {
+                width: 200px;
+                padding: 5px 0;
+                span {
+                    font-size: 1.5rem;
+                    padding: 1rem 0;
+                }
+            }
+            p {
+                font-size: 1.2rem;
+            }
         }
     }
 }
 
-@media all and (max-width: 480px) {
+@media screen and (max-width: 480px) {
     .footer {
-        .footerBtn {
-            width: 200px !important;
-            padding: 5px 0 !important;
-            span {
-                font-size: 1.5rem !important;
-                padding: 1rem 0 !important;
+        div {
+            .footerBtn {
+                width: 150px;
+                padding: 2px 0;
+                span {
+                    font-size: 1.2rem;
+                    padding: 1rem 0;
+                }
+            }
+            p {
+                font-size: 1.1rem;
             }
         }
     }

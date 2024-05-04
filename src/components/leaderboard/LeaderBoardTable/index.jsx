@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { SearchOutlined, UserOutlined } from '@ant-design/icons';
-import { Table, Button, Input, Space, Popover, Statistic, Rate } from 'antd';
+import { Table, Button, Input, Space, Popover, Rate } from 'antd';
 import Highlighter from 'react-highlight-words';
 import './LeaderBoardTable.scss';
 import gold from 'assets/gold.png';
@@ -140,7 +140,14 @@ function LeaderBoardTable() {
                 ];
                 const getRankImage = (rank) =>
                     (
-                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'baseline', gap: '5px' }}>
+                        <div
+                            style={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'baseline',
+                                gap: '5px',
+                            }}
+                        >
                             <div style={{ color: rankColors[rank - 1] }}>
                                 # <span style={{ fontWeight: '800', color: rankColors[rank - 1] }}>{rank}</span>
                             </div>
@@ -170,6 +177,7 @@ function LeaderBoardTable() {
             filterSearch: true,
             onFilter: (value, record) => record.publisherName.indexOf(value) === 0,
             width: '20%',
+            responsive: ['md'],
         },
         {
             title: 'Số bình chọn',
@@ -275,7 +283,7 @@ function LeaderBoardTable() {
                     </div>
                     <div className="rate-container">
                         <p>Đánh giá bảng xếp hạng</p>
-                        <Rate tooltips={rateDesc} value={rateValue} />
+                        <Rate tooltips={rateDesc} value={rateValue} onChange={setRateValue} />
                     </div>
                     <div className="next-container">
                         <p>Kỳ tiếp theo</p>
@@ -287,7 +295,12 @@ function LeaderBoardTable() {
                 <Table
                     columns={columns}
                     dataSource={data}
-                    pagination={{ position: ['bottomCenter'], pageSize: 20 }}
+                    rowClassName={(record) => `rank-${record.rank}`}
+                    pagination={{
+                        position: ['bottomCenter'],
+                        defaultPageSize: 20,
+                        locale: { items_per_page: 'mục/trang' },
+                    }}
                     bordered
                     locale={{
                         triggerDesc: 'Click để xếp theo thứ tự giảm dần',

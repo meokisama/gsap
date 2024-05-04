@@ -76,61 +76,6 @@ const favoriteRanobeList = [
         seriesName: 'Sứ Giả Bốn Mùa - Vũ Điệu Mùa Xuân',
         publisherName: 'Kim Đồng',
     },
-    {
-        vote: 26,
-        seriesName: '86 Eighty Six',
-        publisherName: 'IPM',
-    },
-    {
-        vote: 47,
-        seriesName: 'Hành Trình Của Elaina',
-        publisherName: 'Amak',
-    },
-    {
-        vote: 11,
-        seriesName: 'Nhân Vật Hạ Cấp Tomozaki',
-        publisherName: 'Kim Đồng',
-    },
-    {
-        vote: 32,
-        seriesName: 'Sứ Giả Bốn Mùa - Vũ Điệu Mùa Xuân',
-        publisherName: 'Kim Đồng',
-    },
-    {
-        vote: 26,
-        seriesName: '86 Eighty Six',
-        publisherName: 'IPM',
-    },
-    {
-        vote: 46,
-        seriesName: 'Hành Trình Của Elaina',
-        publisherName: 'Amak',
-    },
-    {
-        vote: 11,
-        seriesName: 'Nhân Vật Hạ Cấp Tomozaki',
-        publisherName: 'Kim Đồng',
-    },
-    {
-        vote: 32,
-        seriesName: 'Sứ Giả Bốn Mùa - Vũ Điệu Mùa Xuân',
-        publisherName: 'Kim Đồng',
-    },
-    {
-        vote: 26,
-        seriesName: '86 Eighty Six',
-        publisherName: 'IPM',
-    },
-    {
-        vote: 45,
-        seriesName: 'Hành Trình Của Elaina',
-        publisherName: 'Amak',
-    },
-    {
-        vote: 11,
-        seriesName: 'Nhân Vật Hạ Cấp Tomozaki',
-        publisherName: 'Kim Đồng',
-    },
 ];
 
 const rookieRanobeList = [
@@ -172,6 +117,20 @@ const favoritePublisherList = [
         publisherName: 'Kim Đồng',
     },
 ];
+
+//Generate random data for favoriteRanobeList with unique vote and lower than 1000
+
+for (let i = 0; i < 100; i++) {
+    let randomVote = Math.floor(Math.random() * 1000);
+    while (favoriteRanobeList.some((item) => item.vote === randomVote)) {
+        randomVote = Math.floor(Math.random() * 1000);
+    }
+    favoriteRanobeList.push({
+        vote: randomVote,
+        seriesName: `Sứ Giả Bốn Mùa - ${i}`,
+        publisherName: publisherFilter[Math.floor(Math.random() * publisherFilter.length)].value,
+    });
+}
 
 // Handle list for output
 const handleList = (arr) => {
