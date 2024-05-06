@@ -6,3 +6,4 @@ export { default as LastTop10 } from './LastTop10';
 export { default as CategoryVote } from './CategoryVote';
 export { default as Introduction } from './Introduction';
 export { default as Overview } from './Overview';
+export { default as ResultModal } from './ResultModal';

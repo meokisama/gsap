@@ -43,9 +43,11 @@ function SplashScreen() {
     useChain([textInRef, propsDownRef, propsLeftRef, propsRightRef], [0, 0.5, 0.75, 0.75]);
 
     useEffect(() => {
+        document.body.style.position = 'fixed';
         const timeoutId = setTimeout(() => {
+            document.body.style.position = '';
             setShouldUnmount(true);
-        }, 5000);
+        }, 4000);
 
         return () => clearTimeout(timeoutId);
     }, []);

@@ -1,4 +1,14 @@
-import { Header, LargeText, Introduction, Overview, CategoryVote, LastTop10, Comment, Media } from 'components/home';
+import {
+    Header,
+    LargeText,
+    Introduction,
+    Overview,
+    CategoryVote,
+    LastTop10,
+    Comment,
+    Media,
+    ResultModal,
+} from 'components/home';
 import { SplashScreen, Footer } from 'components/common';
 
 function Home() {
@@ -7,6 +17,7 @@ function Home() {
             <SplashScreen />
             <Header />
             <div className="contentContainer">
+                <ResultModal />
                 <LargeText />
                 <Introduction />
                 <Overview />
