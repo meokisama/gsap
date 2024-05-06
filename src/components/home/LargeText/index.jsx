@@ -2,9 +2,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
-
 import './LargeText.scss';
-import nonoa_chibi from 'assets/nonoa_chibi.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -44,7 +42,7 @@ function LargeText() {
 
     return (
         <div className="largeText">
-            <img alt="" src={nonoa_chibi} ref={imgRef} />
+            <img alt="" src={'src/assets/nonoa_chibi.webp'} ref={imgRef} />
             <div className="container">
                 <h1 className="text">Vietnam</h1>
                 <h1 className="text">light novel</h1>

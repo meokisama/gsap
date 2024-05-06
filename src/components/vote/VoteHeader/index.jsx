@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
 import './VoteHeader.scss';
-import voteHalu from 'assets/voteHalu.webp';
 
 function VoteHeader() {
     const [imgHeight, setImgHeight] = useState(null);
@@ -41,7 +39,7 @@ function VoteHeader() {
     }, []);
     return (
         <div className="voteHeader">
-            <img id="votebanner" alt="" src={voteHalu} />
+            <img id="votebanner" alt="" src={'src/assets/voteHalu.webp'} />
             <div style={{ height: imgHeight }}></div>
         </div>
     );

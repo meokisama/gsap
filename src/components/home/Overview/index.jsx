@@ -9,9 +9,6 @@ import './Overview.scss';
 import { ROUTES } from 'constants';
 import timelineItem from './Timeline';
 import SectionTitle from '../SectionTitle';
-import rotSakura1 from 'assets/sakura1.svg';
-import chibi00 from 'assets/chibi00.webp';
-import chibi01 from 'assets/chibi01.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -157,7 +154,7 @@ function Overview() {
         );
     }, []);
 
-    const targetDate = '2024-06-08T12:00:00';
+    const targetDate = '2024-07-08T12:00:00';
     const calculateTimeLeft = () => {
         const difference = new Date(targetDate) - new Date();
         let timeLeft = {};
@@ -241,11 +238,11 @@ function Overview() {
                 <div className="voteWrapper" ref={ref2}>
                     <Link className="voteBtn" to={ROUTES.VOTE} target="_blank">
                         <span>Bình Chọn</span>
-                        <img alt="" src={rotSakura1} />
+                        <img alt="" src={'src/assets/sakura1.svg'} />
                     </Link>
                 </div>
-                <img id="chibi00" alt="" src={chibi00} ref={ref3} />
-                <img id="chibi01" alt="" src={chibi01} ref={ref4} />
+                <img id="chibi00" alt="" src={'src/assets/chibi00.webp'} ref={ref3} />
+                <img id="chibi01" alt="" src={'src/assets/chibi01.webp'} ref={ref4} />
             </div>
         </div>
     );

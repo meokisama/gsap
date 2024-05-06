@@ -1,11 +1,9 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import './LastTop10.scss';
-import gold from 'assets/gold.png';
-import silver from 'assets/silver.png';
-import bronze from 'assets/bronze.png';
+import { TOP10 } from 'constants';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -49,66 +47,18 @@ function LastTop10() {
             </div>
             <div ref={wrapper} className="top10-series">
                 <div ref={slider} className="container">
-                    <div className="panel">
-                        <div className="panel-rank">
-                            <img alt="" src={gold} />
+                    {TOP10.map((panel, index) => (
+                        <div className="panel" key={index}>
+                            <div className="panel-rank">
+                                {['gold', 'silver', 'bronze'].includes(panel.rank) ? (
+                                    <img alt="" src={`src/assets/${panel.rank}.png`} />
+                                ) : (
+                                    <span>{panel.rank}</span>
+                                )}
+                            </div>
+                            <img className="panel-cover" alt="" src={panel.src} />
                         </div>
-                        <img className="panel-cover" alt="" src="images/top10/01.webp" />
-                    </div>
-                    <div className="panel">
-                        <div className="panel-rank">
-                            <img alt="" src={silver} />
-                        </div>
-                        <img className="panel-cover" alt="" src="images/top10/02.webp" />
-                    </div>
-                    <div className="panel">
-                        <div className="panel-rank">
-                            <img alt="" src={bronze} />
-                        </div>
-                        <img className="panel-cover" alt="" src="images/top10/03.webp" />
-                    </div>
-                    <div className="panel">
-                        <div className="panel-rank">
-                            <span>#4</span>
-                        </div>
-                        <img className="panel-cover" alt="" src="images/top10/04.webp" />
-                    </div>
-                    <div className="panel">
-                        <div className="panel-rank">
-                            <span>#5</span>
-                        </div>
-                        <img className="panel-cover" alt="" src="images/top10/05.webp" />
-                    </div>
-                    <div className="panel">
-                        <div className="panel-rank">
-                            <span>#6</span>
-                        </div>
-                        <img className="panel-cover" alt="" src="images/top10/06.webp" />
-                    </div>
-                    <div className="panel">
-                        <div className="panel-rank">
-                            <span>#7</span>
-                        </div>
-                        <img className="panel-cover" alt="" src="images/top10/07.webp" />
-                    </div>
-                    <div className="panel">
-                        <div className="panel-rank">
-                            <span>#8</span>
-                        </div>
-                        <img className="panel-cover" alt="" src="images/top10/08.webp" />
-                    </div>
-                    <div className="panel">
-                        <div className="panel-rank">
-                            <span>#9</span>
-                        </div>
-                        <img className="panel-cover" alt="" src="images/top10/09.webp" />
-                    </div>
-                    <div className="panel">
-                        <div className="panel-rank">
-                            <span>#10</span>
-                        </div>
-                        <img className="panel-cover" alt="" src="images/top10/10.webp" />
-                    </div>
+                    ))}
                 </div>
             </div>
         </div>

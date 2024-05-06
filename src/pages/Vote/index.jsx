@@ -67,6 +67,8 @@ function Vote() {
         <ListComponent
             id="1"
             title="Light Novel được yêu thích nhất"
+            category="favoriteRanobe"
+            listData={favoriteRanobe}
             description={
                 <p>
                     Hạng mục đầu tiên chính là Light Novel được yêu thích nhất. Yêu không thể nín, đói không thể nhịn,
@@ -74,15 +76,15 @@ function Vote() {
                     hạng mục này.
                 </p>
             }
-            listData={favoriteRanobe}
             maxItems={10}
             notification="Bạn chỉ được chọn tối đa 10 tựa sách cho hạng mục này!"
-            category="favoriteRanobe"
             onSelectionChange={handleChildSelection}
         />,
         <ListComponent
             id="2"
             title="Light Novel tân binh của năm"
+            category="rookieRanobe"
+            listData={rookieRanobe}
             description={
                 <p>
                     Hạng mục đầu tiên chính là Light Novel được yêu thích nhất. Yêu không thể nín, đói không thể nhịn,
@@ -90,15 +92,15 @@ function Vote() {
                     hạng mục này.
                 </p>
             }
-            listData={rookieRanobe}
             maxItems={2}
             notification="Bạn chỉ được chọn tối đa 2 tựa sách cho hạng mục này!"
-            category="rookieRanobe"
             onSelectionChange={handleChildSelection}
         />,
         <ListComponent
             id="3"
             title="Light Novel được mong chờ nhất"
+            category="anticipatedRanobe"
+            listData={anticipatedRanobe}
             description={
                 <p>
                     Hạng mục đầu tiên chính là Light Novel được yêu thích nhất. Yêu không thể nín, đói không thể nhịn,
@@ -106,15 +108,15 @@ function Vote() {
                     hạng mục này.
                 </p>
             }
-            listData={anticipatedRanobe}
             maxItems={1}
             notification="Bạn chỉ được chọn tối đa 2 tựa sách cho hạng mục này!"
-            category="anticipatedRanobe"
             onSelectionChange={handleChildSelection}
         />,
         <ListComponent
             id="4"
             title="Light Novel gây thất vọng nhất"
+            category="disappointingRanobe"
+            listData={disappointingRanobe}
             description={
                 <p>
                     Hạng mục đầu tiên chính là Light Novel được yêu thích nhất. Yêu không thể nín, đói không thể nhịn,
@@ -122,15 +124,15 @@ function Vote() {
                     hạng mục này.
                 </p>
             }
-            listData={disappointingRanobe}
             maxItems={1}
             notification="Bạn chỉ được chọn tối đa 2 tựa sách cho hạng mục này!"
-            category="disappointingRanobe"
             onSelectionChange={handleChildSelection}
         />,
         <ListComponent
             id="5"
             title="Light Novel muốn có bản quyền nhất"
+            category="copyrightRanobe"
+            listData={copyrightRanobe}
             description={
                 <p>
                     Hạng mục đầu tiên chính là Light Novel được yêu thích nhất. Yêu không thể nín, đói không thể nhịn,
@@ -138,15 +140,15 @@ function Vote() {
                     hạng mục này.
                 </p>
             }
-            listData={copyrightRanobe}
             maxItems={1}
             notification="Bạn chỉ được chọn tối đa 2 tựa sách cho hạng mục này!"
-            category="copyrightRanobe"
             onSelectionChange={handleChildSelection}
         />,
         <ListComponent
             id="6"
             title="Nhà phát hành được yêu thích nhất"
+            category="favoritePublisher"
+            listData={favoritePublisher}
             description={
                 <p>
                     Hạng mục đầu tiên chính là Light Novel được yêu thích nhất. Yêu không thể nín, đói không thể nhịn,
@@ -154,10 +156,8 @@ function Vote() {
                     hạng mục này.
                 </p>
             }
-            listData={favoritePublisher}
             maxItems={1}
             notification="Bạn chỉ được chọn tối đa 1 nhà phát hành yêu thích nhất!"
-            category="favoritePublisher"
             onSelectionChange={handleChildSelection}
         />,
         <SendResult result={selectedItems} />,

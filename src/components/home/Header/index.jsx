@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom';
 import { ROUTES } from 'constants';
 import './Header.scss';
 import Sakura from '../Sakura';
-import halumonica from 'assets/headerimg.webp';
-import rotSakura1 from 'assets/sakura1.svg';
-import rotSakura2 from 'assets/sakura2.svg';
 
 function Header() {
     const [imgHeight, setImgHeight] = useState(null);
@@ -59,8 +56,8 @@ function Header() {
                             <br />
                             <span id="text03"> Việt Nam</span>
                         </h1>
-                        <img id="rotSakura1" alt="" src={rotSakura1} />
-                        <img id="rotSakura2" alt="" src={rotSakura2} />
+                        <img id="rotSakura1" alt="" src={'src/assets/sakura1.svg'} />
+                        <img id="rotSakura2" alt="" src={'src/assets/sakura2.svg'} />
                     </div>
                     <p>
                         Bạn là nhà thám hiểm rong ruổi trong những thế giới giả tưởng kỳ bí, là nhà lãnh đạo của những
@@ -72,12 +69,12 @@ function Header() {
                     <div id="textBtn">
                         <Link id="votebtn" to={ROUTES.VOTE} target="_blank">
                             <span>Bình Chọn</span>
-                            <img alt="" src={rotSakura1} />
+                            <img alt="" src={'src/assets/sakura1.svg'} />
                         </Link>
                     </div>
                 </div>
                 <div className="imgContent">
-                    <img alt="" src={halumonica} ref={imgRef} />
+                    <img alt="" src={'src/assets/headerimg.webp'} ref={imgRef} />
                 </div>
             </div>
             {shouldHide ? null : <div style={{ height: imgHeight }}></div>}

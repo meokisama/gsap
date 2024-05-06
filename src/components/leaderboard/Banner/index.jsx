@@ -1,11 +1,10 @@
 import './Banner.scss';
-import bannerimg from 'assets/bannerimg.jpg';
 
 function Banner() {
     return (
         <div className="ld-banner">
             <div className="bannerimg">
-                <img src={bannerimg} alt="" />
+                <img src={'src/assets/bannerimg.jpg'} alt="" />
             </div>
             <div className="bannertext">
                 <h1>

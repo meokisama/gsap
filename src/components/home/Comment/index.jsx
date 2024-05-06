@@ -7,9 +7,8 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import './Comment.scss';
-import { commentsList } from './Comment';
+import { COMMENTS } from 'constants';
 import SectionTitle from '../SectionTitle';
-import img from 'assets/makein2.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -80,7 +79,7 @@ function Comment() {
                     className="mySwiper"
                     ref={commentRef}
                 >
-                    {commentsList.map((comment, index) => (
+                    {COMMENTS.map((comment, index) => (
                         <SwiperSlide key={index}>
                             <div className="slideContent">
                                 <div className="avatar">
@@ -96,7 +95,7 @@ function Comment() {
                     ))}
                 </Swiper>
                 <div className="commentImg" ref={commentimgRef}>
-                    <img alt="" src={img} />
+                    <img alt="" src={'src/assets/makein2.webp'} />
                 </div>
             </div>
         </div>
