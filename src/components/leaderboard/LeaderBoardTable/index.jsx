@@ -250,9 +250,15 @@ function LeaderBoardTable() {
                 <div className="header-left-panel">
                     <div className="category-title">
                         <h1>{selectedCategory.label}</h1>
-                        <p className="h1-description">
-                            Hạng mục này có tổng cộng <strong>{data.length} tác phẩm</strong> tham gia!
-                        </p>
+                        {selectedCategory.value === 'favoritePublisher' ? (
+                            <p className="h1-description">
+                                Có tổng cộng <strong>{data.length} nhà phát hành</strong> tham gia hạng mục!
+                            </p>
+                        ) : (
+                            <p className="h1-description">
+                                Hạng mục này có tổng cộng <strong>{data.length} tác phẩm</strong> tham gia!
+                            </p>
+                        )}
                     </div>
                     <Popover placement="bottomRight" content={popoverContent} trigger="click">
                         <svg
@@ -288,22 +294,44 @@ function LeaderBoardTable() {
                 </div>
             </div>
             <div className="ld-table">
-                <Table
-                    columns={columns}
-                    dataSource={data}
-                    rowClassName={(record) => `rank-${record.rank}`}
-                    pagination={{
-                        position: ['bottomCenter'],
-                        defaultPageSize: 20,
-                        locale: { items_per_page: 'mục/trang' },
-                    }}
-                    bordered
-                    locale={{
-                        triggerDesc: 'Click để xếp theo thứ tự giảm dần',
-                        cancelSort: 'Click để xếp theo thứ tự tăng dần',
-                        filterSearchPlaceholder: 'Tìm tên nhà phát hành',
-                    }}
-                />
+                {selectedCategory.value === 'favoritePublisher' ? (
+                    <div className="publisher-table">
+                        {favoritePublisher.map((ln, index) => (
+                            <div className={`publisher-item ${ln.publisherLogo}`} key={index}>
+                                <div className="logoWrapper">
+                                    <img alt="" src={`images/publisher/${ln.publisherLogo}.webp`} loading="lazy" />
+                                </div>
+                                <div className="publisher-info">
+                                    <div className="publisher-vote">
+                                        <h3>Số bình chọn</h3>
+                                        <p>{ln.vote}</p>
+                                    </div>
+                                    <div className="publisher-rank">
+                                        <h3>Xếp hạng</h3>
+                                        <p>#{ln.rank}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                ) : (
+                    <Table
+                        columns={columns}
+                        dataSource={data}
+                        rowClassName={(record) => `rank-${record.rank}`}
+                        pagination={{
+                            position: ['bottomCenter'],
+                            defaultPageSize: 20,
+                            locale: { items_per_page: 'mục/trang' },
+                        }}
+                        bordered
+                        locale={{
+                            triggerDesc: 'Click để xếp theo thứ tự giảm dần',
+                            cancelSort: 'Click để xếp theo thứ tự tăng dần',
+                            filterSearchPlaceholder: 'Tìm tên nhà phát hành',
+                        }}
+                    />
+                )}
             </div>
         </div>
     );

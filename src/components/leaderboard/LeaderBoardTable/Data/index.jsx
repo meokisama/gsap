@@ -112,9 +112,89 @@ const copyrightRanobeList = [
 
 const favoritePublisherList = [
     {
-        vote: 17,
-        seriesName: 'Sứ Giả Bốn Mùa - favoritePublisherList',
-        publisherName: 'Kim Đồng',
+        vote: 1,
+        publisherName: 'IPM',
+        publisherLogo: 'ipm',
+    },
+    {
+        vote: 2,
+        publisherName: 'Hikari Light Novel (Thái Hà Books)',
+        publisherLogo: 'hikari',
+    },
+    {
+        vote: 3,
+        publisherName: 'Quảng Văn',
+        publisherLogo: 'quangvan',
+    },
+    {
+        vote: 4,
+        publisherName: 'Amak',
+        publisherLogo: 'amak',
+    },
+    {
+        vote: 5,
+        publisherName: 'Sky Light Novel',
+        publisherLogo: 'sky',
+    },
+    {
+        vote: 6,
+        publisherName: 'Tsuki Light Novel',
+        publisherLogo: 'tsuki',
+    },
+    {
+        vote: 7,
+        publisherName: 'Nhã Nam',
+        publisherLogo: 'nhanam',
+    },
+    {
+        vote: 8,
+        publisherName: 'Owlbooks',
+        publisherLogo: 'owlbooks',
+    },
+    {
+        vote: 9,
+        publisherName: 'Wingsbooks (Kim Đồng)',
+        publisherLogo: 'wingsbooks',
+    },
+    {
+        vote: 10,
+        publisherName: 'NXB Trẻ',
+        publisherLogo: 'tre',
+    },
+    {
+        vote: 11,
+        publisherName: 'TA Books',
+        publisherLogo: 'tabooks',
+    },
+    {
+        vote: 12,
+        publisherName: 'Ai Novel',
+        publisherLogo: 'ainovel',
+    },
+    {
+        vote: 13,
+        publisherName: 'Uranix',
+        publisherLogo: 'uranix',
+    },
+    {
+        vote: 14,
+        publisherName: 'Shine Novel',
+        publisherLogo: 'shine',
+    },
+    {
+        vote: 15,
+        publisherName: 'Usagi Light Novel',
+        publisherLogo: 'usagi',
+    },
+    {
+        vote: 16,
+        publisherName: 'Ichi Light Novel',
+        publisherLogo: 'ichi',
+    },
+    {
+        vote: 0,
+        publisherName: 'Orion Books',
+        publisherLogo: 'orion',
     },
 ];
 
