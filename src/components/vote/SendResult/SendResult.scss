@@ -173,7 +173,42 @@
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
+    .sendResult {
+        .votedContent {
+            .listItem {
+                .rItem {
+                    max-width: 100px;
+                    .rCover {
+                        height: 65%;
+                    }
+                    .info {
+                        height: 35%;
+                        h4 {
+                            font-size: 1rem;
+                            line-height: 1.5rem;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                        p {
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+            }
+            .captcha {
+                padding-top: 5rem;
+                .btnContainer {
+                    button {
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+        }
+    }
     .ipInfo {
         grid-template-columns: repeat(1, 1fr) !important;
     }

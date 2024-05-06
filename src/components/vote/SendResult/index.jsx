@@ -111,7 +111,7 @@ function SendResult({ result }) {
                             <Card>
                                 <Statistic
                                     title="Địa Chỉ IPv6"
-                                    value={ip6Address}
+                                    value={'N/A'}
                                     valueStyle={{
                                         color: '#3f8600',
                                     }}

@@ -59,7 +59,7 @@ body {
 /* End scrollbar------------------------------------------ */
 
 .contentContainer {
-    background-image: url(assets/sakura_circle.svg);
+    background-image: url(src/assets/sakura_circle.svg);
     background-repeat: no-repeat;
     background-color: #fff7f8;
     background-size: 50%;
@@ -94,45 +94,75 @@ body {
     border-radius: 20px;
     padding: 2rem;
     background-color: var(--color-background);
-    position: relative;
     overflow: hidden;
-    #btnPrev,
-    #btnNext {
-        cursor: pointer;
-        font-size: 2rem;
-        border-radius: 50%;
-        padding: 10px 13px;
-        position: absolute;
-        border: none;
-        svg {
-            width: 20px;
-            transform: translateY(2px);
-            color: aliceblue;
+    .control-button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        #btnPrev,
+        #btnNext {
+            cursor: pointer;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            svg {
+                width: 18px;
+                color: aliceblue;
+            }
+            background-color: #404660;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
         }
-        top: 15px;
-        background-color: #404660;
-        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        p {
+            width: 70%;
+            font-weight: 300;
+            color: #4e4d4d;
+            text-align: center;
+            strong {
+                font-weight: 600;
+            }
+        }
     }
-    #btnPrev {
-        left: 15px;
+
+    .control-step {
+        margin-top: 2rem;
+        width: min(100%, 900px);
+        display: block;
+        margin: 20px auto;
+        .ant-steps {
+            .ant-steps-item-icon {
+                font-family: 'Lexend';
+                font-weight: 600;
+            }
+            .ant-steps-item-process:not(.ant-steps-item-custom) {
+                .ant-steps-item-icon {
+                    background-color: #404660;
+                    border-color: #404660;
+                }
+            }
+            .ant-steps-item-custom .ant-steps-item-icon > .ant-steps-icon {
+                color: #404660;
+            }
+        }
     }
-    #btnNext {
-        right: 15px;
-    }
+
     #toTop {
         position: fixed;
         bottom: 20px;
         right: 20px;
         cursor: pointer;
-        font-size: 2rem;
         border-radius: 50%;
-        padding: 10px 13px;
-        background-color: #869dff;
+        width: 40px;
+        height: 40px;
+        background-color: #404660;
         box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
         border: none;
         opacity: 0.3;
         svg {
-            width: 30px;
+            width: 20px;
             transform: translateY(2px);
             color: aliceblue;
         }
@@ -162,5 +192,15 @@ body {
     .selected-category {
         background-color: #f193a6;
         color: white;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .voteContainer {
+        .control-button {
+            p {
+                font-size: 1.3rem;
+            }
+        }
     }
 }

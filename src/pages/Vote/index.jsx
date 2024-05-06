@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
+import { Steps } from 'antd';
+import { SendOutlined } from '@ant-design/icons';
 import { ROUTES } from 'constants';
 import { Transition, Footer, DocumentTitle } from 'components/common';
 import { VoteHeader, ListComponent, SendResult } from 'components/vote';
@@ -61,6 +63,11 @@ function Vote() {
         if (currentComponent > 0) {
             setCurrentComponent(currentComponent - 1);
         }
+    };
+
+    //onChange for Steps
+    const onChange = (current) => {
+        setCurrentComponent(current);
     };
 
     const components = [
@@ -201,49 +208,65 @@ function Vote() {
                 <div>
                     <VoteHeader />
                     <div className="voteContainer">
+                        <div className="control-button">
+                            <button
+                                className={currentComponent === 0 ? 'inactivate' : ''}
+                                id="btnPrev"
+                                onClick={handlePrevious}
+                                ref={ref1}
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth={1.5}
+                                    stroke="currentColor"
+                                    className="w-6 h-6"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+                                    />
+                                </svg>
+                            </button>
+                            <p>
+                                Chuyển hạng mục với <strong>nút mũi tên</strong> hoặc ấn vào{' '}
+                                <strong>thanh steps</strong> bên dưới.
+                            </p>
+                            <button
+                                className={isLastComponent ? 'inactivate' : ''}
+                                id="btnNext"
+                                onClick={handleNext}
+                                ref={ref2}
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth={1.5}
+                                    stroke="currentColor"
+                                    className="w-6 h-6"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                                    />
+                                </svg>
+                            </button>
+                        </div>
+                        <div className="control-step">
+                            <Steps
+                                current={currentComponent}
+                                onChange={onChange}
+                                items={[{}, {}, {}, {}, {}, {}, { icon: <SendOutlined /> }]}
+                                responsive={false}
+                            />
+                        </div>
+
                         {components[currentComponent]}
-                        <button
-                            className={currentComponent === 0 ? 'inactivate' : ''}
-                            id="btnPrev"
-                            onClick={handlePrevious}
-                            ref={ref1}
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth={1.5}
-                                stroke="currentColor"
-                                className="w-6 h-6"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
-                                />
-                            </svg>
-                        </button>
-                        <button
-                            className={isLastComponent ? 'inactivate' : ''}
-                            id="btnNext"
-                            onClick={handleNext}
-                            ref={ref2}
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth={1.5}
-                                stroke="currentColor"
-                                className="w-6 h-6"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                                />
-                            </svg>
-                        </button>
+
                         <button
                             id="toTop"
                             onClick={scrollToTop}
