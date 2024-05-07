@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import svgrPlugin from "vite-plugin-svgr";
 import jsconfigPaths from "vite-jsconfig-paths";
+import { resolve } from "path";
 
 export default defineConfig({
     server: {
@@ -9,6 +10,11 @@ export default defineConfig({
     },
     build: {
         outDir: "build",
+    },
+    resolve: {
+        alias: {
+            $fonts: resolve('./src/assets/fonts'),
+        }
     },
     plugins: [
         react(),
