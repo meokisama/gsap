@@ -139,13 +139,14 @@
         padding-bottom: 2rem;
         .result-banner {
             .bannerimg {
+                height: 220px;
                 img {
                     height: 100%;
                 }
             }
             .bannertext {
                 h1 {
-                    font-size: 400%;
+                    font-size: 300%;
                 }
             }
         }

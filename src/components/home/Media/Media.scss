@@ -99,19 +99,21 @@
 
 @media screen and (max-width: 600px) {
     .mediaContent {
-        gap: 3rem !important;
+        gap: 5px !important;
         div {
             img {
-                width: 100px !important;
-                height: 100px !important;
+                width: 70px !important;
+                height: 70px !important;
             }
         }
         p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
-
+        .username {
+            font-size: 1.3rem !important;
+        }
         .fullName {
-            font-size: 1.4rem !important;
+            font-size: 1.3rem !important;
         }
     }
 }

@@ -14,31 +14,35 @@ function LargeText() {
         const textElements = gsap.utils.toArray('.text');
         const imgElement = imgRef.current;
 
-        textElements.forEach((text) => {
-            gsap.to(text, {
-                backgroundSize: '100%',
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: text,
-                    scrub: true,
-                },
-            });
-        });
+        const mm = gsap.matchMedia();
 
-        gsap.fromTo(
-            imgElement,
-            {
-                opacity: 0,
-            },
-            {
-                opacity: 1,
-                scrollTrigger: {
-                    trigger: imgElement,
-                    end: 'top 50%',
-                    scrub: true,
+        mm.add('(min-width: 800px)', () => {
+            textElements.forEach((text) => {
+                gsap.to(text, {
+                    backgroundSize: '100%',
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: text,
+                        scrub: true,
+                    },
+                });
+            });
+
+            gsap.fromTo(
+                imgElement,
+                {
+                    opacity: 0,
                 },
-            },
-        );
+                {
+                    opacity: 1,
+                    scrollTrigger: {
+                        trigger: imgElement,
+                        end: 'top 50%',
+                        scrub: true,
+                    },
+                },
+            );
+        });
     }, []);
 
     return (

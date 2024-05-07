@@ -19,59 +19,63 @@ function Introduction() {
         const e1 = ref1.current;
         const e2 = ref2.current;
 
-        gsap.fromTo(
-            e1,
-            {
-                x: -500,
-                opacity: 0,
-            },
-            {
-                x: 0,
-                opacity: 1,
-                scrollTrigger: {
-                    trigger: e1,
-                    end: 'top 30%',
-                    scrub: true,
-                },
-            },
-        );
+        const mm = gsap.matchMedia();
 
-        gsap.fromTo(
-            e2,
-            {
-                y: -100,
-                opacity: 0,
-            },
-            {
-                y: 0,
-                opacity: 1,
-                scrollTrigger: {
-                    trigger: e2,
-                    start: 'top 80%',
-                    end: 'top 30%',
-                    scrub: true,
-                },
-            },
-        );
-
-        const rightElements = gsap.utils.toArray('.rightElement');
-        rightElements.forEach((e2) => {
+        mm.add('(min-width: 800px)', () => {
             gsap.fromTo(
-                e2,
+                e1,
                 {
-                    x: 500,
+                    x: -500,
                     opacity: 0,
                 },
                 {
                     x: 0,
                     opacity: 1,
                     scrollTrigger: {
-                        trigger: e2,
+                        trigger: e1,
                         end: 'top 30%',
                         scrub: true,
                     },
                 },
             );
+
+            gsap.fromTo(
+                e2,
+                {
+                    y: -100,
+                    opacity: 0,
+                },
+                {
+                    y: 0,
+                    opacity: 1,
+                    scrollTrigger: {
+                        trigger: e2,
+                        start: 'top 80%',
+                        end: 'top 30%',
+                        scrub: true,
+                    },
+                },
+            );
+
+            const rightElements = gsap.utils.toArray('.rightElement');
+            rightElements.forEach((e2) => {
+                gsap.fromTo(
+                    e2,
+                    {
+                        x: 500,
+                        opacity: 0,
+                    },
+                    {
+                        x: 0,
+                        opacity: 1,
+                        scrollTrigger: {
+                            trigger: e2,
+                            end: 'top 30%',
+                            scrub: true,
+                        },
+                    },
+                );
+            });
         });
     }, []);
 

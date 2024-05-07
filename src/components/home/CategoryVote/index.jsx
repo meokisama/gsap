@@ -16,41 +16,45 @@ function CategoryVote() {
         const textElements = gsap.utils.toArray('.categoryItem');
         const el = mediaRef.current;
 
-        textElements.forEach((text) => {
+        const mm = gsap.matchMedia();
+
+        mm.add('(min-width: 800px)', () => {
+            textElements.forEach((text) => {
+                gsap.fromTo(
+                    text,
+                    {
+                        x: 500,
+                        opacity: 0,
+                    },
+                    {
+                        x: 0,
+                        opacity: 1,
+                        scrollTrigger: {
+                            trigger: text,
+                            end: 'top 50%',
+                            scrub: true,
+                        },
+                    },
+                );
+            });
+
             gsap.fromTo(
-                text,
+                el,
                 {
-                    x: 500,
+                    x: -500,
                     opacity: 0,
                 },
                 {
                     x: 0,
                     opacity: 1,
                     scrollTrigger: {
-                        trigger: text,
-                        end: 'top 50%',
+                        trigger: el,
+                        end: 'top 30%',
                         scrub: true,
                     },
                 },
             );
         });
-
-        gsap.fromTo(
-            el,
-            {
-                x: -500,
-                opacity: 0,
-            },
-            {
-                x: 0,
-                opacity: 1,
-                scrollTrigger: {
-                    trigger: el,
-                    end: 'top 30%',
-                    scrub: true,
-                },
-            },
-        );
     }, []);
 
     return (

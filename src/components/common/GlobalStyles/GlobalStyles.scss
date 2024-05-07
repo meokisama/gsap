@@ -43,6 +43,7 @@ body {
 /* Start scrollbar-------------------------------------- */
 ::-webkit-scrollbar {
     width: 5px;
+    height: 4px;
 }
 
 /* Track */
@@ -50,10 +51,17 @@ body {
     background-color: white;
     border-radius: 10px;
 }
+::-webkit-scrollbar-track:horizontal {
+    background-color: transparent;
+}
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #404660;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:horizontal {
+    background: #fa7667;
     border-radius: 10px;
 }
 /* End scrollbar------------------------------------------ */

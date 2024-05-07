@@ -22,39 +22,43 @@ function Comment() {
             const el = commentRef.current;
             const elimg = commentimgRef.current;
 
-            gsap.fromTo(
-                el,
-                {
-                    x: -500,
-                    opacity: 0,
-                },
-                {
-                    x: 0,
-                    opacity: 1,
-                    scrollTrigger: {
-                        trigger: el,
-                        end: 'top 30%',
-                        scrub: true,
-                    },
-                },
-            );
+            const mm = gsap.matchMedia();
 
-            gsap.fromTo(
-                elimg,
-                {
-                    opacity: 0,
-                    y: -200,
-                },
-                {
-                    opacity: 1,
-                    y: 0,
-                    scrollTrigger: {
-                        trigger: elimg,
-                        end: 'top 30%',
-                        scrub: true,
+            mm.add('(min-width: 800px)', () => {
+                gsap.fromTo(
+                    el,
+                    {
+                        x: -500,
+                        opacity: 0,
                     },
-                },
-            );
+                    {
+                        x: 0,
+                        opacity: 1,
+                        scrollTrigger: {
+                            trigger: el,
+                            end: 'top 30%',
+                            scrub: true,
+                        },
+                    },
+                );
+
+                gsap.fromTo(
+                    elimg,
+                    {
+                        opacity: 0,
+                        y: -200,
+                    },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        scrollTrigger: {
+                            trigger: elimg,
+                            end: 'top 30%',
+                            scrub: true,
+                        },
+                    },
+                );
+            });
         }
         window.addEventListener('load', handleLoad);
 

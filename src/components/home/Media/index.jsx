@@ -11,43 +11,46 @@ function Media() {
     useGSAP(() => {
         function handleLoad() {
             const elementsLeft = gsap.utils.toArray('.mediaItemLeft');
-            elementsLeft.forEach((text) => {
-                gsap.fromTo(
-                    text,
-                    {
-                        x: -500,
-                        opacity: 0,
-                    },
-                    {
-                        x: 0,
-                        opacity: 1,
-                        scrollTrigger: {
-                            trigger: text,
-                            end: 'top 50%',
-                            scrub: true,
+            const mm = gsap.matchMedia();
+            mm.add('(min-width: 800px)', () => {
+                elementsLeft.forEach((text) => {
+                    gsap.fromTo(
+                        text,
+                        {
+                            x: -500,
+                            opacity: 0,
                         },
-                    },
-                );
-            });
+                        {
+                            x: 0,
+                            opacity: 1,
+                            scrollTrigger: {
+                                trigger: text,
+                                end: 'top 50%',
+                                scrub: true,
+                            },
+                        },
+                    );
+                });
 
-            const elementsRight = gsap.utils.toArray('.mediaItemRight');
-            elementsRight.forEach((text) => {
-                gsap.fromTo(
-                    text,
-                    {
-                        x: 500,
-                        opacity: 0,
-                    },
-                    {
-                        x: 0,
-                        opacity: 1,
-                        scrollTrigger: {
-                            trigger: text,
-                            end: 'top 50%',
-                            scrub: true,
+                const elementsRight = gsap.utils.toArray('.mediaItemRight');
+                elementsRight.forEach((text) => {
+                    gsap.fromTo(
+                        text,
+                        {
+                            x: 500,
+                            opacity: 0,
                         },
-                    },
-                );
+                        {
+                            x: 0,
+                            opacity: 1,
+                            scrollTrigger: {
+                                trigger: text,
+                                end: 'top 50%',
+                                scrub: true,
+                            },
+                        },
+                    );
+                });
             });
         }
         window.addEventListener('load', handleLoad);
@@ -67,7 +70,7 @@ function Media() {
                             <img onClick={() => window.open(media.url, '_blank')} alt="" src={media.avatar} />
                         </div>
                         <div className="mediaInfo">
-                            <span>@{media.username}</span>
+                            <span className="username">@{media.username}</span>
                             <span className="fullName">{media.name}</span>
                             <p>{media.description}</p>
                         </div>

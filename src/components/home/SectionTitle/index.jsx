@@ -12,22 +12,25 @@ function SectionTitle({ title, description }) {
 
     useGSAP(() => {
         const el = titleRef.current;
-        gsap.fromTo(
-            el,
-            {
-                y: -200,
-                opacity: 0,
-            },
-            {
-                y: 0,
-                opacity: 1,
-                scrollTrigger: {
-                    trigger: el,
-                    end: 'top 50%',
-                    scrub: true,
+        const mm = gsap.matchMedia();
+        mm.add('(min-width: 800px)', () => {
+            gsap.fromTo(
+                el,
+                {
+                    y: -200,
+                    opacity: 0,
                 },
-            },
-        );
+                {
+                    y: 0,
+                    opacity: 1,
+                    scrollTrigger: {
+                        trigger: el,
+                        end: 'top 50%',
+                        scrub: true,
+                    },
+                },
+            );
+        });
     }, []);
 
     return (

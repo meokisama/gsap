@@ -253,9 +253,24 @@
         .countdown {
             .cdwrapper {
                 width: 70%;
+                p {
+                    font-size: 1.3rem;
+                }
+                .timeLeft {
+                    h2 {
+                        font-size: 1.8rem;
+                    }
+                    span {
+                        font-size: 1.5rem;
+                    }
+                }
             }
             .voteWrapper {
                 width: 70%;
+                .voteBtn {
+                    font-size: 2.5rem;
+                    padding: 8px 15px;
+                }
             }
             #chibi00,
             #chibi01 {

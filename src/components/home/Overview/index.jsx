@@ -49,32 +49,39 @@ function Overview() {
         const el2 = stat2.current;
         const el3 = stat3.current;
         const el4 = stat4.current;
-        tl.fromTo(el1, { y: -200, opacity: 0 }, { y: 0, opacity: 1 }, 0)
-            .fromTo(el2, { y: -200, opacity: 0 }, { y: 0, opacity: 1 }, 0.5)
-            .fromTo(el3, { y: -200, opacity: 0 }, { y: 0, opacity: 1 }, 1)
-            .fromTo(el4, { y: -200, opacity: 0 }, { y: 0, opacity: 1 }, 1.5);
+
+        const mm = gsap.matchMedia();
+        mm.add('(min-width: 800px)', () => {
+            tl.fromTo(el1, { y: -200, opacity: 0 }, { y: 0, opacity: 1 }, 0)
+                .fromTo(el2, { y: -200, opacity: 0 }, { y: 0, opacity: 1 }, 0.5)
+                .fromTo(el3, { y: -200, opacity: 0 }, { y: 0, opacity: 1 }, 1)
+                .fromTo(el4, { y: -200, opacity: 0 }, { y: 0, opacity: 1 }, 1.5);
+        });
     }, []);
 
     useGSAP(() => {
         const textElements = gsap.utils.toArray('.tlref');
-        textElements.forEach((text) => {
-            gsap.fromTo(
-                text,
-                {
-                    y: -200,
-                    opacity: 0,
-                },
-                {
-                    y: 0,
-                    opacity: 1,
-                    scrollTrigger: {
-                        trigger: text,
-                        start: 'top 70%',
-                        end: 'top 40%',
-                        scrub: true,
+        const mm = gsap.matchMedia();
+        mm.add('(min-width: 800px)', () => {
+            textElements.forEach((text) => {
+                gsap.fromTo(
+                    text,
+                    {
+                        y: -200,
+                        opacity: 0,
                     },
-                },
-            );
+                    {
+                        y: 0,
+                        opacity: 1,
+                        scrollTrigger: {
+                            trigger: text,
+                            start: 'top 70%',
+                            end: 'top 40%',
+                            scrub: true,
+                        },
+                    },
+                );
+            });
         });
     }, []);
 
@@ -87,74 +94,77 @@ function Overview() {
         const el2 = ref2.current;
         const el3 = ref3.current;
         const el4 = ref4.current;
-        gsap.fromTo(
-            el1,
-            {
-                x: 200,
-                opacity: 0,
-            },
-            {
-                x: 0,
-                opacity: 1,
-                scrollTrigger: {
-                    trigger: el1,
-                    start: 'top 70%',
-                    end: 'top 40%',
-                    scrub: true,
+        const mm = gsap.matchMedia();
+        mm.add('(min-width: 800px)', () => {
+            gsap.fromTo(
+                el1,
+                {
+                    x: 200,
+                    opacity: 0,
                 },
-            },
-        );
-        gsap.fromTo(
-            el2,
-            {
-                x: -200,
-                opacity: 0,
-            },
-            {
-                x: 0,
-                opacity: 1,
-                scrollTrigger: {
-                    trigger: el2,
-                    start: 'top 70%',
-                    end: 'top 40%',
-                    scrub: true,
+                {
+                    x: 0,
+                    opacity: 1,
+                    scrollTrigger: {
+                        trigger: el1,
+                        start: 'top 70%',
+                        end: 'top 40%',
+                        scrub: true,
+                    },
                 },
-            },
-        );
-        gsap.fromTo(
-            el3,
-            {
-                x: -200,
-                opacity: 0,
-            },
-            {
-                x: 0,
-                opacity: 1,
-                scrollTrigger: {
-                    trigger: el3,
-                    start: 'top 70%',
-                    end: 'top 40%',
-                    scrub: true,
+            );
+            gsap.fromTo(
+                el2,
+                {
+                    x: -200,
+                    opacity: 0,
                 },
-            },
-        );
-        gsap.fromTo(
-            el4,
-            {
-                x: 200,
-                opacity: 0,
-            },
-            {
-                x: 0,
-                opacity: 1,
-                scrollTrigger: {
-                    trigger: el4,
-                    start: 'top 70%',
-                    end: 'top 40%',
-                    scrub: true,
+                {
+                    x: 0,
+                    opacity: 1,
+                    scrollTrigger: {
+                        trigger: el2,
+                        start: 'top 70%',
+                        end: 'top 40%',
+                        scrub: true,
+                    },
                 },
-            },
-        );
+            );
+            gsap.fromTo(
+                el3,
+                {
+                    x: -200,
+                    opacity: 0,
+                },
+                {
+                    x: 0,
+                    opacity: 1,
+                    scrollTrigger: {
+                        trigger: el3,
+                        start: 'top 70%',
+                        end: 'top 40%',
+                        scrub: true,
+                    },
+                },
+            );
+            gsap.fromTo(
+                el4,
+                {
+                    x: 200,
+                    opacity: 0,
+                },
+                {
+                    x: 0,
+                    opacity: 1,
+                    scrollTrigger: {
+                        trigger: el4,
+                        start: 'top 70%',
+                        end: 'top 40%',
+                        scrub: true,
+                    },
+                },
+            );
+        });
     }, []);
 
     const targetDate = '2024-07-08T12:00:00';

@@ -16,17 +16,20 @@ function LastTop10() {
 
     useGSAP(() => {
         function handleLoad() {
-            gsap.to(slider.current, {
-                x: -(slider.current.scrollWidth - window.innerWidth * 0.9),
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: wrapper.current,
-                    pin: true,
-                    scrub: 1,
-                    start: 'top 18%',
-                    end: '+=' + slider.current.scrollWidth,
-                    // markers: true
-                },
+            const mm = gsap.matchMedia();
+            mm.add('(min-width: 800px)', () => {
+                gsap.to(slider.current, {
+                    x: -(slider.current.scrollWidth - window.innerWidth * 0.9),
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: wrapper.current,
+                        pin: true,
+                        scrub: 1,
+                        start: 'top 18%',
+                        end: '+=' + slider.current.scrollWidth,
+                        // markers: true
+                    },
+                });
             });
         }
 

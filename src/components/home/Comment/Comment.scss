@@ -25,7 +25,7 @@
         .swiper-slide {
             background-position: center;
             background-size: cover;
-            width: min(500px, 90%);
+            width: min(500px, 85%);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -115,7 +115,8 @@
         padding-top: 0;
         .commentContent {
             .swiper {
-                width: 100%;
+                width: 98%;
+                padding-left: 0;
             }
             .commentImg {
                 display: none;
@@ -126,10 +127,26 @@
 
 @media screen and (max-width: 600px) {
     .comment {
+        padding-bottom: 0;
+        height: 80rem;
         .commentContent {
+            height: 70%;
             .slideContent {
+                .avatar {
+                    .avatarMain {
+                        width: 80px !important;
+                        height: 80px !important;
+                    }
+                    p {
+                        padding-top: 1rem !important;
+                        font-size: 1.5rem !important;
+                    }
+                }
                 .content {
-                    font-size: 2rem !important;
+                    font-size: 1.8rem !important;
+                }
+                .author {
+                    font-size: 1.3rem !important;
                 }
             }
         }

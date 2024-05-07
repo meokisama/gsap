@@ -201,9 +201,22 @@ function Vote() {
         return () => clearTimeout(timeout);
     }, []);
 
+    //Hide Transition on small screen
+    const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 800);
+    useEffect(() => {
+        const handleResize = () => {
+            setIsWideScreen(window.innerWidth > 800);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     return (
         <div>
-            <Transition />
+            {isWideScreen && <Transition />}
             {contentMouted && (
                 <div>
                     <VoteHeader />

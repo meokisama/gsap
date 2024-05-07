@@ -31,9 +31,23 @@ function Home() {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+    //Hide Splash Screen on small screen
+    const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 800);
+    useEffect(() => {
+        const handleResize = () => {
+            setIsWideScreen(window.innerWidth > 800);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     return (
         <div style={{ backgroundColor: '#fff7f8' }}>
-            <SplashScreen />
+            {isWideScreen && <SplashScreen />}
             <Header />
             <div className="contentContainer">
                 <ResultModal />
