@@ -6,7 +6,7 @@ import Sakura from '../Sakura';
 import sakura1 from 'assets/sakura1.svg';
 import sakura2 from 'assets/sakura2.svg';
 import headerimg from 'assets/headerimg.webp';
-import sakura_circle from 'assets/sakura_circle.svg';
+import sakura_circle from '../../../assets/sakura_circle.svg';
 
 function Header() {
     const [imgHeight, setImgHeight] = useState(null);

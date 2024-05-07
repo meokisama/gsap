@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Tooltip } from 'antd';
-import search_icon from 'assets/search_icon.svg';
+import search_icon from '../../../assets/search_icon.svg';
 import './ListComponent.scss';
 import Category from '../Category';
 import { MessageHub } from 'components/common';

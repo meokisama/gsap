@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Modal } from 'antd';
 import { ROUTES } from 'constants';
 import './ResultModal.scss';
-import bannerimg from 'assets/bannerimg.jpg';
+import bannerimg from 'assets/bannerimg.webp';
 
 function ResultModal() {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
-        showModal();
-        // const timer = setTimeout(showModal, 2000);
-        // return () => clearTimeout(timer);
+        const timer = setTimeout(showModal, 4000);
+        return () => clearTimeout(timer);
     }, []);
 
     const showModal = () => {
@@ -65,7 +65,9 @@ function ResultModal() {
                             này và chúng tôi hy vọng cộng đồng sẽ tiếp tục ủng hộ bảng xếp hạng cũng như thưởng thức
                             những tác phẩm light novel tuyệt vời tiếp theo trong tương lai. Trân trọng.
                         </p>
-                        <span onClick={() => window.open(ROUTES.LEADERBOARD, '_blank')}>XEM KẾT QUẢ</span>
+                        <Link to={ROUTES.LEADERBOARD} target="_blank">
+                            <span>XEM KẾT QUẢ</span>
+                        </Link>
                     </div>
                 </div>
             </Modal>
