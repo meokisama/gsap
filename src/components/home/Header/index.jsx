@@ -71,6 +71,10 @@ function Header() {
                             <span>Bình Chọn</span>
                             <img alt="" src={'src/assets/sakura1.svg'} />
                         </Link>
+                        <Link id="leaderboard-btn" to={ROUTES.LEADERBOARD} target="_blank">
+                            <span>Xem kết quả</span>
+                            <img alt="" src={'src/assets/sakura1.svg'} />
+                        </Link>
                     </div>
                 </div>
                 <div className="imgContent">

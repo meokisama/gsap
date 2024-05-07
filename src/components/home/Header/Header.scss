@@ -98,7 +98,10 @@
             }
             #textBtn {
                 padding-bottom: 8%;
-                #votebtn {
+                display: flex;
+                gap: 10px;
+                #votebtn,
+                #leaderboard-btn {
                     font-family: 'Phudu';
                     text-decoration: none;
                     font-weight: 900;
@@ -204,6 +207,11 @@
                         left: 28%;
                     }
                 }
+                #textBtn {
+                    #votebtn {
+                        border-radius: 10px;
+                    }
+                }
             }
         }
     }
@@ -250,7 +258,7 @@
                         font-size: 4vw;
                         width: 40%;
                         padding: 15px;
-                        border-radius: 7px;
+                        border-radius: 10px;
                     }
                 }
             }
