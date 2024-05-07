@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Tooltip } from 'antd';
-
+import search_icon from 'assets/search_icon.svg';
 import './ListComponent.scss';
 import Category from '../Category';
 import { MessageHub } from 'components/common';
@@ -79,6 +79,7 @@ function ListComponent({ id, title, description, listData, maxItems, notificatio
                         placeholder="Lọc theo tên bất kể hoa thường dấu hoặc không dấu..."
                         value={searchInput}
                         onChange={handleSearchInputChange}
+                        style={{ backgroundImage: `url(${search_icon})` }}
                     />
                 </Tooltip>
                 <Tooltip title="Nhấn để hiển thị những tác phẩm mà bạn đang lựa chọn, nhấn một lần nữa để hiển thị lại tất cả.">

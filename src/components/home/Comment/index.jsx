@@ -9,6 +9,7 @@ import { useGSAP } from '@gsap/react';
 import './Comment.scss';
 import { COMMENTS } from 'constants';
 import SectionTitle from '../SectionTitle';
+import makein2 from 'assets/makein2.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -95,7 +96,7 @@ function Comment() {
                     ))}
                 </Swiper>
                 <div className="commentImg" ref={commentimgRef}>
-                    <img alt="" src={'src/assets/makein2.webp'} />
+                    <img alt="" src={makein2} />
                 </div>
             </div>
         </div>

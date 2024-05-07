@@ -5,6 +5,7 @@ import { useGSAP } from '@gsap/react';
 import './CategoryVote.scss';
 import SectionTitle from '../SectionTitle';
 import { CATEGORIES } from 'constants';
+import makein from 'assets/makein.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -57,7 +58,7 @@ function CategoryVote() {
             <SectionTitle title="Hạng Mục" description="Những hạng mục bình chọn cho bảng xếp hạng năm nay!" />
             <div className="categoryContainer">
                 <div className="categoryImg" ref={mediaRef}>
-                    <img id="haruhi" alt="" src={'src/assets/makein.webp'} />
+                    <img id="haruhi" alt="" src={makein} />
                 </div>
                 <div className="categoryText">
                     {CATEGORIES.map((category, index) => (

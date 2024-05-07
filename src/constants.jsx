@@ -1,3 +1,12 @@
+import gold from 'assets/gold.png';
+import silver from 'assets/silver.png';
+import bronze from 'assets/bronze.png';
+import tl01 from 'assets/tl01.webp';
+import tl02 from 'assets/tl02.webp';
+import tl03 from 'assets/tl03.webp';
+import tl04 from 'assets/tl04.webp';
+import tl05 from 'assets/tl05.webp';
+
 const ROUTES = {
     HOME: '/',
     VOTE: '/vote',
@@ -32,9 +41,9 @@ const CATEGORIES = [
 ];
 
 const TOP10 = [
-    { rank: 'gold', src: 'images/top10/01.webp' },
-    { rank: 'silver', src: 'images/top10/02.webp' },
-    { rank: 'bronze', src: 'images/top10/03.webp' },
+    { rank: gold, src: 'images/top10/01.webp' },
+    { rank: silver, src: 'images/top10/02.webp' },
+    { rank: bronze, src: 'images/top10/03.webp' },
     { rank: '#4', src: 'images/top10/04.webp' },
     { rank: '#5', src: 'images/top10/05.webp' },
     { rank: '#6', src: 'images/top10/06.webp' },
@@ -46,21 +55,21 @@ const TOP10 = [
 
 const TIMELINE = [
     {
-        index: 'tl01',
+        index: tl01,
         date: '22-22/22/2024',
         description: 'Đăng bài phỏng vấn, PR các fandom lên dần chuẩn bị cho sự kiện.',
         position: 'right',
         optional: false,
     },
     {
-        index: 'tl02',
+        index: tl02,
         date: '22-22/22/2024',
         description: 'Công bố ra mắt banner Bảng Xếp Hạng Light Novel Việt Nam cuối 2023.',
         position: 'left',
         optional: false,
     },
     {
-        index: 'tl03',
+        index: tl03,
         date: '22-22/22/2024',
         description:
             'Chính thức mở bình chọn BXH LNVN cuối năm 2023 với các hạng mục được giới thiệu ở phần tiếp theo.',
@@ -68,14 +77,14 @@ const TIMELINE = [
         optional: true,
     },
     {
-        index: 'tl04',
+        index: tl04,
         date: '22-22/22/2024',
         description: 'Ban tổ chức tiến hành tổng hợp các lượt bình chọn và xử lý kết quả.',
         position: 'left',
         optional: false,
     },
     {
-        index: 'tl05',
+        index: tl05,
         date: '22-22/22/2024',
         description: 'Đăng bài tổng kết bảng xếp hạng và ảnh mừng các tác phẩm đứng đầu.',
         position: 'right',

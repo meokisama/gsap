@@ -4,6 +4,9 @@ import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
 import './LastTop10.scss';
 import { TOP10 } from 'constants';
+import gold from 'assets/gold.png';
+import silver from 'assets/silver.png';
+import bronze from 'assets/bronze.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,8 +53,8 @@ function LastTop10() {
                     {TOP10.map((panel, index) => (
                         <div className="panel" key={index}>
                             <div className="panel-rank">
-                                {['gold', 'silver', 'bronze'].includes(panel.rank) ? (
-                                    <img alt="" src={`src/assets/${panel.rank}.png`} />
+                                {panel.rank === gold || panel.rank === silver || panel.rank === bronze ? (
+                                    <img alt="" src={panel.rank} />
                                 ) : (
                                     <span>{panel.rank}</span>
                                 )}

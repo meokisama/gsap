@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Modal } from 'antd';
 import { ROUTES } from 'constants';
 import './ResultModal.scss';
+import bannerimg from 'assets/bannerimg.jpg';
 
 function ResultModal() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -39,7 +40,7 @@ function ResultModal() {
                 <div className="result-modal">
                     <div className="result-banner">
                         <div className="bannerimg">
-                            <img src={'src/assets/bannerimg.jpg'} alt="" />
+                            <img src={bannerimg} alt="" />
                         </div>
                         <div className="bannertext">
                             <h1>

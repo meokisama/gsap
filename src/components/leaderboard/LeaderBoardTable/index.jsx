@@ -3,6 +3,10 @@ import { SearchOutlined, UserOutlined } from '@ant-design/icons';
 import { Table, Button, Input, Space, Popover, Rate } from 'antd';
 import Highlighter from 'react-highlight-words';
 import './LeaderBoardTable.scss';
+import gold from 'assets/gold.png';
+import silver from 'assets/silver.png';
+import bronze from 'assets/bronze.png';
+import nonoa_chibi from 'assets/nonoa_chibi.webp';
 import {
     publisherFilter,
     rookieRanobe,
@@ -130,9 +134,9 @@ function LeaderBoardTable() {
             render: (rank) => {
                 const rankColors = ['#e79827', '#7784a5', '#b46933'];
                 const rankImages = [
-                    <img src={`src/assets/gold.png`} alt="" width={20} />,
-                    <img src={`src/assets/silver.png`} alt="" width={20} />,
-                    <img src={`src/assets/bronze.png`} alt="" width={20} />,
+                    <img src={gold} alt="" width={20} />,
+                    <img src={silver} alt="" width={20} />,
+                    <img src={bronze} alt="" width={20} />,
                 ];
                 const getRankImage = (rank) =>
                     (
@@ -244,7 +248,7 @@ function LeaderBoardTable() {
                 <strong>lọc ra các tác phẩm của mỗi nhà xuất bản</strong> tương ứng.
             </p>
             <div className="ld-chibi">
-                <img src={'src/assets/nonoa_chibi.webp'} alt="" />
+                <img src={nonoa_chibi} alt="" />
             </div>
             <div className="ld-table-header">
                 <div className="header-left-panel">

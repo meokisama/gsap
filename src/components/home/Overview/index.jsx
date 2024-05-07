@@ -9,6 +9,9 @@ import './Overview.scss';
 import { ROUTES } from 'constants';
 import timelineItem from './Timeline';
 import SectionTitle from '../SectionTitle';
+import chibi00 from 'assets/chibi00.webp';
+import chibi01 from 'assets/chibi01.webp';
+import sakura1 from 'assets/sakura1.svg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -238,11 +241,11 @@ function Overview() {
                 <div className="voteWrapper" ref={ref2}>
                     <Link className="voteBtn" to={ROUTES.VOTE} target="_blank">
                         <span>Bình Chọn</span>
-                        <img alt="" src={'src/assets/sakura1.svg'} />
+                        <img alt="" src={sakura1} />
                     </Link>
                 </div>
-                <img id="chibi00" alt="" src={'src/assets/chibi00.webp'} ref={ref3} />
-                <img id="chibi01" alt="" src={'src/assets/chibi01.webp'} ref={ref4} />
+                <img id="chibi00" alt="" src={chibi00} ref={ref3} />
+                <img id="chibi01" alt="" src={chibi01} ref={ref4} />
             </div>
         </div>
     );

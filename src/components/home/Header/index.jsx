@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import { ROUTES } from 'constants';
 import './Header.scss';
 import Sakura from '../Sakura';
+import sakura1 from 'assets/sakura1.svg';
+import sakura2 from 'assets/sakura2.svg';
+import headerimg from 'assets/headerimg.webp';
+import sakura_circle from 'assets/sakura_circle.svg';
 
 function Header() {
     const [imgHeight, setImgHeight] = useState(null);
@@ -45,7 +49,7 @@ function Header() {
 
     return (
         <div className="header">
-            <div className="headerContent" ref={bannerRef}>
+            <div className="headerContent" ref={bannerRef} style={{ backgroundImage: `url(${sakura_circle})` }}>
                 <Sakura density={60} />
                 <div className="textContent">
                     <div className="textTitle">
@@ -56,8 +60,8 @@ function Header() {
                             <br />
                             <span id="text03"> Việt Nam</span>
                         </h1>
-                        <img id="rotSakura1" alt="" src={'src/assets/sakura1.svg'} />
-                        <img id="rotSakura2" alt="" src={'src/assets/sakura2.svg'} />
+                        <img id="rotSakura1" alt="" src={sakura1} />
+                        <img id="rotSakura2" alt="" src={sakura2} />
                     </div>
                     <p>
                         Bạn là nhà thám hiểm rong ruổi trong những thế giới giả tưởng kỳ bí, là nhà lãnh đạo của những
@@ -69,16 +73,16 @@ function Header() {
                     <div id="textBtn">
                         <Link id="votebtn" to={ROUTES.VOTE} target="_blank">
                             <span>Bình Chọn</span>
-                            <img alt="" src={'src/assets/sakura1.svg'} />
+                            <img alt="" src={sakura1} />
                         </Link>
                         <Link id="leaderboard-btn" to={ROUTES.LEADERBOARD} target="_blank">
                             <span>Xem kết quả</span>
-                            <img alt="" src={'src/assets/sakura1.svg'} />
+                            <img alt="" src={sakura1} />
                         </Link>
                     </div>
                 </div>
                 <div className="imgContent">
-                    <img alt="" src={'src/assets/headerimg.webp'} ref={imgRef} />
+                    <img alt="" src={headerimg} ref={imgRef} />
                 </div>
             </div>
             {shouldHide ? null : <div style={{ height: imgHeight }}></div>}
