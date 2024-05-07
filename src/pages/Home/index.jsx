@@ -11,7 +11,6 @@ import {
     ResultModal,
 } from 'components/home';
 import { SplashScreen, Footer } from 'components/common';
-import sakura_circle from '../../assets/sakura_circle.svg';
 
 function Home() {
     //Scroll to top
@@ -36,7 +35,7 @@ function Home() {
         <div style={{ backgroundColor: '#fff7f8' }}>
             <SplashScreen />
             <Header />
-            <div className="contentContainer" style={{ backgroundImage: `url(${sakura_circle})` }}>
+            <div className="contentContainer">
                 <ResultModal />
                 <LargeText />
                 <Introduction />

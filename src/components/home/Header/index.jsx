@@ -6,7 +6,6 @@ import Sakura from '../Sakura';
 import sakura1 from 'assets/sakura1.svg';
 import sakura2 from 'assets/sakura2.svg';
 import headerimg from 'assets/headerimg.webp';
-import sakura_circle from '../../../assets/sakura_circle.svg';
 
 function Header() {
     const [imgHeight, setImgHeight] = useState(null);
@@ -49,7 +48,7 @@ function Header() {
 
     return (
         <div className="header">
-            <div className="headerContent" ref={bannerRef} style={{ backgroundImage: `url(${sakura_circle})` }}>
+            <div className="headerContent" ref={bannerRef}>
                 <Sakura density={60} />
                 <div className="textContent">
                     <div className="textTitle">
