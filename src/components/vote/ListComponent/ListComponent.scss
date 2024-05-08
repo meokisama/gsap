@@ -331,3 +331,27 @@
         }
     }
 }
+
+@media screen and (max-width: 480px) {
+    .ranobeContainer {
+        .ranobeList {
+            .lnItem {
+                max-width: 100px;
+                .coverWrapper {
+                    height: 65%;
+                }
+                .info {
+                    height: 35%;
+                    padding: 0 5px;
+                    h4 {
+                        font-size: 1rem;
+                        line-height: 1.3rem;
+                    }
+                    p {
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+        }
+    }
+}

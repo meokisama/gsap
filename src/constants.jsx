@@ -13,6 +13,59 @@ const ROUTES = {
     LEADERBOARD: '/leaderboard',
 };
 
+const INTRODUCTION_INFO = [
+    {
+        title: 'Về Bảng Xếp Hạng',
+        content: (
+            <div>
+                <p>
+                    Trong cộng đồng độc giả Light Novel, có một <strong>Bảng Xếp Hạng Light Novel Việt Nam</strong> tỏa
+                    sáng như một điểm đến tinh thần, nơi những tâm hồn đam mê văn học Nhật Bản hội tụ, cùng chia sẻ đam
+                    mê và khám phá những tác phẩm đình đám nhất. Hành trình này không chỉ là một cuộc bình chọn, mà còn
+                    là một cuộc phiêu lưu, một hành trình khám phá văn hóa và tinh thần, đan xen giữa sức sáng tạo của
+                    tác giả và niềm đam mê của độc giả.
+                </p>
+                <p>
+                    Mỗi năm, khi <strong>Bảng Xếp Hạng Light Novel Việt Nam</strong> khởi động, một cuộc bình chọn hoành
+                    tráng mở ra, mời gọi toàn bộ cộng đồng dấn thân vào cuộc hành trình tìm ra những tác phẩm vượt trội
+                    nhất, những câu chuyện cảm xúc nhất, những nhân vật hấp dẫn nhất.
+                </p>
+                <p>
+                    Hơn hết, <strong>Bảng Xếp Hạng Light Novel Việt Nam</strong> không chỉ là một sân chơi giành cho các
+                    tác phẩm, mà còn góp phần xây dựng cộng đồng, tạo ra một không gian văn hóa nơi mà mọi người có thể
+                    cùng nhau giao lưu, trao đổi, lan tỏa niềm đam mê và tận hưởng sự phong phú của văn học Light Novel.
+                </p>
+            </div>
+        ),
+    },
+    {
+        title: 'Về Ban Tổ Chức',
+        content: (
+            <div>
+                <p>
+                    Và ở tận cốt lõi của <strong>Bảng Xếp Hạng Light Novel Việt Nam</strong> chính là đội ngũ ban tổ
+                    chức và truyền thông, một đội ngũ đam mê và tận tâm dẫn đầu bởi{' '}
+                    <strong style={{ color: 'rgb(85, 83, 83)' }}>Baka Hyddyt</strong>, là những người sẵn lòng hy sinh
+                    thời gian và công sức để tạo ra một sân chơi công bằng và chất lượng nhất cho cộng đồng yêu thích
+                    Light Novel.
+                </p>
+                <p>
+                    Họ không chỉ là những người tổ chức, mà còn là những người đại diện cho cộng đồng độc giả, là những
+                    người truyền cảm hứng và gieo mầm ước mơ, dẫn dắt nhưng tâm hồn mới rong ruổi trong những thế giới
+                    văn học hấp dẫn.
+                </p>
+                <p>
+                    Kể từ năm 2018, ban tổ chức của <strong>Bảng Xếp Hạng Light Novel Việt Nam</strong> đã bắt đầu hành
+                    trình đầy tham vọng đó. Trải qua nhiều thăng trầm, vượt qua mọi thách thức để tạo ra một không gian
+                    đầy màu sắc cho cộng đồng yêu thích Light Novel. Bằng tâm huyết và nỗ lực không ngừng, họ đang xây
+                    dựng một cộng đồng mạnh mẽ và đầy sức sống, nơi mà mỗi tác phẩm và mỗi đam mê đều được tôn vinh và
+                    lan tỏa.
+                </p>
+            </div>
+        ),
+    },
+];
+
 const AUTHORS = [
     {
         name: 'Hyddyt',
@@ -196,4 +249,4 @@ const COMMENTS = [
     },
 ];
 
-export { ROUTES, AUTHORS, CATEGORIES, COMMENTS, TOP10, COLLAB_PAGES, TIMELINE };
+export { ROUTES, INTRODUCTION_INFO, AUTHORS, CATEGORIES, COMMENTS, TOP10, COLLAB_PAGES, TIMELINE };

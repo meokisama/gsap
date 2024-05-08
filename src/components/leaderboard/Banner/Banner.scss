@@ -20,7 +20,7 @@
         h1 {
             font-family: 'Phudu';
             font-size: 6vw;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             line-height: 5.6vw;
             text-align: center;
             filter: drop-shadow(2px 2px 30px rgb(20, 10, 10));
@@ -81,11 +81,13 @@
             h1 {
                 font-size: 12vw;
                 line-height: 11vw;
+                letter-spacing: 0;
             }
             #extra {
                 font-size: 1.2rem;
                 border: 1px solid rgb(255, 211, 211);
                 padding: 10px;
+                border-radius: 6px;
             }
         }
     }
