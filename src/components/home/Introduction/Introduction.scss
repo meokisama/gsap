@@ -2,7 +2,7 @@
     max-width: 1350px;
     margin: 0 auto;
     padding: 15rem 3rem;
-    margin-top: -35rem;
+    margin-top: -20rem;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -113,7 +113,7 @@
 @media screen and (max-width: 750px) {
     .introduction {
         padding: 0rem 1rem;
-        margin-top: -20rem;
+        margin-top: -10rem;
         #saki {
             width: 300px;
             transform: translateY(39.8%);

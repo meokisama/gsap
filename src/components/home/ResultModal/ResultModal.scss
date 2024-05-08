@@ -40,9 +40,11 @@
             display: inline-block;
             text-align: center;
             h1 {
-                font-family: 'Phudu';
-                font-size: 500%;
-                line-height: 100%;
+                font-family: 'Jaro';
+                text-transform: uppercase;
+                font-weight: normal;
+                font-size: 550%;
+                line-height: 84%;
                 text-align: center;
                 filter: drop-shadow(2px 2px 20px rgb(20, 10, 10));
                 #bannertext01 {
@@ -144,7 +146,8 @@
             }
             .bannertext {
                 h1 {
-                    font-size: 300%;
+                    font-size: 350%;
+                    letter-spacing: -1.5px;
                 }
             }
         }

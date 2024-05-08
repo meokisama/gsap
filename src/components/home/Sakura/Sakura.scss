@@ -203,3 +203,9 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .sakuraAnimation {
+        display: none;
+    }
+}

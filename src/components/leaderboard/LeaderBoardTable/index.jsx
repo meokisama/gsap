@@ -312,7 +312,10 @@ function LeaderBoardTable() {
                                     </div>
                                     <div className="publisher-rank">
                                         <h3>Xếp hạng</h3>
-                                        <p>#{ln.rank}</p>
+                                        <p>
+                                            <span>#</span>
+                                            {ln.rank}
+                                        </p>
                                     </div>
                                 </div>
                             </div>

@@ -18,10 +18,11 @@
         display: inline-block;
         text-align: center;
         h1 {
-            font-family: 'Phudu';
-            font-size: 6vw;
-            letter-spacing: 1px;
-            line-height: 5.6vw;
+            font-family: 'Jaro';
+            text-transform: uppercase;
+            font-weight: normal;
+            font-size: 7vw;
+            line-height: 5.8vw;
             text-align: center;
             filter: drop-shadow(2px 2px 30px rgb(20, 10, 10));
             #bannertext01 {
@@ -79,9 +80,9 @@
     .ld-banner {
         .bannertext {
             h1 {
-                font-size: 12vw;
-                line-height: 11vw;
-                letter-spacing: 0;
+                font-size: 14vw;
+                line-height: 12vw;
+                letter-spacing: -1.5px;
             }
             #extra {
                 font-size: 1.2rem;
