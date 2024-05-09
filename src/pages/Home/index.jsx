@@ -63,7 +63,7 @@ function Home() {
                     id="toTop"
                     onClick={scrollToTop}
                     style={{
-                        display: isVisible ? 'block' : 'none',
+                        display: isVisible ? 'flex' : 'none',
                     }}
                 >
                     <svg
