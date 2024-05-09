@@ -20,9 +20,9 @@ More than that, the **Vietnamese Light Novel Ranking** is not just a playground 
 
 ##
 
-![](preview/demo.png)
+![](preview/demo.jpg)
 
-## About Comettee
+## About Committee
 
 And at the heart of the **Vietnamese Light Novel Ranking** is the organizing and communications team, a passionate and dedicated team led by Baka Hyddyt, who are willing to sacrifice their time and effort to create the fairest and highest quality playground for the Light Novel community.
 
@@ -32,4 +32,4 @@ Since 2018, the organizing committee of the **Vietnamese Light Novel Ranking** h
 
 ##
 
-![](preview/publisher.png)
+![](preview/publisher.jpg)
