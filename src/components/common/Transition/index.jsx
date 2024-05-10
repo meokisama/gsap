@@ -33,9 +33,9 @@ function Transition() {
     useChain([propsTransRef, propsLeftRef, propsRightRef], [0, 0.5, 0.5]);
 
     useEffect(() => {
-        document.body.style.overflowY = 'hidden';
+        document.body.style.position = 'fixed';
         const timeoutId = setTimeout(() => {
-            document.body.style.overflowY = 'auto';
+            document.body.style.position = '';
             setShouldUnmount(true);
         }, 4000);
 

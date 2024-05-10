@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Modal } from 'antd';
 import { ROUTES } from 'constants';
 import './ResultModal.scss';
-import bannerimg from 'assets/bannerimg.webp';
+import bannerimg from 'assets/popup_img.webp';
 
 function ResultModal() {
     const [isModalOpen, setIsModalOpen] = useState(false);

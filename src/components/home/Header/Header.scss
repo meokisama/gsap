@@ -233,22 +233,24 @@
                         font-size: 14vw;
                         line-height: 12vw;
                         letter-spacing: -1.5px;
+                        position: relative;
+                        z-index: 2;
                     }
                     #rotSakura1 {
-                        top: 55%;
+                        top: 60%;
                         left: 85%;
                         z-index: 1;
                     }
                     #rotSakura2 {
                         width: 12%;
-                        top: 61%;
+                        top: 65%;
                         left: 12%;
                         z-index: 1;
                     }
                 }
                 p {
                     margin: 0 auto;
-                    font-size: 3.1vw;
+                    font-size: 2rem;
                     width: 90%;
                 }
                 #textBtn {
@@ -267,6 +269,46 @@
                 width: 80%;
                 img {
                     margin-left: 0;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 600px) {
+    .header {
+        .headerContent {
+            .textContent {
+                .textTitle {
+                    #rotSakura1 {
+                        top: 60%;
+                        left: 85%;
+                    }
+                    #rotSakura2 {
+                        top: 65%;
+                        left: 12%;
+                    }
+                }
+                p {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header {
+        .headerContent {
+            .textContent {
+                .textTitle {
+                    #rotSakura1 {
+                        top: 55%;
+                        left: 85%;
+                    }
+                    #rotSakura2 {
+                        top: 60%;
+                        left: 12%;
+                    }
                 }
             }
         }

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { ROUTES } from 'constants';
 import { Transition, Footer, DocumentTitle } from 'components/common';
-import { VoteHeader, ListComponent, SendResult, StepBar } from 'components/vote';
+import { VoteHeader, ListComponent, SendResult, StepBar, PopupModal } from 'components/vote';
 import {
     favoriteRanobe,
     rookieRanobe,
@@ -58,12 +58,14 @@ function Vote() {
     const handleNext = () => {
         if (currentComponent < components.length - 1) {
             setCurrentComponent(currentComponent + 1);
+            scrollToTop();
         }
     };
 
     const handlePrevious = () => {
         if (currentComponent > 0) {
             setCurrentComponent(currentComponent - 1);
+            scrollToTop();
         }
     };
 
@@ -220,6 +222,7 @@ function Vote() {
     return (
         <div>
             {isWideScreen && <Transition />}
+            <PopupModal />
             {contentMouted && (
                 <div>
                     <StepBar
