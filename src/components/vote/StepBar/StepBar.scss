@@ -1,0 +1,91 @@
+.step-bar {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 100;
+    .control-button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: min(100%, 1200px);
+        background-color: white;
+        padding: 10px 20px 15px;
+        border-radius: 0 0 10px 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        #btnPrev,
+        #btnNext {
+            cursor: pointer;
+            border-radius: 8px;
+            width: 40px;
+            height: 40px;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            svg {
+                width: 18px;
+                color: aliceblue;
+            }
+            background-color: #404660;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        }
+        .control-step {
+            width: 70%;
+            .ant-steps {
+                .ant-steps-item-icon {
+                    font-family: 'Lexend';
+                    font-weight: 600;
+                    margin-inline-end: 0;
+                }
+                .ant-steps-item-process:not(.ant-steps-item-custom) {
+                    .ant-steps-item-icon {
+                        background-color: #404660;
+                        border-color: #404660;
+                    }
+                }
+                .ant-steps-item-custom .ant-steps-item-icon > .ant-steps-icon {
+                    color: #404660;
+                }
+                .ant-steps-item:first-child .ant-steps-item-container {
+                    margin-inline-start: 0;
+                }
+            }
+        }
+        .inactivate {
+            opacity: 0.3;
+            pointer-events: none;
+            cursor: default;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .step-bar {
+        .control-button {
+            padding: 0px 5px;
+            border-radius: 0;
+            #btnPrev,
+            #btnNext {
+                display: none;
+            }
+            .control-step {
+                width: 100%;
+                .ant-steps {
+                    .ant-steps-item::before {
+                        bottom: 5px;
+                    }
+                    .ant-steps-item::after {
+                        width: 6px;
+                        height: 6px;
+                    }
+                    .anticon svg {
+                        width: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

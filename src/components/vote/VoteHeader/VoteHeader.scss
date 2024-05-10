@@ -5,3 +5,9 @@
         z-index: -1;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .voteHeader {
+        padding-top: 50px;
+    }
+}

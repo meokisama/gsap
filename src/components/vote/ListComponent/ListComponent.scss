@@ -286,12 +286,15 @@
             }
             button {
                 font-size: 1.3rem;
+                padding: 13px;
+                border-radius: 8px;
             }
         }
         .ranobeList {
             gap: 1rem;
             .lnItem {
                 max-width: 110px;
+                border-radius: 5px;
                 .coverWrapper {
                     height: 65%;
                 }
@@ -336,7 +339,7 @@
     .ranobeContainer {
         .ranobeList {
             .lnItem {
-                max-width: 100px;
+                max-width: 105px;
                 .coverWrapper {
                     height: 65%;
                 }

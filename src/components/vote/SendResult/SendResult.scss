@@ -205,10 +205,32 @@
                         font-size: 1.8rem;
                     }
                 }
+                .showSuccess {
+                    h3 {
+                        font-size: 1.5rem;
+                    }
+                    p {
+                        font-size: 1.2rem;
+                    }
+                }
             }
+        }
+        .rPublisher {
+            width: 100px !important;
+            height: 100px !important;
+            border-radius: 15px !important;
         }
     }
     .ipInfo {
         grid-template-columns: repeat(1, 1fr) !important;
+    }
+    .ant-card-head-title {
+        font-size: 1.25rem !important;
+    }
+    .ant-statistic-content-value {
+        font-size: 2rem !important;
+    }
+    .ant-statistic .anticon svg {
+        width: 2rem !important;
     }
 }

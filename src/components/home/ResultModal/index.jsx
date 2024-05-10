@@ -25,6 +25,18 @@ function ResultModal() {
         setIsModalOpen(false);
     };
 
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     return (
         <>
             <Modal
@@ -33,7 +45,7 @@ function ResultModal() {
                 onCancel={handleCancel}
                 centered
                 footer={[]}
-                width={800}
+                width={isMobile ? 500 : 800}
                 zIndex={479}
                 destroyOnClose={true}
             >

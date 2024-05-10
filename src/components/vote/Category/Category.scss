@@ -1,5 +1,4 @@
 .category {
-    margin-top: 50px;
     padding: 0 0 5rem;
     h1 {
         font-weight: 800;
@@ -25,13 +24,26 @@
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     .category {
+        padding-bottom: 2rem;
         h1 {
             font-size: 2.5rem;
         }
         p {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .category {
+        padding-bottom: 2rem;
+        h1 {
+            font-size: 2rem;
+        }
+        p {
+            font-size: 1.2rem;
         }
     }
 }

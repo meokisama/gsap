@@ -104,64 +104,6 @@ body {
     padding: 2rem;
     background-color: var(--color-background);
     overflow: hidden;
-    .control-button {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        #btnPrev,
-        #btnNext {
-            cursor: pointer;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            border: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            svg {
-                width: 18px;
-                color: aliceblue;
-            }
-            background-color: #404660;
-            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-        }
-        p {
-            width: 70%;
-            font-weight: 300;
-            color: #4e4d4d;
-            text-align: center;
-            strong {
-                font-weight: 600;
-            }
-        }
-    }
-
-    .control-step {
-        margin-top: 2rem;
-        width: min(100%, 900px);
-        display: block;
-        margin: 20px auto;
-        .ant-steps {
-            .ant-steps-item-icon {
-                font-family: 'Lexend';
-                font-weight: 600;
-            }
-            .ant-steps-item-process:not(.ant-steps-item-custom) {
-                .ant-steps-item-icon {
-                    background-color: #404660;
-                    border-color: #404660;
-                }
-            }
-            .ant-steps-item-custom .ant-steps-item-icon > .ant-steps-icon {
-                color: #404660;
-            }
-        }
-    }
-    .inactivate {
-        opacity: 0.3;
-        pointer-events: none;
-        cursor: default;
-    }
 }
 
 #toTop {

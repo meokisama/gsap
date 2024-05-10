@@ -1,9 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
-import { Steps } from 'antd';
-import { SendOutlined } from '@ant-design/icons';
 import { ROUTES } from 'constants';
 import { Transition, Footer, DocumentTitle } from 'components/common';
-import { VoteHeader, ListComponent, SendResult } from 'components/vote';
+import { VoteHeader, ListComponent, SendResult, StepBar } from 'components/vote';
 import {
     favoriteRanobe,
     rookieRanobe,
@@ -16,13 +14,17 @@ import {
 function Vote() {
     DocumentTitle('Bình Chọn - Bảng Xếp Hạng Light Novel Việt Nam');
 
-    const ref1 = useRef(null);
-    const ref2 = useRef(null);
-
     const [currentComponent, setCurrentComponent] = useState(0);
 
     //Get selected items from each category
-    const [selectedItems, setSelectedItems] = useState([]);
+    const [selectedItems, setSelectedItems] = useState([
+        { category_name: 'Light Novel được yêu thích nhất', category_short: 'favoriteRanobe', chosenItems: [] },
+        { category_name: 'Light Novel tân binh của năm', category_short: 'rookieRanobe', chosenItems: [] },
+        { category_name: 'Light Novel được mong chờ nhất', category_short: 'anticipatedRanobe', chosenItems: [] },
+        { category_name: 'Light Novel gây thất vọng nhất', category_short: 'disappointingRanobe', chosenItems: [] },
+        { category_name: 'Light Novel muốn có bản quyền nhất', category_short: 'copyrightRanobe', chosenItems: [] },
+        { category_name: 'Nhà phát hành được yêu thích nhất', category_short: 'favoritePublisher', chosenItems: [] },
+    ]);
     const handleChildSelection = (category, title, selectedItemsFromChild) => {
         setSelectedItems((prevSelectedItems) => {
             const updatedSelectedItems = [...prevSelectedItems];
@@ -68,6 +70,7 @@ function Vote() {
     //onChange for Steps
     const onChange = (current) => {
         setCurrentComponent(current);
+        scrollToTop();
     };
 
     const components = [
@@ -219,66 +222,20 @@ function Vote() {
             {isWideScreen && <Transition />}
             {contentMouted && (
                 <div>
+                    <StepBar
+                        currentComponent={currentComponent}
+                        onChange={onChange}
+                        isLastComponent={isLastComponent}
+                        handlePrevious={handlePrevious}
+                        handleNext={handleNext}
+                    />
                     <VoteHeader />
                     <div className="voteContainer">
-                        <div className="control-button">
-                            <button
-                                className={currentComponent === 0 ? 'inactivate' : ''}
-                                id="btnPrev"
-                                onClick={handlePrevious}
-                                ref={ref1}
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth={1.5}
-                                    stroke="currentColor"
-                                    className="w-6 h-6"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
-                                    />
-                                </svg>
-                            </button>
-                            <p>
-                                Chuyển hạng mục với <strong>nút mũi tên</strong> hoặc ấn vào{' '}
-                                <strong>thanh steps</strong> bên dưới.
-                            </p>
-                            <button
-                                className={isLastComponent ? 'inactivate' : ''}
-                                id="btnNext"
-                                onClick={handleNext}
-                                ref={ref2}
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth={1.5}
-                                    stroke="currentColor"
-                                    className="w-6 h-6"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                                    />
-                                </svg>
-                            </button>
-                        </div>
-                        <div className="control-step">
-                            <Steps
-                                current={currentComponent}
-                                onChange={onChange}
-                                items={[{}, {}, {}, {}, {}, {}, { icon: <SendOutlined /> }]}
-                                responsive={false}
-                            />
-                        </div>
-
-                        {components[currentComponent]}
+                        {components.map((component, index) => (
+                            <div key={index} style={{ display: currentComponent === index ? 'block' : 'none' }}>
+                                {component}
+                            </div>
+                        ))}
 
                         <button
                             id="toTop"
