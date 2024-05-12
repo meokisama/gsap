@@ -302,7 +302,7 @@ function LeaderBoardTable() {
                     <div className="publisher-table">
                         {favoritePublisher.map((ln, index) => (
                             <div className={`publisher-item ${ln.publisherLogo}`} key={index}>
-                                <div className="logoWrapper">
+                                <div className="logo-wrapper">
                                     <img alt="" src={`images/publisher/${ln.publisherLogo}.webp`} loading="lazy" />
                                 </div>
                                 <div className="publisher-info">

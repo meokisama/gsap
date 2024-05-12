@@ -16,8 +16,27 @@ function StepBar({ currentComponent, onChange, isLastComponent, handlePrevious, 
         };
     }, []);
 
+    const [show, setShow] = useState(true);
+    const [scrollPos, setScrollPos] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollPos = window.pageYOffset;
+            const visible = scrollPos > currentScrollPos;
+
+            setShow(visible);
+            setScrollPos(currentScrollPos);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [scrollPos]);
+
     return (
-        <div className="step-bar">
+        <div className={`step-bar ${show ? '' : 'hidden'}`}>
             <div className="control-button">
                 <button className={currentComponent === 0 ? 'inactivate' : ''} id="btnPrev" onClick={handlePrevious}>
                     <svg

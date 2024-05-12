@@ -5,6 +5,7 @@ import Category from '../Category';
 import { MessageHub } from 'components/common';
 
 function ListComponent({ id, title, description, listData, maxItems, notification, category, onSelectionChange }) {
+    const alertRef = useRef(null);
     const [chosenItems, setChosenItems] = useState([]);
     const [searchInput, setSearchInput] = useState('');
     const [showSelected, setShowSelected] = useState(false);
@@ -37,8 +38,6 @@ function ListComponent({ id, title, description, listData, maxItems, notificatio
         onSelectionChange(category, title, chosenItems);
     }, [chosenItems]);
 
-    const alertRef = useRef(null);
-
     //Search function
     const handleSearchInputChange = (e) => {
         setSearchInput(e.target.value);
@@ -51,27 +50,21 @@ function ListComponent({ id, title, description, listData, maxItems, notificatio
             .replace(/đ/g, 'd')
             .replace(/Đ/g, 'D');
 
-    let filteredLnList;
-    if (category !== 'favoritePublisher') {
-        filteredLnList = listData.filter((ln) =>
-            removeAccents(ln.seriesName.toLowerCase()).includes(removeAccents(searchInput.toLowerCase())),
-        );
-    } else {
-        filteredLnList = listData.filter((ln) =>
-            removeAccents(ln.publisherName.toLowerCase()).includes(removeAccents(searchInput.toLowerCase())),
-        );
-    }
-
+    let filteredList = listData.filter((ln) =>
+        removeAccents(
+            category !== 'favoritePublisher' ? ln.seriesName.toLowerCase() : ln.publisherName.toLowerCase(),
+        ).includes(removeAccents(searchInput.toLowerCase())),
+    );
     //Show selected items
     const handleShowSelected = () => {
         setShowSelected(!showSelected);
     };
-    const displayList = showSelected ? chosenItems : filteredLnList;
+    const displayList = showSelected ? chosenItems : filteredList;
 
     return (
-        <div className="ranobeContainer">
+        <div className="ranobe-container">
             <Category title={id + '. ' + title} description={description} />
-            <div className="functionContainer">
+            <div className="filter-container">
                 <Tooltip title="Chỉ cần nhập kí tự hoặc từ nào đó, tất cả những tác phẩm trong tên có chứa kí tự hoặc từ đó sẽ xuất hiện bên dưới. Nhập càng đầy đủ càng chính xác.">
                     <input
                         type="text"
@@ -95,14 +88,16 @@ function ListComponent({ id, title, description, listData, maxItems, notificatio
                 </Tooltip>
             </div>
             {category !== 'favoritePublisher' ? (
-                <div className="ranobeList">
+                <div className="ranobe-list">
                     {displayList.map((ln) => (
                         <div
                             key={ln.id}
-                            className={`lnItem ${chosenItems.find((item) => item.id === ln.id) ? 'lnChosen' : ''}`}
+                            className={`ranobe-item ${
+                                chosenItems.find((item) => item.id === ln.id) ? 'ranobe-chosen' : ''
+                            }`}
                             onClick={() => handleClick(ln.id)}
                         >
-                            <div className="coverWrapper">
+                            <div className="cover-wrapper">
                                 <img alt="" src={ln.coverUrl} loading="lazy" />
                             </div>
                             <div className="info">
@@ -111,7 +106,7 @@ function ListComponent({ id, title, description, listData, maxItems, notificatio
                                     (<strong style={{ color: '#5f5f5f' }}>{ln.publisherName}</strong> phát hành)
                                 </p>
                             </div>
-                            <span className="lnID">{ln.id}</span>
+                            <span className="ranobe-id">{ln.id}</span>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
@@ -128,19 +123,18 @@ function ListComponent({ id, title, description, listData, maxItems, notificatio
                     ))}
                 </div>
             ) : (
-                <div className="publisherList">
+                <div className="publisher-list">
                     {displayList.map((ln) => (
                         <Tooltip key={ln.id} title={ln.publisherName}>
                             <div
-                                className={`pItem ${ln.publisherLogo} ${
-                                    chosenItems.find((item) => item.id === ln.id) ? 'pChosen' : ''
+                                className={`publisher-item ${ln.publisherLogo} ${
+                                    chosenItems.find((item) => item.id === ln.id) ? 'publisher-chosen' : ''
                                 }`}
                                 onClick={() => handleClick(ln.id)}
                             >
-                                <div className="logoWrapper">
+                                <div className="logo-wrapper">
                                     <img alt="" src={`images/publisher/${ln.publisherLogo}.webp`} loading="lazy" />
                                 </div>
-                                {/* <span className="pID">{ln.id}</span> */}
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24"

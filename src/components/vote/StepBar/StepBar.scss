@@ -1,3 +1,7 @@
+.hidden {
+    top: -10% !important;
+}
+
 .step-bar {
     position: fixed;
     top: 0;
@@ -6,13 +10,14 @@
     align-items: center;
     width: 100%;
     z-index: 100;
+    transition: all 0.3s ease-in-out;
     .control-button {
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: min(100%, 1200px);
         background-color: white;
-        padding: 10px 20px 15px;
+        padding: 0px 10px 5px;
         border-radius: 0 0 10px 10px;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         #btnPrev,

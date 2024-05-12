@@ -1,6 +1,56 @@
 const lnList = [
     {
-        seriesName: 'Sứ Giả Bốn Mùa - Vũ Điệu Mùa Xuân',
+        seriesName: 'Nữ Chính Sinh Tồn Mạnh Mẽ Trong Thế Giới Otome Game',
+        publisherName: 'Ichi Light Novel',
+        coverUrl: 'https://i2.docln.net/ln/licensed/covers/d38d150a-02f5-4e34-ae3f-0333173b3a31.jpg',
+    },
+    {
+        seriesName: 'Bỗng Một Ngày Tôi Có Vị Hôn Thê Là Gal',
+        publisherName: 'Shine Novel',
+        coverUrl: 'https://i2.docln.net/ln/licensed/covers/99afec02-448f-4b62-b38f-04a32a131e44.jpg',
+    },
+    {
+        seriesName: 'Grimgar - Ảo Ảnh Và Tro Tàn',
+        publisherName: 'Kim Đồng',
+        coverUrl: 'https://i2.docln.net/ln/licensed/covers/1760e91c-4ff6-40b9-9d45-9abe4f30e666.jpg',
+    },
+    {
+        seriesName: 'Cuộc Nổi Dậy Của Cô Nàng Mọt Sách',
+        publisherName: 'Sky Light Novel',
+        coverUrl: 'https://i2.docln.net/ln/licensed/covers/cdb412c7-5325-4975-a19c-d1d7a52d92d7.jpg',
+    },
+    {
+        seriesName: 'Cô Nàng Shimotsuki Trót Phải Lòng Nhân Vật Nền',
+        publisherName: 'Kim Đồng',
+        coverUrl: 'https://i2.docln.net/ln/licensed/covers/c3767b39-a0e4-49aa-a8ef-be2e114eff13.jpg',
+    },
+    {
+        seriesName: 'Ai Dám Bảo Rom-com Không Có Ngoài Đời Thực?',
+        publisherName: 'Thái Hà Books',
+        coverUrl: 'https://i2.docln.net/ln/licensed/covers/fcda86e1-40b4-4061-bbf0-12a7dd880d39.jpg',
+    },
+    {
+        seriesName: 'Spy Room - Lớp Học Điệp Viên',
+        publisherName: 'Thái Hà Books',
+        coverUrl: 'https://i2.docln.net/ln/licensed/covers/19a61092-0c96-49c3-9cc1-d384a057c39b.jpg',
+    },
+    {
+        seriesName: 'Ma Pháp Thiếu Nữ',
+        publisherName: 'Usagi Light Novel',
+        coverUrl: 'https://i2.docln.net/ln/licensed/covers/34c01f6b-7f8f-4316-85a6-bab693117d6f.jpg',
+    },
+    {
+        seriesName: 'Thế Giới Otome Game Thật Khắc Nghiệt Với Nhân Vật Quần Chúng',
+        publisherName: 'Tsuki Light Novel',
+        coverUrl: 'https://i2.docln.net/ln/licensed/covers/382d7a63-5b5b-4d77-a579-05dce103c35d.jpg',
+    },
+    {
+        seriesName: 'Arya Bàn Bên Thỉnh Thoảng Lại Trêu Ghẹo Tôi Bằng Tiếng Nga',
+        publisherName: 'Kim Đồng',
+        coverUrl: 'https://i2.docln.net/ln/licensed/covers/c1a9536d-d16b-487d-a29e-e74b521db055.jpg',
+    },
+    {
+        seriesName: 'Sứ Giả Bốn Mùa',
         publisherName: 'Kim Đồng',
         coverUrl: 'https://i2.docln.net/ln/licensed/covers/db58571a-54fb-421a-bed7-8ea4ff79e7e5.jpg',
     },
@@ -75,6 +125,11 @@ const lnList = [
         coverUrl: 'https://i2.docln.net/ln/licensed/covers/81b1412c-273a-4046-b277-bf68e29ab56b.jpg',
     },
     {
+        seriesName: 'Nguyệt Đạo Dị Giới',
+        publisherName: 'Sky Light Novel',
+        coverUrl: 'https://i2.docln.net/ln/licensed/covers/0b00339f-837c-4282-bac3-a9bd5c328282.jpg',
+    },
+    {
         seriesName: 'Xa Một Chút Hơn Một Triệu Năm Ánh Sáng',
         publisherName: 'Nhã Nam',
         coverUrl: 'https://i2.docln.net/ln/licensed/covers/d1147c95-6721-462a-ad85-4e3c672907e6.jpg',
@@ -87,7 +142,7 @@ const lnList = [
     {
         seriesName: 'Này Cậu Có Muốn Hẹn Hò Với Tớ Không?',
         publisherName: 'Ichi Light Novel',
-        coverUrl: 'https://i2.docln.net/ln/licensed/covers/562cdc25-b4d0-4968-bd5e-1b289432f69f.jpg',
+        coverUrl: 'https://i2.docln.net/ln/licensed/covers/82428ea5-3285-4c9d-b870-8aad8f5e9f18.jpg',
     },
     {
         seriesName: 'Nàng Cựu Idol Lớp Tôi Lại Có Hành Động Đáng Ngờ Nữa Rồi',
@@ -115,21 +170,6 @@ const lnList = [
         coverUrl: 'https://i.docln.net/lightnovel/covers/u2-226edb18-b150-480b-aa9b-5754aa7fcfbd.jpg',
     },
     {
-        seriesName: 'Grimgar - Ảo Ảnh Và Tro Tàn',
-        publisherName: 'Kim Đồng',
-        coverUrl: 'https://i2.docln.net/ln/licensed/covers/01c7cd48-31b1-4a87-bd5e-81d5af50fc5f.jpg',
-    },
-    {
-        seriesName: 'Ma Pháp Thiếu Nữ',
-        publisherName: 'Usagi Light Novel',
-        coverUrl: 'https://i2.docln.net/ln/licensed/covers/974b37be-3673-44fd-a929-a46cccac1b88.jpg',
-    },
-    {
-        seriesName: 'Cô Nàng Shimotsuki Trót Phải Lòng Nhân Vật Nền',
-        publisherName: 'Kim Đồng',
-        coverUrl: 'https://i.docln.net/lightnovel/covers/u2-d792d8a4-ac0a-4407-b36e-0010e745234e.jpg',
-    },
-    {
         seriesName: 'Bảo Mẫu Bí Mật Của Tiểu Thư',
         publisherName: 'Amak',
         coverUrl: 'https://i.docln.net/lightnovel/covers/u2-a3b8511d-e997-40b7-8852-6f384d08e113.jpg',
@@ -153,11 +193,6 @@ const lnList = [
         seriesName: 'Chitose Trong Chai Ramune',
         publisherName: 'Kim Đồng',
         coverUrl: 'https://i.docln.net/lightnovel/covers/u3855-647d6848-eaa8-413a-98ad-b72abf91c714.jpg',
-    },
-    {
-        seriesName: 'Thế Giới Otome Game Thật Khắc Nghiệt Với Nhân Vật Quần Chúng',
-        publisherName: 'Tsuki Light Novel',
-        coverUrl: 'https://i.docln.net/lightnovel/covers/u2-1ddcdc5a-f4d8-4bca-9911-526d714cee01.jpg',
     },
     {
         seriesName: 'Khóa Chặt Cửa Nào Suzume',
@@ -210,11 +245,6 @@ const lnList = [
         coverUrl: 'https://i.docln.net/lightnovel/covers/u2-543dcf8c-f20b-4a32-adaa-ded181e3d0a2.jpg',
     },
     {
-        seriesName: 'Arya Bàn Bên Thỉnh Thoảng Lại Trêu Ghẹo Tôi Bằng Tiếng Nga',
-        publisherName: 'Kim Đồng',
-        coverUrl: 'https://i.docln.net/lightnovel/covers/u3855-ea724498-7c7e-4aa8-999b-f3fb258c4896.jpg',
-    },
-    {
         seriesName: 'Đường hầm tới mùa hạ - Lối thoát của Biệt ly',
         publisherName: 'Thái Hà Books',
         coverUrl: 'https://i.docln.net/lightnovel/covers/u3855-0404485a-a981-42c2-b53d-62956b6b0d67.jpg',
@@ -223,11 +253,6 @@ const lnList = [
         seriesName: 'Hôn Nhân Hạnh Phúc Của Tôi',
         publisherName: 'Kim Đồng',
         coverUrl: 'https://i.docln.net/lightnovel/covers/u2-0549dc6f-4e42-4611-aa12-597a38c33129.jpg',
-    },
-    {
-        seriesName: 'Nữ Chính Sinh Tồn Mạnh Mẽ Trong Thế Giới Otome Game',
-        publisherName: 'Ichi Light Novel',
-        coverUrl: 'https://i.docln.net/lightnovel/covers/u2-6fb11bac-df29-4ac4-a4b2-d8ab2231532d.jpg',
     },
     {
         seriesName: 'Sword Art Online',
@@ -298,11 +323,6 @@ const lnList = [
         seriesName: 'Hiệp Sĩ Lưu Ban',
         publisherName: 'Amak',
         coverUrl: 'https://i.docln.net/lightnovel/covers/u2-6c314e9c-434d-46cc-9d3a-552e069eb91a.jpg',
-    },
-    {
-        seriesName: 'Ai Dám Bảo Rom-com Không Có Ngoài Đời Thực?',
-        publisherName: 'Thái Hà Books',
-        coverUrl: 'https://i.docln.net/lightnovel/covers/u2-e8bc1d52-582e-407b-abb2-35f5f5a01484.jpg',
     },
     {
         seriesName: 'Anh Hùng Diệt Thần & Bảy Thệ Ước',
@@ -410,11 +430,6 @@ const lnList = [
         coverUrl: 'https://i.docln.net/lightnovel/covers/u2-5f81ccbe-2793-4a3f-8a34-102ee41b4f8e.jpg',
     },
     {
-        seriesName: 'SPY ROOM - Lớp Học Điệp Viên',
-        publisherName: 'Thái Hà Books',
-        coverUrl: 'https://i.docln.net/lightnovel/covers/u2-c26aec98-fd3b-4ac8-95ab-a810843af8af.jpg',
-    },
-    {
         seriesName: 'Gia Sư Của Công Chúa Quỷ',
         publisherName: 'Usagi Light Novel',
         coverUrl: 'https://i.docln.net/lightnovel/covers/u2-82129e82-460b-45f6-9c3f-a444aec3a66f.jpg',
@@ -485,11 +500,6 @@ const lnList = [
         coverUrl: 'https://i.docln.net/lightnovel/covers/u2-20aaed00-6a10-430c-808a-c4c85f3b98d1.jpg',
     },
     {
-        seriesName: 'Grimgar - Ảo ảnh và tro tàn',
-        publisherName: 'Kim Đồng',
-        coverUrl: 'https://i.docln.net/lightnovel/covers/u2-a1d87a80-3f79-4856-8d1a-c702bbc32d99.jpg',
-    },
-    {
         seriesName: 'Holmes ở Kyoto',
         publisherName: 'Kim Đồng',
         coverUrl: 'https://i.docln.net/lightnovel/covers/u2-33dd10fe-c360-4768-b609-7c10f573a72a.jpg',
@@ -513,11 +523,6 @@ const lnList = [
         seriesName: 'Tháng 8 Cùng Em Và Những Ký Ức Vụn Vỡ',
         publisherName: 'Ai Novel',
         coverUrl: 'https://i.docln.net/lightnovel/covers/u3855-6227c01f-24fc-4a6b-be6b-e1c213adb8f3.jpg',
-    },
-    {
-        seriesName: 'Cuộc Nổi Dậy Của Cô Nàng Mọt Sách',
-        publisherName: 'Sky Light Novel',
-        coverUrl: 'https://i.docln.net/lightnovel/covers/u2-4b30e919-dd59-4a9a-92ae-eb5d73093307.jpg',
     },
     {
         seriesName: 'Công Cuộc Tái Thiết Vương Quốc Của Anh Hùng Chủ Nghĩa Hiện Thực',
@@ -585,7 +590,7 @@ const lnList = [
         coverUrl: 'https://i.docln.net/lightnovel/covers/u2-19c5e228-c28a-43e7-852e-ddf3bf4087b9.jpg',
     },
     {
-        seriesName: 'Ma Vương Kiến Tạo – Hầm Ngục Kiên Cố Nhất Chính Là Thành Phố Hiện Đại',
+        seriesName: 'Ma Vương Kiến Tạo - Hầm Ngục Kiên Cố Nhất Chính Là Thành Phố Hiện Đại',
         publisherName: 'Tsuki Light Novel',
         coverUrl: 'https://i.docln.net/lightnovel/covers/u2-a5248f03-ab69-4600-a2d9-3824d9fbbdd9.jpg',
     },
@@ -613,11 +618,6 @@ const lnList = [
         seriesName: 'Durarara!!',
         publisherName: 'IPM',
         coverUrl: 'https://i.docln.net/lightnovel/covers/u2-96de4480-a97f-4905-8c4b-cf05a0634988.jpg',
-    },
-    {
-        seriesName: 'Nguyệt Đạo Dị Giới',
-        publisherName: 'Sky Light Novel',
-        coverUrl: 'https://i.docln.net/lightnovel/covers/u2-06b023c3-bcca-4da9-b840-daf3dbff9e8f.jpg',
     },
     {
         seriesName: 'Bạn Gái Vs. Bạn Thời Thơ Ấu',
@@ -988,11 +988,6 @@ const lnList = [
         seriesName: 'Just Be Friends',
         publisherName: 'Quảng Văn',
         coverUrl: 'https://i.docln.net/lightnovel/covers/u2-4cf4a6e7-247e-47bc-a0b2-d0dffbf4b576.jpg',
-    },
-    {
-        seriesName: 'Ma Vương Kiến Tạo - Hầm Ngục Kiên Cố Nhất Chính Là Thành Phố Hiện Đại',
-        publisherName: 'Tsuki Light Novel',
-        coverUrl: 'https://i.docln.net/lightnovel/covers/u2-07ab6597-a5ff-4688-99b6-191fca58f04c.jpg',
     },
     {
         seriesName: 'Nhật Ký Kẻ Cô Đơn',
