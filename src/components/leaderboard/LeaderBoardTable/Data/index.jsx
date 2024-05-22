@@ -78,38 +78,13 @@ const favoriteRanobeList = [
     },
 ];
 
-const rookieRanobeList = [
+const favoriteIllustratorList = [
     {
         vote: 17,
-        seriesName: 'Sứ Giả Bốn Mùa - rookieRanobeList',
+        seriesName: 'Sứ Giả Bốn Mùa',
         publisherName: 'Kim Đồng',
     },
 ];
-
-const anticipatedRanobeList = [
-    {
-        vote: 17,
-        seriesName: 'Sứ Giả Bốn Mùa - anticipatedRanobeList',
-        publisherName: 'Kim Đồng',
-    },
-];
-
-const disappointingRanobeList = [
-    {
-        vote: 17,
-        seriesName: 'Sứ Giả Bốn Mùa - disappointingRanobeList',
-        publisherName: 'Kim Đồng',
-    },
-];
-
-const copyrightRanobeList = [
-    {
-        vote: 17,
-        seriesName: 'Sứ Giả Bốn Mùa - copyrightRanobeList',
-        publisherName: 'Kim Đồng',
-    },
-];
-
 const favoritePublisherList = [
     {
         vote: 1,
@@ -235,18 +210,7 @@ const handleList = (arr) => {
 
 // Export data
 const favoriteRanobe = handleList(favoriteRanobeList);
-const rookieRanobe = handleList(rookieRanobeList);
-const anticipatedRanobe = handleList(anticipatedRanobeList);
-const disappointingRanobe = handleList(disappointingRanobeList);
-const copyrightRanobe = handleList(copyrightRanobeList);
+const favoriteIllustrator = handleList(favoriteIllustratorList);
 const favoritePublisher = handleList(favoritePublisherList);
 
-export {
-    publisherFilter,
-    rookieRanobe,
-    anticipatedRanobe,
-    disappointingRanobe,
-    copyrightRanobe,
-    favoritePublisher,
-    favoriteRanobe,
-};
+export { publisherFilter, favoriteIllustrator, favoritePublisher, favoriteRanobe };

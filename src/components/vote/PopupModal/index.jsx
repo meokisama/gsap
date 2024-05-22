@@ -9,7 +9,7 @@ function PopupModal() {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
-        const timer = setTimeout(showModal, 1000);
+        const timer = setTimeout(showModal, 2000);
         return () => clearTimeout(timer);
     }, []);
 
@@ -68,25 +68,23 @@ function PopupModal() {
                         <p id="greeting">Quý độc giả thân mến,</p>
                         <p>
                             Sau đây là phần bình chọn chính thức cho <strong>Bảng Xếp Hạng Light Novel Việt Nam</strong>
-                            . Bảng xếp hạng kì này sẽ được chia làm 6 hạng mục bao gồm:
+                            . Bảng xếp hạng kì này sẽ được chia làm những hạng mục sau:
                         </p>
                         <div className="split-categories">
                             <span>
                                 <strong>1.</strong> Light Novel được yêu thích nhất <br />
-                                <strong>2.</strong> Light Novel tân binh của năm <br />
-                                <strong>3.</strong> Light Novel được mong chờ nhất <br />
+                                <strong>2.</strong> Họa sĩ minh họa được yêu thích nhất <br />
                             </span>
                             <span>
-                                <strong>4.</strong> Light Novel gây thất vọng nhất <br />
-                                <strong>5.</strong> Light Novel muốn có bản quyền nhất <br />
-                                <strong>6.</strong> Nhà phát hành được yêu thích nhất
+                                <strong>3.</strong> Nhà phát hành được yêu thích nhất <br />
+                                <strong>Bonus.</strong> Tự do đóng góp ý kiến và đề xuất <br />
                             </span>
                         </div>
                         <p>
                             Sau khi hoàn thành mỗi một hạng mục, quý độc giả có thể chuyển sang hạng mục tiếp theo bằng
                             cách tương tác với thanh steps bar nằm ở phía trên với{' '}
                             <strong style={{ color: '#fa7667' }}>hai nút mũi tên tiến/lùi </strong>
-                            và <strong style={{ color: '#fa7667' }}>6 nút được đánh số tương ứng với 6 hạng mục</strong>
+                            và <strong style={{ color: '#fa7667' }}>4 nút được đánh số tương ứng với 4 hạng mục</strong>
                             .
                         </p>
                         <p>

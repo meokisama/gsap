@@ -44,7 +44,6 @@ function LargeText() {
             );
         });
     }, []);
-
     return (
         <div className="largeText">
             <img alt="" src={nonoa_chibi} ref={imgRef} />

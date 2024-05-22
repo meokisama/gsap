@@ -56,7 +56,6 @@ function CategoryVote() {
             );
         });
     }, []);
-
     return (
         <div className=" wrapper categoryVote">
             <SectionTitle title="Hạng Mục" description="Những hạng mục bình chọn cho bảng xếp hạng năm nay!" />
@@ -73,6 +72,12 @@ function CategoryVote() {
                             </div>
                         </div>
                     ))}
+                    <div className="categoryItem">
+                        <div className="categoryIndex">&</div>
+                        <div className="categoryName">
+                            <p>Tự do đóng góp ý kiến và đề xuất</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

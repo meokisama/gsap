@@ -1,8 +1,8 @@
-import { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
+import { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -66,21 +66,28 @@ function Comment() {
             window.removeEventListener('load', handleLoad);
         };
     }, []);
-
     return (
         <div className="comment">
-            <SectionTitle
-                title={'Bình Luận'}
-                description={'Phần bình luận từ các bên được phỏng vấn. Kéo lên xuống để xem nội dung kế tiếp!'}
-            />
+            <SectionTitle title={'Bình Luận'} description={'Phần bình luận từ các bên được phỏng vấn.'} />
             <div className="commentContent">
                 <Swiper
                     direction={'vertical'}
-                    loop={true}
                     pagination={{
                         clickable: true,
                     }}
-                    modules={[Pagination]}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    }}
+                    breakpoints={{
+                        600: {
+                            direction: 'vertical',
+                        },
+                        0: {
+                            direction: 'horizontal',
+                        },
+                    }}
+                    modules={[Autoplay, Pagination]}
                     className="mySwiper"
                     ref={commentRef}
                 >

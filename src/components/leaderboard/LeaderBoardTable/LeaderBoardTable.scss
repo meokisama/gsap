@@ -1,3 +1,21 @@
+.ant-btn-primary {
+    background-color: #dd6e61;
+    &:hover {
+        background-color: #c53e1f !important;
+    }
+}
+.ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover {
+    color: #dd6e61;
+    border-color: #dd6e61;
+}
+.ant-input-outlined:hover {
+    border-color: #dd6e61;
+}
+.ant-input-outlined:focus,
+.ant-input-outlined:focus-within {
+    border-color: #dd6e61 !important;
+}
+
 .leaderboard {
     max-width: 1400px;
     padding: 2rem 10px;
@@ -434,6 +452,9 @@
 }
 
 @media screen and (max-width: 600px) {
+    .ant-popover {
+        font-size: 1.3rem;
+    }
     .leaderboard {
         .ld-table-header {
             .header-right-panel {
@@ -476,6 +497,14 @@
             font-size: 1.3rem;
         }
         .ld-table {
+            .ant-table {
+                font-size: 1.2rem;
+            }
+            .ant-table-content {
+                th {
+                    font-size: 1.3rem;
+                }
+            }
             .publisher-table {
                 gap: 10px;
                 .publisher-item {

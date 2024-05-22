@@ -7,15 +7,7 @@ import gold from 'assets/gold.png';
 import silver from 'assets/silver.png';
 import bronze from 'assets/bronze.png';
 import nonoa_chibi from 'assets/nonoa_chibi.webp';
-import {
-    publisherFilter,
-    rookieRanobe,
-    anticipatedRanobe,
-    disappointingRanobe,
-    copyrightRanobe,
-    favoritePublisher,
-    favoriteRanobe,
-} from './Data';
+import { publisherFilter, favoritePublisher, favoriteRanobe, favoriteIllustrator } from './Data';
 
 function LeaderBoardTable() {
     const [selectedCategory, setSelectedCategory] = useState({
@@ -25,10 +17,7 @@ function LeaderBoardTable() {
     const [data, setData] = useState(favoriteRanobe);
     const dataInput = {
         publisherFilter,
-        rookieRanobe,
-        anticipatedRanobe,
-        disappointingRanobe,
-        copyrightRanobe,
+        favoriteIllustrator,
         favoritePublisher,
         favoriteRanobe,
     };
@@ -76,22 +65,17 @@ function LeaderBoardTable() {
                         Tìm kiếm
                     </Button>
                     <Button
-                        onClick={() => clearFilters && handleReset(clearFilters)}
+                        onClick={() => {
+                            clearFilters && handleReset(clearFilters);
+                            handleSearch(selectedKeys, confirm, dataIndex);
+                            clearFilters && handleReset(clearFilters);
+                        }}
                         size="small"
                         style={{
                             width: 70,
                         }}
                     >
                         Reset
-                    </Button>
-                    <Button
-                        type="link"
-                        size="small"
-                        onClick={() => {
-                            close();
-                        }}
-                    >
-                        Đóng
                     </Button>
                 </Space>
             </div>
@@ -196,20 +180,8 @@ function LeaderBoardTable() {
             label: 'Light Novel được yêu thích nhất',
         },
         {
-            value: 'rookieRanobe',
-            label: 'Light Novel tân binh của năm',
-        },
-        {
-            value: 'anticipatedRanobe',
-            label: 'Light Novel được mong chờ nhất',
-        },
-        {
-            value: 'disappointingRanobe',
-            label: 'Light Novel gây thất vọng nhất',
-        },
-        {
-            value: 'copyrightRanobe',
-            label: 'Light Novel muốn có bản quyền nhất',
+            value: 'favoriteIllustrator',
+            label: 'Họa sĩ minh họa được yêu thích nhất',
         },
         {
             value: 'favoritePublisher',

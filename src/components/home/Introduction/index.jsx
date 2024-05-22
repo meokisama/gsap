@@ -74,7 +74,6 @@ function Introduction() {
             );
         });
     }, []);
-
     return (
         <div className="introduction">
             <img id="saki" src={saki} alt="" />

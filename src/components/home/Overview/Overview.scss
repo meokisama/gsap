@@ -170,14 +170,40 @@
         #chibi00 {
             position: absolute;
             top: 25%;
-            right: 17%;
-            width: 15%;
+            right: 7%;
+            width: 25%;
         }
         #chibi01 {
             position: absolute;
             top: 25%;
-            left: 14%;
-            width: 20%;
+            left: 11%;
+            width: 21%;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1450px) {
+    .overview {
+        .statistic {
+            margin: 5rem 100px 150px;
+            .statisticItem {
+                p {
+                    font-size: 2.8rem !important;
+                    margin: 0;
+                }
+                .staname {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+        .timeline {
+            padding: 0 5rem;
+            .timelineItemright,
+            .timelineItemleft {
+                .detail {
+                    font-size: 1.3rem;
+                }
+            }
         }
     }
 }
@@ -206,11 +232,11 @@
             }
             #chibi00 {
                 top: 35%;
-                right: 5%;
+                right: -2%;
             }
             #chibi01 {
                 top: 35%;
-                left: 5%;
+                left: 0%;
             }
         }
     }
