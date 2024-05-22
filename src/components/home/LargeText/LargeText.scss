@@ -48,6 +48,16 @@
     }
 }
 
+@media screen and (min-width: 1200px) and (max-width: 1450px) {
+    .largeText {
+        .container {
+            .text {
+                -webkit-text-stroke: 1px rgba(0, 0, 0, 0.199);
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 1450px) {
     .largeText {
         img {
@@ -91,6 +101,12 @@
     .largeText {
         img {
             top: 9%;
+        }
+        .container {
+            .text {
+                font-size: 15vw;
+                -webkit-text-stroke: 1px rgba(0, 0, 0, 0.199);
+            }
         }
     }
 }

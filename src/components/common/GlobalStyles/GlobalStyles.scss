@@ -104,6 +104,36 @@ body {
     padding: 2rem;
     background-color: var(--color-background);
     overflow: hidden;
+    .control-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        width: min(100%, 1200px);
+        background-color: white;
+        padding: 0px 10px 5px;
+        #btnPrev,
+        #btnNext {
+            cursor: pointer;
+            border-radius: 8px;
+            width: 40px;
+            height: 40px;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            svg {
+                color: aliceblue;
+            }
+            background-color: #404660;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        }
+        .inactivate {
+            opacity: 0.3;
+            pointer-events: none;
+            cursor: default;
+        }
+    }
 }
 
 #toTop {
@@ -122,8 +152,6 @@ body {
     border: none;
     opacity: 0.3;
     svg {
-        width: 20px;
-        transform: translateY(2px);
         color: aliceblue;
     }
     &:hover {
@@ -151,9 +179,13 @@ body {
 
 @media screen and (max-width: 600px) {
     .voteContainer {
+        padding: 1.5rem;
         .control-button {
-            p {
-                font-size: 1.3rem;
+            #btnPrev,
+            #btnNext {
+                width: 30px;
+                height: 30px;
+                border-radius: 5px;
             }
         }
     }

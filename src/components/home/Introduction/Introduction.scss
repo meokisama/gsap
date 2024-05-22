@@ -110,6 +110,33 @@
     }
 }
 
+@media screen and (min-width: 1200px) and (max-width: 1450px) {
+    .introduction {
+        max-width: 80vw;
+        padding: 7.813vw 1.563vw;
+        margin-top: -10.417vw;
+        .inner {
+            .holder {
+                padding: 20px;
+                padding-bottom: 30px;
+                .social-icon {
+                    margin-bottom: 20px;
+                }
+                .about-wrapper {
+                    .about-content {
+                        span {
+                            font-size: 1.5vw;
+                        }
+                        p {
+                            font-size: 1vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 750px) {
     .introduction {
         padding: 0rem 1rem;

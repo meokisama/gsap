@@ -224,6 +224,7 @@
             align-items: center;
             background-size: 130%;
             background-position: center -10%;
+            box-shadow: none;
             .textContent {
                 width: 100%;
                 display: block;
@@ -261,7 +262,7 @@
                         font-size: 4vw;
                         width: 40%;
                         padding: 15px;
-                        border-radius: 10px;
+                        border-radius: 5px;
                     }
                 }
             }
@@ -309,6 +310,9 @@
                         top: 60%;
                         left: 12%;
                     }
+                }
+                p {
+                    font-size: 1.25rem;
                 }
             }
         }

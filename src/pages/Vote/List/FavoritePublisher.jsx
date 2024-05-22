@@ -11,8 +11,8 @@ const favoritePublisher = [
     },
     {
         id: 3,
-        publisherName: 'Quảng Văn',
-        publisherLogo: 'quangvan',
+        publisherName: 'Sakura Light Novel (Quảng Văn)',
+        publisherLogo: 'sakuraln',
     },
     {
         id: 4,

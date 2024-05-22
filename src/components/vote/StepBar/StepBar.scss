@@ -1,5 +1,13 @@
 .hidden {
-    top: -10% !important;
+    transform: translateY(-100%);
+}
+
+.step-active {
+    transform: translateY(0);
+}
+
+.step-inactive {
+    transform: translateY(-100%);
 }
 
 .step-bar {
@@ -10,16 +18,15 @@
     align-items: center;
     width: 100%;
     z-index: 100;
-    transition: all 0.3s ease-in-out;
+    transition: transform 0.3s;
     .control-button {
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: min(100%, 1200px);
         background-color: white;
-        padding: 0px 10px 5px;
+        padding: 0px 10px;
         border-radius: 0 0 10px 10px;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         #btnPrev,
         #btnNext {
             cursor: pointer;
@@ -31,14 +38,12 @@
             align-items: center;
             justify-content: center;
             svg {
-                width: 18px;
                 color: aliceblue;
             }
             background-color: #404660;
-            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
         }
         .control-step {
-            width: 70%;
+            width: 60%;
             .ant-steps {
                 .ant-steps-item-icon {
                     font-family: 'Lexend';
@@ -74,10 +79,12 @@
             border-radius: 0;
             #btnPrev,
             #btnNext {
-                display: none;
+                width: 30px;
+                height: 30px;
+                border-radius: 5px;
             }
             .control-step {
-                width: 100%;
+                width: 70%;
                 .ant-steps {
                     .ant-steps-item::before {
                         bottom: 5px;

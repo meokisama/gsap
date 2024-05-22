@@ -31,7 +31,7 @@
             align-items: center;
             position: relative;
             .slideContent {
-                background: linear-gradient(#fff2f2 0 0) padding-box,
+                background: linear-gradient(#fff9f9 0 0) padding-box,
                     linear-gradient(to bottom, transparent, #fa7667) border-box;
                 border: 1px solid transparent;
                 border-radius: 20px;
@@ -87,23 +87,37 @@
         }
         .commentImg {
             width: 50%;
-            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             img {
                 width: 100%;
-                top: -10%;
-                left: 10%;
-                position: absolute;
             }
         }
     }
 }
 
-@media screen and (max-width: 1150px) {
+@media screen and (min-width: 1200px) and (max-width: 1450px) {
     .comment {
         .commentContent {
-            .commentImg {
-                img {
-                    top: 0;
+            padding: 0 10rem;
+            .slideContent {
+                height: 70% !important;
+                .avatar {
+                    .avatarMain {
+                        width: 80px !important;
+                        height: 80px !important;
+                    }
+                    p {
+                        padding-top: 2rem !important;
+                        font-size: 1.3rem !important;
+                    }
+                }
+                .content {
+                    font-size: 1.6rem !important;
+                }
+                .author {
+                    font-size: 1.2rem !important;
                 }
             }
         }
@@ -127,11 +141,12 @@
 
 @media screen and (max-width: 600px) {
     .comment {
-        padding-bottom: 0;
-        height: 80rem;
+        padding-bottom: 7rem;
+        height: 60rem;
         .commentContent {
-            height: 70%;
             .slideContent {
+                height: 80% !important;
+                margin: 0 2rem;
                 .avatar {
                     .avatarMain {
                         width: 80px !important;
@@ -139,14 +154,14 @@
                     }
                     p {
                         padding-top: 1rem !important;
-                        font-size: 1.5rem !important;
+                        font-size: 1.3rem !important;
                     }
                 }
                 .content {
-                    font-size: 1.8rem !important;
+                    font-size: 1.6rem !important;
                 }
                 .author {
-                    font-size: 1.3rem !important;
+                    font-size: 1.2rem !important;
                 }
             }
         }

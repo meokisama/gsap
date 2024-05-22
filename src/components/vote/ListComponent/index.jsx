@@ -1,8 +1,16 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Tooltip } from 'antd';
+import { Tooltip, Divider, Empty } from 'antd';
 import './ListComponent.scss';
 import Category from '../Category';
 import { MessageHub } from 'components/common';
+
+//Vietnamese accents to Latin
+const removeAccents = (str) =>
+    str
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/đ/g, 'd')
+        .replace(/Đ/g, 'D');
 
 function ListComponent({ id, title, description, listData, maxItems, notification, category, onSelectionChange }) {
     const alertRef = useRef(null);
@@ -42,13 +50,6 @@ function ListComponent({ id, title, description, listData, maxItems, notificatio
     const handleSearchInputChange = (e) => {
         setSearchInput(e.target.value);
     };
-    //Vietnamese accents to Latin
-    const removeAccents = (str) =>
-        str
-            .normalize('NFD')
-            .replace(/[\u0300-\u036f]/g, '')
-            .replace(/đ/g, 'd')
-            .replace(/Đ/g, 'D');
 
     let filteredList = listData.filter((ln) =>
         removeAccents(
@@ -64,28 +65,25 @@ function ListComponent({ id, title, description, listData, maxItems, notificatio
     return (
         <div className="ranobe-container">
             <Category title={id + '. ' + title} description={description} />
+            <Divider style={{ marginBottom: '4rem' }} />
             <div className="filter-container">
-                <Tooltip title="Chỉ cần nhập kí tự hoặc từ nào đó, tất cả những tác phẩm trong tên có chứa kí tự hoặc từ đó sẽ xuất hiện bên dưới. Nhập càng đầy đủ càng chính xác.">
-                    <input
-                        type="text"
-                        placeholder="Lọc theo tên bất kể hoa thường dấu hoặc không dấu..."
-                        value={searchInput}
-                        onChange={handleSearchInputChange}
-                    />
-                </Tooltip>
-                <Tooltip title="Nhấn để hiển thị những tác phẩm mà bạn đang lựa chọn, nhấn một lần nữa để hiển thị lại tất cả.">
-                    <button onClick={handleShowSelected}>
-                        {showSelected ? (
-                            <span>
-                                Hiển thị <strong>Tất Cả</strong>
-                            </span>
-                        ) : (
-                            <span>
-                                Hiển thị <strong>Đã Chọn</strong>
-                            </span>
-                        )}
-                    </button>
-                </Tooltip>
+                <input
+                    type="text"
+                    placeholder="Lọc theo tên bất kể hoa thường dấu hoặc không dấu..."
+                    value={searchInput}
+                    onChange={handleSearchInputChange}
+                />
+                <button onClick={handleShowSelected}>
+                    {showSelected ? (
+                        <span>
+                            Hiển thị <strong>Tất Cả</strong>
+                        </span>
+                    ) : (
+                        <span>
+                            Hiển thị <strong>Đã Chọn</strong>
+                        </span>
+                    )}
+                </button>
             </div>
             {category !== 'favoritePublisher' ? (
                 <div className="ranobe-list">
@@ -152,6 +150,16 @@ function ListComponent({ id, title, description, listData, maxItems, notificatio
                     ))}
                 </div>
             )}
+            {showSelected && chosenItems.length === 0 ? (
+                <Empty
+                    style={{ marginTop: 100 }}
+                    description={
+                        <span style={{ fontFamily: 'Lexend', fontWeight: 300, color: '#636161e0' }}>
+                            Bạn chưa bình chọn hạng mục này...
+                        </span>
+                    }
+                />
+            ) : null}
             <MessageHub>{(msg) => (alertRef.current = msg)}</MessageHub>
         </div>
     );

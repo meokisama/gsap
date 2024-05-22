@@ -109,11 +109,11 @@
                 position: absolute;
                 top: 1%;
                 left: 3%;
-                font-size: 1.4rem;
+                font-size: 1.2rem;
                 font-weight: 600;
                 background: var(--color-azure);
-                border-radius: 25%;
-                padding: 1px 5px;
+                border-radius: 20%;
+                padding: 1px 4px;
                 text-align: center;
             }
             svg {
@@ -142,15 +142,14 @@
     }
 
     .publisher-list {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: stretch;
-        gap: 1rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
         .publisher-item {
             position: relative;
-            width: 250px;
-            height: 250px;
+            max-width: 300px;
+            max-height: 300px;
+            aspect-ratio: 1/1;
             border-radius: 20px;
             cursor: pointer;
             display: flex;
@@ -201,6 +200,14 @@
                 }
             }
         }
+        .sakuraln {
+            box-shadow: rgba(250, 146, 134, 0.1) 0px 20px 25px -5px, rgba(250, 146, 134, 0.51) 0px 10px 10px -5px;
+            .logo-wrapper {
+                img {
+                    width: 60%;
+                }
+            }
+        }
         .amak {
             box-shadow: rgb(73 127 43 / 10%) 0px 20px 25px -5px, rgb(71 126 42 / 50%) 0px 10px 10px -5px;
         }
@@ -220,7 +227,12 @@
             border: 2px solid #4b4b4b;
         }
         .nhanam {
-            box-shadow: rgb(62 184 179 / 10%) 0px 20px 25px -5px, rgb(62 184 179 / 50%) 0px 10px 10px -5px;
+            box-shadow: rgb(30 135 65 / 10%) 0px 20px 25px -5px, rgb(30 135 65 / 50%) 0px 10px 10px -5px;
+            .logo-wrapper {
+                img {
+                    width: 55%;
+                }
+            }
         }
         .owlbooks {
             box-shadow: rgb(12 151 204 / 10%) 0px 20px 25px -5px, rgb(12 151 204 / 50%) 0px 10px 10px -5px;
@@ -307,7 +319,7 @@
             align-items: stretch;
             input {
                 font-size: 1.2rem;
-                padding: 10px 10px 10px 35px;
+                padding: 15px 10px 15px 35px;
             }
             button {
                 font-size: 1.2rem;
@@ -337,15 +349,18 @@
             }
         }
         .publisher-list {
-            gap: 1rem;
+            gap: 7px;
             .publisher-item {
-                width: 150px;
-                height: 150px;
-                border-radius: 15px;
+                border-radius: 10px;
+                .logo-wrapper {
+                    img {
+                        width: 80%;
+                    }
+                }
             }
             .publisher-chosen {
                 svg {
-                    width: 25px;
+                    width: 20px;
                 }
             }
         }
@@ -357,13 +372,17 @@
         .filter-container {
             input {
                 font-size: 1rem;
-                padding: 8px 8px 8px 30px;
+                padding: 12px 8px 12px 25px;
                 border-radius: 5px;
+                background-position: 7px center;
+                border: 1px solid #66666617;
+                box-shadow: none;
             }
             button {
                 font-size: 1rem;
                 padding: 10px;
                 border-radius: 5px;
+                box-shadow: none;
             }
         }
         .ranobe-list {
@@ -391,6 +410,9 @@
                 .ranobe-id {
                     font-size: 1rem;
                 }
+                svg {
+                    width: 20px;
+                }
             }
         }
     }
@@ -414,6 +436,58 @@
                     p {
                         font-size: 0.7rem;
                         line-height: 1.3rem;
+                    }
+                }
+            }
+        }
+        .publisher-list {
+            grid-template-columns: repeat(3, 1fr);
+            .publisher-item {
+                border-radius: 10px;
+                .logo-wrapper {
+                    img {
+                        width: 80%;
+                    }
+                }
+            }
+            .publisher-chosen {
+                svg {
+                    width: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .ranobe-container {
+        .ranobe-list {
+            grid-template-columns: repeat(3, 1fr);
+            .ranobe-item {
+                max-height: 180px !important;
+                .cover-wrapper {
+                    height: 75%;
+                }
+                .info {
+                    height: 25%;
+                    h4 {
+                        font-size: 0.7rem;
+                        line-height: 1rem;
+                    }
+                    p {
+                        font-size: 0.6rem;
+                        line-height: 1rem;
+                    }
+                }
+            }
+        }
+        .publisher-list {
+            grid-template-columns: repeat(2, 1fr);
+            .publisher-item {
+                border-radius: 10px;
+                .logo-wrapper {
+                    img {
+                        width: 80%;
                     }
                 }
             }

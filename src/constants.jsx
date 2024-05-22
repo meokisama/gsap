@@ -43,23 +43,24 @@ const INTRODUCTION_INFO = [
         content: (
             <div>
                 <p>
-                    Và ở tận cốt lõi của <strong>Bảng Xếp Hạng Light Novel Việt Nam</strong> chính là đội ngũ ban tổ
-                    chức và truyền thông, một đội ngũ đam mê và tận tâm dẫn đầu bởi{' '}
-                    <strong style={{ color: 'rgb(85, 83, 83)' }}>Baka Hyddyt</strong>, là những người sẵn lòng hy sinh
-                    thời gian và công sức để tạo ra một sân chơi công bằng và chất lượng nhất cho cộng đồng yêu thích
+                    Và đứng sau <strong>Bảng Xếp Hạng Light Novel Việt Nam</strong> chính là đội ngũ ban tổ chức và
+                    truyền thông, một đội ngũ đam mê và tận tâm dẫn đầu bởi{' '}
+                    <strong style={{ color: 'rgb(85, 83, 83)' }}>Baka Hyddyt</strong>, là những người sẵn lòng bỏ thời
+                    gian và công sức để tạo ra một sân chơi mới, công bằng và chất lượng nhất cho cộng đồng yêu thích
                     Light Novel.
                 </p>
                 <p>
-                    Họ không chỉ là những người tổ chức, mà còn là những người đại diện cho cộng đồng độc giả, là những
-                    người truyền cảm hứng và gieo mầm ước mơ, dẫn dắt nhưng tâm hồn mới rong ruổi trong những thế giới
-                    văn học hấp dẫn.
+                    <strong style={{ color: 'rgb(85, 83, 83)' }}>Hyddyt</strong> không chỉ là người tổ chức, mà còn là
+                    một anti romcom chúa, chiến thần harem và shitposter chuyên nghiệp. Với mục tiêu giúp cho mọi người
+                    có 1 cái nhìn đầy đủ và rõ ràng hơn về thị trường Light Novel Việt Nam.
                 </p>
                 <p>
-                    Kể từ năm 2018, ban tổ chức của <strong>Bảng Xếp Hạng Light Novel Việt Nam</strong> đã bắt đầu hành
-                    trình đầy tham vọng đó. Trải qua nhiều thăng trầm, vượt qua mọi thách thức để tạo ra một không gian
-                    đầy màu sắc cho cộng đồng yêu thích Light Novel. Bằng tâm huyết và nỗ lực không ngừng, họ đang xây
-                    dựng một cộng đồng mạnh mẽ và đầy sức sống, nơi mà mỗi tác phẩm và mỗi đam mê đều được tôn vinh và
-                    lan tỏa.
+                    Kể từ năm 2018, ban tổ chức đã bắt đầu hành trình đầy tham vọng đó khi muốn đưa một{' '}
+                    <strong>Konorano/Oricon</strong> hay thứ gì đó tương tự tới với thị trường Việt. Trải qua nhiều
+                    thăng trầm để tạo ra một không gian đầy màu sắc dành cho cộng đồng yêu thích Light Novel Việt Nam
+                    nói riêng và những người ưa thích văn hoá Nhật Bản nói chung. Bằng tâm huyết và những nỗ lực không
+                    ngừng nghỉ, chúng tôi cố gắng xây dựng một bảng xếp hạng công bằng nơi mà mọi tác phẩm, mọi đam mê,
+                    mọi ý kiến góp ý và xây dựng của độc giả đều được lắng nghe và thấu hiểu.
                 </p>
             </div>
         ),
@@ -82,14 +83,26 @@ const AUTHORS = [
         description: 'FE',
         url: 'https://www.facebook.com/TheMeoki',
     },
+    {
+        name: 'Hyddytt',
+        description: 'Organizer',
+        url: 'https://www.facebook.com/hyddytngokngek',
+    },
+    {
+        name: 'Zennomii',
+        description: 'BE',
+        url: 'https://www.facebook.com/Zennomi',
+    },
+    {
+        name: 'Meokii',
+        description: 'FE',
+        url: 'https://www.facebook.com/TheMeoki',
+    },
 ];
 
 const CATEGORIES = [
     'Light Novel được yêu thích nhất',
-    'Light Novel tân binh của năm',
-    'Light Novel được mong chờ nhất',
-    'Light Novel gây thất vọng nhất',
-    'Light Novel muốn có bản quyền nhất',
+    'Họa sĩ minh họa được yêu thích nhất',
     'Nhà phát hành được yêu thích nhất',
 ];
 
@@ -109,36 +122,35 @@ const TOP10 = [
 const TIMELINE = [
     {
         index: tl01,
-        date: '22-22/22/2024',
+        date: '05-14/06/2024',
         description: 'Đăng bài phỏng vấn, PR các fandom lên dần chuẩn bị cho sự kiện.',
         position: 'right',
         optional: false,
     },
     {
         index: tl02,
-        date: '22-22/22/2024',
-        description: 'Công bố ra mắt banner Bảng Xếp Hạng Light Novel Việt Nam cuối 2023.',
+        date: '10/06/2024',
+        description: 'Công bố ra mắt banner Bảng Xếp Hạng Light Novel Việt Nam nửa đầu 2024.',
         position: 'left',
         optional: false,
     },
     {
         index: tl03,
-        date: '22-22/22/2024',
-        description:
-            'Chính thức mở bình chọn BXH LNVN cuối năm 2023 với các hạng mục được giới thiệu ở phần tiếp theo.',
+        date: '15-25/06/2024',
+        description: 'Chính thức mở bình chọn BXH LNVN nửa đầu 2024 với các hạng mục được giới thiệu ở phần tiếp theo.',
         position: 'right',
         optional: true,
     },
     {
         index: tl04,
-        date: '22-22/22/2024',
+        date: '26-29/06/2024',
         description: 'Ban tổ chức tiến hành tổng hợp các lượt bình chọn và xử lý kết quả.',
         position: 'left',
         optional: false,
     },
     {
         index: tl05,
-        date: '22-22/22/2024',
+        date: '30/06/2024',
         description: 'Đăng bài tổng kết bảng xếp hạng và ảnh mừng các tác phẩm đứng đầu.',
         position: 'right',
         optional: false,
@@ -147,60 +159,164 @@ const TIMELINE = [
 
 const COLLAB_PAGES = [
     {
-        name: 'Light Novel Việt Nam Fanpage',
-        username: 'username',
-        url: 'https://facebook.com',
-        avatar: 'https://yt3.ggpht.com/yti/AGOGRCpP0MYQ6pqgZiPwxTzSgKGnUdsCZagtWQss9eJwNQ=s108-c-k-c0x00ffffff-no-rj',
-        description: 'Premium PR Pack has been activated!',
+        name: 'Hako.re',
+        username: 'hako.page',
+        url: 'https://www.facebook.com/hako.page',
+        avatar: 'images/media/hako.webp',
+        box_shadow: 'rgb(19 32 60 / 10%) 0px 20px 25px -5px, rgb(19 32 60 / 20%) 0px 10px 10px -5px',
+        name_color: '#878489',
     },
     {
-        name: 'Light Novel Việt Nam Fanpage',
-        username: 'username',
-        url: 'https://facebook.com',
-        avatar: 'https://yt3.ggpht.com/yti/AGOGRCpP0MYQ6pqgZiPwxTzSgKGnUdsCZagtWQss9eJwNQ=s108-c-k-c0x00ffffff-no-rj',
-        description: 'Premium PR Pack has been activated!',
+        name: 'Zennomi',
+        username: 'zennomi',
+        url: 'https://facebook.com/Zennomi',
+        avatar: 'images/media/zennomi.webp',
+        box_shadow: 'rgba(250, 146, 134, 0.1) 0px 20px 25px -5px, rgba(250, 146, 134, 0.51) 0px 10px 10px -5px',
+        name_color: '#e3253ac4',
     },
     {
-        name: 'Light Novel Việt Nam Fanpage',
-        username: 'username',
-        url: 'https://facebook.com',
-        avatar: 'https://yt3.ggpht.com/yti/AGOGRCpP0MYQ6pqgZiPwxTzSgKGnUdsCZagtWQss9eJwNQ=s108-c-k-c0x00ffffff-no-rj',
-        description: 'Premium PR Pack has been activated!',
+        name: 'Sonako Light Novel',
+        username: 'SonakoWiki',
+        url: 'https://facebook.com/SonakoWiki',
+        avatar: 'images/media/sonako.webp',
+        box_shadow: 'rgb(30 135 65 / 10%) 0px 20px 25px -5px, (43 60 72 / 23%) 0px 10px 10px -5px',
+        name_color: '#afc58fe0',
     },
     {
-        name: 'Light Novel Việt Nam Fanpage',
-        username: 'username',
-        url: 'https://facebook.com',
-        avatar: 'https://yt3.ggpht.com/yti/AGOGRCpP0MYQ6pqgZiPwxTzSgKGnUdsCZagtWQss9eJwNQ=s108-c-k-c0x00ffffff-no-rj',
-        description: 'Premium PR Pack has been activated!',
+        name: 'Hội những người yêu thích Light Novel',
+        username: '100064392503502',
+        url: 'https://www.facebook.com/profile.php?id=100064392503502',
+        avatar: 'images/media/valvrare.webp',
+        box_shadow: 'rgb(30 135 65 / 10%) 0px 20px 25px -5px, (43 60 72 / 23%) 0px 10px 10px -5px',
+        name_color: '#afc58fe0',
     },
     {
-        name: 'Light Novel Việt Nam Fanpage',
-        username: 'username',
-        url: 'https://facebook.com',
-        avatar: 'https://yt3.ggpht.com/yti/AGOGRCpP0MYQ6pqgZiPwxTzSgKGnUdsCZagtWQss9eJwNQ=s108-c-k-c0x00ffffff-no-rj',
-        description: 'Premium PR Pack has been activated!',
+        name: 'Sword Art Online Vietnam',
+        username: 'sword.art.online.vietnam',
+        url: 'https://facebook.com/sword.art.online.vietnam',
+        avatar: 'images/media/sao.webp',
+        box_shadow: 'rgb(12 151 204 / 10%) 0px 20px 25px -5px, rgb(12 151 204 / 30%) 0px 10px 10px -5px',
+        name_color: '#00448382',
     },
     {
-        name: 'Light Novel Việt Nam Fanpage',
-        username: 'username',
-        url: 'https://facebook.com',
-        avatar: 'https://yt3.ggpht.com/yti/AGOGRCpP0MYQ6pqgZiPwxTzSgKGnUdsCZagtWQss9eJwNQ=s108-c-k-c0x00ffffff-no-rj',
-        description: 'Premium PR Pack has been activated!',
+        name: 'LIGHT NOVEL - MANGA VIỆT NAM 2.0',
+        username: '2154767871225294',
+        url: 'https://facebook.com/groups/2154767871225294',
+        avatar: 'images/media/group2_0.webp',
+        box_shadow: 'rgb(30 135 65 / 10%) 0px 20px 25px -5px, (43 60 72 / 23%) 0px 10px 10px -5px',
+        name_color: '#afc58fe0',
     },
     {
-        name: 'Light Novel Việt Nam Fanpage',
-        username: 'username',
-        url: 'https://facebook.com',
-        avatar: 'https://yt3.ggpht.com/yti/AGOGRCpP0MYQ6pqgZiPwxTzSgKGnUdsCZagtWQss9eJwNQ=s108-c-k-c0x00ffffff-no-rj',
-        description: 'Premium PR Pack has been activated!',
+        name: 'Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e VN Fanpage',
+        username: 'YoujitsuVN',
+        url: 'https://www.facebook.com/YoujitsuVN',
+        avatar: 'images/media/youjitsu.webp',
+        box_shadow: 'rgba(250, 146, 134, 0.1) 0px 20px 25px -5px, rgba(245 218 165) 0px 10px 10px -5px',
+        name_color: '#f99b29b8',
     },
     {
-        name: 'Light Novel Việt Nam Fanpage',
-        username: 'username',
-        url: 'https://facebook.com',
-        avatar: 'https://yt3.ggpht.com/yti/AGOGRCpP0MYQ6pqgZiPwxTzSgKGnUdsCZagtWQss9eJwNQ=s108-c-k-c0x00ffffff-no-rj',
-        description: 'Premium PR Pack has been activated!',
+        name: 'Tokidoki Bosotto Roshia-go de Dereru Tonari no Arya-san Vietnam Fanpage',
+        username: 'RoshidereVN',
+        url: 'https://facebook.com/RoshidereVN',
+        avatar: 'images/media/roshidere.webp',
+        box_shadow: 'rgb(12 151 204 / 10%) 0px 20px 25px -5px, rgb(147 211 154 / 62%) 0px 10px 10px -5px',
+        name_color: '#79c79bd4',
+    },
+    {
+        name: 'Otonari no Tenshi-sama Fanpage Việt Nam ',
+        username: 'OtonariVNFP',
+        url: 'https://www.facebook.com/OtonariVNFP',
+        avatar: 'images/media/tenshi.webp',
+        box_shadow: 'rgb(12 151 204 / 10%) 0px 20px 25px -5px, (251 200 176) 0px 10px 10px -5px',
+        name_color: '#d5967cc2',
+    },
+    {
+        name: 'Saijo No Osewa VN Fanpage',
+        username: 'saijonoosewaVN',
+        url: 'https://facebook.com/saijonoosewaVN',
+        avatar: 'images/media/saijo.webp',
+        box_shadow: 'rgb(62 184 179 / 10%) 0px 20px 25px -5px, (140 201 96 / 38%) 0px 10px 10px -5px',
+        name_color: '#93b989d6',
+    },
+    {
+        name: 'Netoge no Yome ga Ninki Idol datta Vietnam Fanpage',
+        username: 'NetogeVN',
+        url: 'https://facebook.com/NetogeVN',
+        avatar: 'images/media/netoge.webp',
+        box_shadow: 'rgb(12 151 204 / 10%) 0px 20px 25px -5px, (81 75 82 / 37%) 0px 10px 10px -5px',
+        name_color: '#857170bd',
+    },
+    {
+        name: 'Otome Game Sekai wa Mob ni Kibishii Sekai Desu Việt Nam',
+        username: 'MobSekaVietNam',
+        url: 'https://facebook.com/MobSekaVietNam',
+        avatar: 'images/media/mobuseka.webp',
+        box_shadow: 'rgb(73 127 43 / 10%) 0px 20px 25px -5px, rgba(245 218 165) 0px 10px 10px -5px',
+        name_color: '#c9ab53d6',
+    },
+    {
+        name: 'Jaku chara Tomozaki-kun VN',
+        username: 'TomozakiVN',
+        url: 'https://facebook.com/TomozakiVN',
+        avatar: 'images/media/tomozaki.webp',
+        box_shadow: 'rgb(30 135 65 / 10%) 0px 20px 25px -5px, (163 113 255 / 33%) 0px 10px 10px -5px',
+        name_color: '#b09ccbc7',
+    },
+    {
+        name: 'Bunny Girl Senpai Vietnam',
+        username: 'BGSVietnam',
+        url: 'https://facebook.com/BGSVietnam',
+        avatar: 'images/media/aobuta.webp',
+        box_shadow: 'rgb(206 104 141 / 10%) 0px 20px 25px -5px, (162 167 201 / 32%) 0px 10px 10px -5px',
+        name_color: '#ad9fb3',
+    },
+    {
+        name: 'Eighty Six Vietnam',
+        username: '86VietNamFanpage',
+        url: 'https://facebook.com/86VietNamFanpage',
+        avatar: 'images/media/86.webp',
+        box_shadow: 'rgb(30 135 65 / 10%) 0px 20px 25px -5px, (43 60 72 / 23%) 0px 10px 10px -5px',
+        name_color: '#afc58fe0',
+    },
+    {
+        name: 'Reryuu - Anime/2d Reviewer và Translator',
+        username: 'reryuu52',
+        url: 'https://facebook.com/reryuu52',
+        avatar: 'images/media/reryuu.webp',
+        box_shadow: 'rgb(30 135 65 / 10%) 0px 20px 25px -5px, (43 60 72 / 23%) 0px 10px 10px -5px',
+        name_color: '#afc58fe0',
+    },
+    {
+        name: 'Fanpage Kura Kyoudou Việt Nam',
+        username: 'KuraKyoudou',
+        url: 'https://facebook.com/KuraKyoudou',
+        avatar: 'images/media/kurakyoudou.webp',
+        box_shadow: 'rgb(30 135 65 / 10%) 0px 20px 25px -5px, (43 60 72 / 23%) 0px 10px 10px -5px',
+        name_color: '#afc58fe0',
+    },
+    {
+        name: 'Jimikawa Fanpage Việt Nam',
+        username: 'JimikawaFanpageVN',
+        url: 'https://facebook.com/JimikawaFanpageVN',
+        avatar: 'images/media/jimikawa.webp',
+        box_shadow: 'rgb(30 135 65 / 10%) 0px 20px 25px -5px, (43 60 72 / 23%) 0px 10px 10px -5px',
+        name_color: '#afc58fe0',
+    },
+    {
+        name: 'Otonari Asobi Fanpage Việt nam',
+        username: 'OtonariAsobiVN',
+        url: 'https://facebook.com/OtonariAsobiVN',
+        avatar: 'images/media/otonariasobi.webp',
+        box_shadow: 'rgb(30 135 65 / 10%) 0px 20px 25px -5px, (43 60 72 / 23%) 0px 10px 10px -5px',
+        name_color: '#afc58fe0',
+    },
+    {
+        name: 'Sứ Giả Bốn Mùa',
+        username: '100094379739358',
+        url: 'https://facebook.com/profile.php?id=100094379739358',
+        avatar: 'images/media/shunkashuutou.webp',
+        box_shadow: 'rgb(30 135 65 / 10%) 0px 20px 25px -5px, (43 60 72 / 23%) 0px 10px 10px -5px',
+        name_color: '#afc58fe0',
     },
 ];
 

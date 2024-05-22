@@ -1,29 +1,47 @@
 import { useState, useEffect, useRef } from 'react';
+import { CaretUpFilled, CaretLeftFilled, CaretRightFilled } from '@ant-design/icons';
 import { ROUTES } from 'constants';
 import { Transition, Footer, DocumentTitle } from 'components/common';
-import { VoteHeader, ListComponent, SendResult, StepBar, PopupModal } from 'components/vote';
 import {
-    favoriteRanobe,
-    rookieRanobe,
-    anticipatedRanobe,
-    disappointingRanobe,
-    copyrightRanobe,
-    favoritePublisher,
-} from './List';
+    VoteHeader,
+    ListComponent,
+    SendResult,
+    StepBar,
+    PopupModal,
+    Feedback,
+    Illustrator,
+    ThankYou,
+} from 'components/vote';
+import { favoriteRanobe, favoriteIllustrator, favoritePublisher } from './List';
 
 function Vote() {
     DocumentTitle('Bình Chọn - Bảng Xếp Hạng Light Novel Việt Nam');
 
+    const thanks = localStorage.getItem('isVoteDone') === 'true' ? true : false;
     const [currentComponent, setCurrentComponent] = useState(0);
 
     //Get selected items from each category
     const [selectedItems, setSelectedItems] = useState([
-        { category_name: 'Light Novel được yêu thích nhất', category_short: 'favoriteRanobe', chosenItems: [] },
-        { category_name: 'Light Novel tân binh của năm', category_short: 'rookieRanobe', chosenItems: [] },
-        { category_name: 'Light Novel được mong chờ nhất', category_short: 'anticipatedRanobe', chosenItems: [] },
-        { category_name: 'Light Novel gây thất vọng nhất', category_short: 'disappointingRanobe', chosenItems: [] },
-        { category_name: 'Light Novel muốn có bản quyền nhất', category_short: 'copyrightRanobe', chosenItems: [] },
-        { category_name: 'Nhà phát hành được yêu thích nhất', category_short: 'favoritePublisher', chosenItems: [] },
+        {
+            category_name: 'Light Novel được yêu thích nhất',
+            category_short: 'favoriteRanobe',
+            chosenItems: [],
+        },
+        {
+            category_name: 'Họa sĩ minh họa được yêu thích nhất',
+            category_short: 'favoriteIllustrator',
+            chosenItems: [],
+        },
+        {
+            category_name: 'Nhà phát hành được yêu thích nhất',
+            category_short: 'favoritePublisher',
+            chosenItems: [],
+        },
+        {
+            category_name: 'Chia sẻ ý kiến và đề xuất',
+            category_short: 'feedback',
+            chosenItems: [],
+        },
     ]);
     const handleChildSelection = (category, title, selectedItemsFromChild) => {
         setSelectedItems((prevSelectedItems) => {
@@ -83,93 +101,57 @@ function Vote() {
             listData={favoriteRanobe}
             description={
                 <p>
-                    Hạng mục đầu tiên chính là Light Novel được yêu thích nhất. Yêu không thể nín, đói không thể nhịn,
-                    và harem cũng không thể chỉ một người. Các bạn có thể chọn <strong>tối đa 10 tác phẩm </strong> cho
-                    hạng mục này.
+                    Best of the best, ngôi đền văn học, nơi những xúc cảm tuyệt vời nhất thăng hoa. Đó chính là hạng mục
+                    Light Novel được ưa thích nhất. Vẫn như mọi khi, <strong>10</strong> chính là con số tối đa các tác
+                    phẩm mà bạn được bình chọn, hãy suy nghĩ khôn ngoan trước khi đưa ra lựa chọn cuối cùng!
                 </p>
             }
             maxItems={10}
-            notification="Bạn chỉ được chọn tối đa 10 tựa sách cho hạng mục này!"
+            notification="Chỉ được chọn tối đa 10 tác phẩm. Hãy thay đổi những lựa chọn trước đó nếu muốn chọn một tác phẩm khác!"
             onSelectionChange={handleChildSelection}
         />,
-        <ListComponent
+        <Illustrator
             id="2"
-            title="Light Novel tân binh của năm"
-            category="rookieRanobe"
-            listData={rookieRanobe}
+            title="Họa sĩ minh họa được yêu thích nhất"
+            category="favoriteIllustrator"
+            listData={favoriteIllustrator}
             description={
                 <p>
-                    Hạng mục đầu tiên chính là Light Novel được yêu thích nhất. Yêu không thể nín, đói không thể nhịn,
-                    và harem cũng không thể chỉ một người. Các bạn có thể chọn <strong>tối đa 10 tác phẩm </strong> cho
-                    hạng mục này.
+                    Một hạng mục mới với BXH Light Novel được ưa thích nhất nơi chúng ta tôn vinh những họa sĩ đã để lại
+                    ấn tượng nhiều nhất, khiến chúng ta mlem mỗi khi đọc Light Novel và là 99% lý do các bạn quan tâm
+                    cái bộ truyện đấy. Số lượng lựa chọn ở đây tối đa là <strong>10 họa sĩ</strong>.
                 </p>
             }
-            maxItems={2}
-            notification="Bạn chỉ được chọn tối đa 2 tựa sách cho hạng mục này!"
+            maxItems={10}
+            notification="Chỉ được chọn tối đa 10 họa sĩ. Hãy thay đổi những lựa chọn trước đó nếu muốn chọn một họa sĩ khác!"
             onSelectionChange={handleChildSelection}
         />,
         <ListComponent
             id="3"
-            title="Light Novel được mong chờ nhất"
-            category="anticipatedRanobe"
-            listData={anticipatedRanobe}
-            description={
-                <p>
-                    Hạng mục đầu tiên chính là Light Novel được yêu thích nhất. Yêu không thể nín, đói không thể nhịn,
-                    và harem cũng không thể chỉ một người. Các bạn có thể chọn <strong>tối đa 10 tác phẩm </strong> cho
-                    hạng mục này.
-                </p>
-            }
-            maxItems={1}
-            notification="Bạn chỉ được chọn tối đa 2 tựa sách cho hạng mục này!"
-            onSelectionChange={handleChildSelection}
-        />,
-        <ListComponent
-            id="4"
-            title="Light Novel gây thất vọng nhất"
-            category="disappointingRanobe"
-            listData={disappointingRanobe}
-            description={
-                <p>
-                    Hạng mục đầu tiên chính là Light Novel được yêu thích nhất. Yêu không thể nín, đói không thể nhịn,
-                    và harem cũng không thể chỉ một người. Các bạn có thể chọn <strong>tối đa 10 tác phẩm </strong> cho
-                    hạng mục này.
-                </p>
-            }
-            maxItems={1}
-            notification="Bạn chỉ được chọn tối đa 2 tựa sách cho hạng mục này!"
-            onSelectionChange={handleChildSelection}
-        />,
-        <ListComponent
-            id="5"
-            title="Light Novel muốn có bản quyền nhất"
-            category="copyrightRanobe"
-            listData={copyrightRanobe}
-            description={
-                <p>
-                    Hạng mục đầu tiên chính là Light Novel được yêu thích nhất. Yêu không thể nín, đói không thể nhịn,
-                    và harem cũng không thể chỉ một người. Các bạn có thể chọn <strong>tối đa 10 tác phẩm </strong> cho
-                    hạng mục này.
-                </p>
-            }
-            maxItems={1}
-            notification="Bạn chỉ được chọn tối đa 2 tựa sách cho hạng mục này!"
-            onSelectionChange={handleChildSelection}
-        />,
-        <ListComponent
-            id="6"
             title="Nhà phát hành được yêu thích nhất"
             category="favoritePublisher"
             listData={favoritePublisher}
             description={
                 <p>
-                    Hạng mục đầu tiên chính là Light Novel được yêu thích nhất. Yêu không thể nín, đói không thể nhịn,
-                    và harem cũng không thể chỉ một người. Các bạn có thể chọn <strong>tối đa 10 tác phẩm </strong> cho
-                    hạng mục này.
+                    Bày tỏ tình cảm và tri ân dành cho các đơn vị xuất bản đã mang đến những bộ Light Novel tuyệt vời
+                    cho cộng đồng. Con số tối đa được chọn là <strong>3 nhà phát hành</strong> trong một lần bình chọn.
                 </p>
             }
-            maxItems={1}
-            notification="Bạn chỉ được chọn tối đa 1 nhà phát hành yêu thích nhất!"
+            maxItems={3}
+            notification="Chỉ được chọn tối đa 3 NPH. Hãy thay đổi những lựa chọn trước đó nếu muốn chọn một NPH khác!"
+            onSelectionChange={handleChildSelection}
+        />,
+        <Feedback
+            id="4"
+            title="Chia sẻ ý kiến và đề xuất"
+            category="feedback"
+            description={
+                <p>
+                    Nơi quý độc giả có thể <strong>tự do đóng góp</strong> ý kiến hay nhận xét về tác phẩm, nhà phát
+                    hành, dịch giả, series muốn có bản quyền hoặc bất kỳ vấn đề nào khác liên quan. Hãy cho chúng tôi
+                    biết bạn đang nghĩ gì!
+                </p>
+            }
             onSelectionChange={handleChildSelection}
         />,
         <SendResult result={selectedItems} />,
@@ -219,7 +201,9 @@ function Vote() {
         };
     }, []);
 
-    return (
+    return thanks ? (
+        <ThankYou />
+    ) : (
         <div>
             {isWideScreen && <Transition />}
             <PopupModal />
@@ -247,21 +231,29 @@ function Vote() {
                                 display: isVisible ? 'flex' : 'none',
                             }}
                         >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth={1.5}
-                                stroke="currentColor"
-                                className="w-6 h-6"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18"
-                                />
-                            </svg>
+                            <CaretUpFilled />
                         </button>
+
+                        {currentComponent !== components.length - 1 ? (
+                            <div className="control-button">
+                                <button
+                                    className={currentComponent === 0 ? 'inactivate' : ''}
+                                    id="btnPrev"
+                                    onClick={handlePrevious}
+                                >
+                                    <CaretLeftFilled />
+                                </button>
+                                <button
+                                    className={isLastComponent ? 'inactivate' : ''}
+                                    id="btnNext"
+                                    onClick={handleNext}
+                                >
+                                    <CaretRightFilled />
+                                </button>
+                            </div>
+                        ) : (
+                            <></>
+                        )}
                     </div>
                     <Footer text="Trang Chủ" to={ROUTES.HOME} />
                 </div>
