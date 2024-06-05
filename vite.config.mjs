@@ -16,6 +16,7 @@ export default defineConfig({
             $fonts: resolve('./src/assets/fonts'),
         }
     },
+    // base: "/ranking",
     plugins: [
         react(),
         svgrPlugin({

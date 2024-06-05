@@ -30,6 +30,7 @@ function SplashScreen() {
         from: { transform: 'translateX(0)' },
         to: { transform: 'translateX(-100%)' },
         config: { tension: 250, friction: 10 },
+        delay: 500,
     });
 
     const propsRightRef = useSpringRef();
@@ -38,9 +39,10 @@ function SplashScreen() {
         from: { transform: 'translateX(0)' },
         to: { transform: 'translateX(100%)' },
         config: { tension: 250, friction: 10 },
+        delay: 500,
     });
 
-    useChain([textInRef, propsDownRef, propsLeftRef, propsRightRef], [0, 0.5, 0.75, 0.75]);
+    useChain([textInRef, propsDownRef, propsLeftRef, propsRightRef], [0, 0.5, 1, 1]);
 
     useEffect(() => {
         document.body.style.position = 'fixed';
